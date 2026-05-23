@@ -25,72 +25,44 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .btn-pink{background:var(--pink);color:#fff}.btn-pink:hover{box-shadow:0 6px 28px rgba(255,61,138,.35);transform:translateY(-2px)}
 .btn-outline{border:1px solid rgba(255,255,255,.18);color:var(--white);background:transparent}.btn-outline:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3);transform:translateY(-2px)}
 
-/* NAV */
+/* ═══════ NAV ═══════ */
 #mainNav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(4,7,22,.96);border-bottom:1px solid rgba(255,255,255,.07);transition:background .25s;transform:translateZ(0)}
 #mainNav.scrolled{background:rgba(3,5,16,.99);border-bottom-color:rgba(79,232,216,.1)}
-.nav-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;height:70px;max-width:1100px;margin:0 auto;padding:0 24px}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:70px;max-width:1100px;margin:0 auto;padding:0 24px;gap:32px}
 .logo-link{display:flex;align-items:center;flex-shrink:0;cursor:pointer}
-.nav-links{display:flex;justify-content:center;align-items:center;gap:24px;font-size:.875rem;color:var(--gray)}
-.nav-links a{padding:4px 0;transition:color .2s;white-space:nowrap;cursor:pointer}.nav-links a:hover{color:var(--white)}
-.nav-links a.nav-lynknow{color:rgba(79,232,216,.7);font-weight:600}.nav-links a.nav-lynknow:hover{color:var(--teal)}
-.nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
-.btn-nav{padding:9px 20px;font-size:.875rem;font-weight:600;border-radius:8px;border:1px solid rgba(79,232,216,.28);color:var(--teal);background:rgba(79,232,216,.04);letter-spacing:.01em;transition:all .2s;text-decoration:none;white-space:nowrap;cursor:pointer}
-.btn-nav:hover{background:rgba(79,232,216,.1);border-color:rgba(79,232,216,.65);box-shadow:0 0 20px rgba(79,232,216,.18)}
-.burger{display:none;background:none;border:1px solid var(--border);color:var(--white);font-size:1.1rem;cursor:pointer;padding:8px 12px;border-radius:7px;line-height:1;align-items:center;justify-content:center}
-.nav-mob{display:none;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(4,7,22,.98);border-bottom:1px solid var(--border);padding:16px 24px 24px;gap:2px;z-index:199}
-.nav-mob.open{display:flex}
-.nav-mob a{font-size:1rem;color:var(--gray);padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s;cursor:pointer}
-.nav-mob a:hover{color:var(--white)}
-.nav-mob a.nav-lynknow-mob{color:rgba(79,232,216,.75);font-weight:600}
-.nav-mob .btn{text-align:center;margin-top:12px;border-bottom:none!important;justify-content:center}
+.nav-links{display:flex;justify-content:center;align-items:center;gap:6px;flex:1}
+.nav-links a{position:relative;padding:6px 10px;font-size:.82rem;font-weight:500;color:var(--gray);letter-spacing:.01em;cursor:pointer;transition:color .2s;white-space:nowrap;text-decoration:none}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:10px;right:10px;height:1.5px;background:var(--teal);border-radius:2px;transform:scaleX(0);transform-origin:center;transition:transform .25s ease}
+.nav-links a:hover{color:var(--white)}.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;flex-shrink:0}
+.btn-nav{padding:9px 20px;font-size:.82rem;font-weight:600;border-radius:8px;border:1px solid rgba(79,232,216,.32);color:var(--teal);background:rgba(79,232,216,.06);letter-spacing:.01em;transition:all .22s;text-decoration:none;white-space:nowrap;cursor:pointer;display:inline-block}
+.btn-nav:hover{background:rgba(79,232,216,.14);border-color:rgba(79,232,216,.75);box-shadow:0 0 28px rgba(79,232,216,.28),0 0 10px rgba(79,232,216,.12);transform:translateY(-1px)}
+.burger{display:none;background:none;border:1px solid var(--border);color:var(--white);font-size:1.15rem;cursor:pointer;padding:8px 12px;border-radius:7px;line-height:1;align-items:center;justify-content:center}
+.nav-mob{display:flex;flex-direction:column;position:fixed;top:70px;right:0;width:100%;max-width:320px;bottom:0;background:rgba(4,7,22,.99);border-left:1px solid rgba(255,255,255,.07);padding:24px 28px 40px;gap:0;z-index:199;transform:translateX(100%);visibility:hidden;transition:transform .32s cubic-bezier(.22,.68,0,1.15),visibility .32s;overflow-y:auto}
+.nav-mob.open{transform:translateX(0);visibility:visible}
+.nav-mob a{font-size:1rem;color:var(--gray);padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s;cursor:pointer;display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-mob a:hover{color:var(--white)}.nav-mob a.mob-highlight{color:rgba(79,232,216,.8);font-weight:600}
+.nav-mob .mob-cta{margin-top:20px;border-bottom:none!important;background:var(--teal);color:#061020;justify-content:center;border-radius:8px;padding:13px 20px;font-weight:700;font-size:.95rem}
+.nav-mob .mob-cta:hover{background:#6ff0e2;color:#061020}
 
 /* PAGE ROUTING */
 .page{display:none}.page.active{display:block}.page-top{padding-top:70px}
 #lynknow,#how-it-works,#why-tidelynk,#join,#contact{scroll-margin-top:84px}
 
-/* ═══ HERO ═══ */
+/* ═══════════════════════════
+   HERO
+═══════════════════════════ */
 .hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 72px;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;pointer-events:none}
-
-/* Deep layered background */
-.hero-base{position:absolute;inset:0;background:
-  radial-gradient(ellipse 90% 55% at 50% -8%,rgba(8,22,52,.98) 0%,transparent 64%),
-  linear-gradient(180deg,#050B1A 0%,#0A0F2C 45%,#081734 100%)}
-
-/* Star field */
-.hero-stars{position:absolute;inset:0;background-image:
-  radial-gradient(1.2px 1.2px at 96px 68px,rgba(255,255,255,.17) 0%,transparent 100%),
-  radial-gradient(1px 1px at 224px 42px,rgba(255,255,255,.13) 0%,transparent 100%),
-  radial-gradient(.9px .9px at 382px 115px,rgba(255,255,255,.19) 0%,transparent 100%),
-  radial-gradient(1.1px 1.1px at 522px 58px,rgba(255,255,255,.14) 0%,transparent 100%),
-  radial-gradient(1.2px 1.2px at 770px 34px,rgba(255,255,255,.16) 0%,transparent 100%),
-  radial-gradient(1px 1px at 924px 74px,rgba(255,255,255,.12) 0%,transparent 100%),
-  radial-gradient(1.1px 1.1px at 1062px 50px,rgba(255,255,255,.17) 0%,transparent 100%),
-  radial-gradient(1px 1px at 1352px 60px,rgba(255,255,255,.14) 0%,transparent 100%),
-  radial-gradient(1px 1px at 312px 84px,rgba(79,232,216,.2) 0%,transparent 100%),
-  radial-gradient(.9px .9px at 852px 56px,rgba(79,232,216,.15) 0%,transparent 100%),
-  radial-gradient(1px 1px at 1154px 108px,rgba(79,232,216,.13) 0%,transparent 100%),
-  radial-gradient(.8px .8px at 608px 136px,rgba(255,255,255,.09) 0%,transparent 100%),
-  radial-gradient(.7px .7px at 148px 190px,rgba(255,255,255,.08) 0%,transparent 100%),
-  radial-gradient(.8px .8px at 468px 175px,rgba(255,255,255,.1) 0%,transparent 100%),
-  radial-gradient(.9px .9px at 1006px 155px,rgba(79,232,216,.11) 0%,transparent 100%),
-  radial-gradient(.8px .8px at 1290px 180px,rgba(255,255,255,.09) 0%,transparent 100%);
-  background-size:100% 100%;background-repeat:no-repeat}
-
-/* Dot grid */
+.hero-base{position:absolute;inset:0;background:radial-gradient(ellipse 90% 55% at 50% -8%,rgba(8,22,52,.98) 0%,transparent 64%),linear-gradient(180deg,#050B1A 0%,#0A0F2C 45%,#081734 100%)}
+.hero-stars{position:absolute;inset:0;background-image:radial-gradient(1.2px 1.2px at 96px 68px,rgba(255,255,255,.17) 0%,transparent 100%),radial-gradient(1px 1px at 224px 42px,rgba(255,255,255,.13) 0%,transparent 100%),radial-gradient(.9px .9px at 382px 115px,rgba(255,255,255,.19) 0%,transparent 100%),radial-gradient(1.1px 1.1px at 522px 58px,rgba(255,255,255,.14) 0%,transparent 100%),radial-gradient(1.2px 1.2px at 770px 34px,rgba(255,255,255,.16) 0%,transparent 100%),radial-gradient(1px 1px at 924px 74px,rgba(255,255,255,.12) 0%,transparent 100%),radial-gradient(1.1px 1.1px at 1062px 50px,rgba(255,255,255,.17) 0%,transparent 100%),radial-gradient(1px 1px at 1352px 60px,rgba(255,255,255,.14) 0%,transparent 100%),radial-gradient(1px 1px at 312px 84px,rgba(79,232,216,.2) 0%,transparent 100%),radial-gradient(.9px .9px at 852px 56px,rgba(79,232,216,.15) 0%,transparent 100%),radial-gradient(1px 1px at 1154px 108px,rgba(79,232,216,.13) 0%,transparent 100%),radial-gradient(.8px .8px at 608px 136px,rgba(255,255,255,.09) 0%,transparent 100%),radial-gradient(.7px .7px at 148px 190px,rgba(255,255,255,.08) 0%,transparent 100%),radial-gradient(.8px .8px at 468px 175px,rgba(255,255,255,.1) 0%,transparent 100%),radial-gradient(.9px .9px at 1006px 155px,rgba(79,232,216,.11) 0%,transparent 100%),radial-gradient(.8px .8px at 1290px 180px,rgba(255,255,255,.09) 0%,transparent 100%);background-size:100% 100%;background-repeat:no-repeat}
 .hero-grid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.022) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 85% 80% at 50% 30%,black 20%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 85% 80% at 50% 30%,black 20%,transparent 80%)}
-
-/* Edge vignette */
 .hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 88% 82% at 50% 38%,transparent 28%,rgba(2,5,16,.52) 100%);pointer-events:none}
-
-/* Ambient orbs */
 .hero-orb{position:absolute;border-radius:50%;pointer-events:none}
-.hero-orb-1{width:900px;height:900px;background:radial-gradient(circle,rgba(79,232,216,.085) 0%,transparent 62%);top:-350px;right:-220px}
-.hero-orb-2{width:600px;height:600px;background:radial-gradient(circle,rgba(255,61,138,.038) 0%,transparent 62%);top:-180px;left:-220px}
+.hero-orb-1{width:900px;height:900px;background:radial-gradient(circle,rgba(79,232,216,.055) 0%,transparent 62%);top:-350px;right:-220px}
+.hero-orb-2{width:600px;height:600px;background:radial-gradient(circle,rgba(255,61,138,.03) 0%,transparent 62%);top:-180px;left:-220px}
 
-
-
-/* ═ FLOATING PARTICLES ═ */
+/* Floating particles */
 .hero-particle{position:absolute;border-radius:50%;pointer-events:none}
 .hp1{width:5px;height:5px;background:rgba(79,232,216,.1);top:22%;left:13%;animation:hpd1 13s ease-in-out infinite}
 .hp2{width:3px;height:3px;background:rgba(255,255,255,.09);top:17%;left:33%;animation:hpd2 17s ease-in-out infinite 2s}
@@ -101,17 +73,9 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 @keyframes hpd1{0%,100%{transform:translate(0,0);opacity:.08}33%{transform:translate(-10px,-14px);opacity:.13}66%{transform:translate(8px,-8px);opacity:.06}}
 @keyframes hpd2{0%,100%{transform:translate(0,0);opacity:.06}40%{transform:translate(12px,-18px);opacity:.11}70%{transform:translate(-6px,-10px);opacity:.07}}
 @keyframes hpd3{0%,100%{transform:translate(0,0);opacity:.07}50%{transform:translate(-8px,-12px);opacity:.12}}
-
-/* ═ CITY ATMOSPHERE ═ */
 .hero-city-sweep{position:absolute;bottom:0;left:0;width:32%;height:130px;background:linear-gradient(90deg,transparent 0%,rgba(79,232,216,.055) 45%,rgba(79,232,216,.08) 55%,transparent 100%);animation:hCitySweep 14s linear infinite;will-change:transform}
 @keyframes hCitySweep{from{transform:translateX(-110%)}to{transform:translateX(340%)}}
-
-/* Skyline */
 .hero-skyline{position:absolute;bottom:0;left:0;right:0;width:100%;will-change:transform;transition:transform .08s linear}
-
-
-
-/* Window pulses */
 .wp1{animation:wPulse 5s ease-in-out infinite}
 .wp2{animation:wPulse 7s ease-in-out 1.8s infinite}
 .wp3{animation:wPulse 4.8s ease-in-out 3.2s infinite}
@@ -120,7 +84,19 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 @keyframes wFlicker{0%,100%{opacity:.04}50%{opacity:.26}}
 @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ═ HERO CONTENT ═ */
+/* ═══════════════════════════
+   VOLUMETRIC CLOUD SYSTEM
+═══════════════════════════ */
+.hero-clouds{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-clouds svg{position:absolute;top:0;left:0;width:100%;height:100%}
+.cg1{animation:cdrift1 26s ease-in-out infinite;will-change:transform}
+.cg2{animation:cdrift2 32s ease-in-out infinite;will-change:transform}
+.cg3{animation:cdrift3 42s ease-in-out infinite;will-change:transform}
+@keyframes cdrift1{0%,100%{transform:translate(0,0)}30%{transform:translate(-8px,-2px)}65%{transform:translate(6px,3px)}}
+@keyframes cdrift2{0%,100%{transform:translate(0,0)}40%{transform:translate(10px,-3px)}72%{transform:translate(-6px,2px)}}
+@keyframes cdrift3{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,1px)}}
+
+/* HERO CONTENT */
 .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:820px;width:100%;margin:0 auto;padding:0 24px;position:relative;z-index:2}
 .hero-content{animation:fadeUp .8s .1s ease both;width:100%}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
@@ -141,7 +117,7 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .hero-proof strong{color:rgba(255,255,255,.55);font-weight:500}
 .momentum-num{color:rgba(79,232,216,.8);font-weight:700}
 
-/* LYNKNOW SECTION */
+/* LYNKNOW */
 .lynknow-grid{display:grid;grid-template-columns:1fr 308px;gap:18px;align-items:start}
 .lynknow-main{background:linear-gradient(145deg,rgba(10,15,46,.99) 0%,rgba(7,10,32,.99) 100%);border:1px solid rgba(79,232,216,.22);border-radius:20px;padding:48px 44px;position:relative;overflow:hidden;display:flex;flex-direction:column}
 .lynknow-main::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(79,232,216,.07) 0%,transparent 65%);pointer-events:none}
@@ -171,8 +147,6 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .card h3{margin-bottom:6px}.card p{font-size:.92rem}
 .ic{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .ic-t{background:var(--teal2);color:var(--teal)}.ic-p{background:var(--pink2);color:var(--pink)}
-
-/* STEPS */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;position:relative}
 .steps::after{content:'';position:absolute;top:40px;left:calc(16.6% + 20px);right:calc(16.6% + 20px);height:1px;background:linear-gradient(90deg,rgba(79,232,216,.4),rgba(255,61,138,.4));pointer-events:none}
 .step{text-align:center}
@@ -182,16 +156,12 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .s2 .snum-inner{background:linear-gradient(135deg,var(--teal2),var(--pink2));color:var(--white)}
 .s3 .snum-inner{background:var(--pink2);color:var(--pink)}
 .step h3{font-size:1.1rem;margin-bottom:8px}
-
-/* ADV GRID */
 .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
 .adv-card{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r);padding:22px;text-align:center;transition:border-color .22s,transform .22s,box-shadow .22s;display:flex;flex-direction:column;align-items:center}
 .adv-card:hover{border-color:rgba(79,232,216,.2);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
 .adv-icon{width:48px;height:48px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .adv-icon.t{background:var(--teal2);color:var(--teal)}.adv-icon.p{background:var(--pink2);color:var(--pink)}
 .adv-card h3{font-size:.95rem;margin-bottom:7px}.adv-card p{font-size:.83rem}
-
-/* WAITLIST */
 .wl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px auto 0;max-width:1020px}
 .wl-card{position:relative;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;overflow:hidden;transition:transform .28s cubic-bezier(.22,.68,0,1.2),box-shadow .28s ease,border-color .28s ease}
 .wl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:16px 16px 0 0}
@@ -230,8 +200,6 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .topo-sec{position:relative}
 .topo-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(79,232,216,.018) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:0}
 .topo-sec>.wrap{position:relative;z-index:1}
-
-/* INNER PAGES */
 .inner-hero{padding:100px 0 60px;background:var(--navy2);position:relative;overflow:hidden}
 .inner-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(79,232,216,.018) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
 .inner-hero-content{position:relative;z-index:1}
@@ -249,8 +217,6 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .ck-t{background:var(--teal2);color:var(--teal)}.ck-p{background:var(--pink2);color:var(--pink)}
 .chk-row p{margin:0;color:var(--white);font-size:.9rem}
 .bk-card{background:var(--navy3);border:1px solid var(--border);border-radius:16px;padding:26px}
-
-/* FAQ */
 .faq-wrap{max-width:720px;margin:40px auto 0;display:flex;flex-direction:column;gap:9px}
 .faq-item{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
 .faq-btn{width:100%;background:none;border:none;color:var(--white);text-align:left;padding:18px 22px;font-size:.92rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit}
@@ -260,8 +226,6 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .faq-body p{padding:0 22px 18px;font-size:.9rem}
 .faq-item.open .faq-body{max-height:300px}
 .faq-item.open .faq-chev{transform:rotate(180deg)}
-
-/* LEGAL */
 .legal-page{padding:96px 0 80px;min-height:80vh}
 .legal-page h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-bottom:8px;background:linear-gradient(135deg,#fff,rgba(79,232,216,.9));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .legal-meta{font-size:.82rem;color:rgba(136,146,176,.5);margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--border)}
@@ -273,8 +237,6 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .legal-body strong{color:rgba(255,255,255,.9)}
 .legal-body .legal-contact{background:var(--navy3);border:1px solid rgba(79,232,216,.2);border-radius:var(--r);padding:24px;margin-top:32px}
 .legal-body .legal-contact h3{margin-top:0}.legal-body .legal-contact p{margin:0}.legal-body .legal-contact a{color:var(--teal)}
-
-/* FOOTER */
 footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;position:relative;overflow:hidden}
 .foot-skyline-bg{position:absolute;bottom:0;left:0;right:0;pointer-events:none;opacity:.055}
 .foot-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:28px;margin-bottom:28px}
@@ -284,38 +246,32 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
 .foot-btm{padding:18px 0 26px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .foot-btm p{font-size:.78rem;color:rgba(136,146,176,.45)}
 
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .nav-inner{display:flex;justify-content:space-between;align-items:center;height:70px}
-  .nav-links{display:none}.btn-nav{display:none}.burger{display:flex}
-}
-@media(max-width:900px){
-  .seg,.seg.r{grid-template-columns:1fr;direction:ltr}
-  .lynknow-grid{grid-template-columns:1fr}
-  .lynknow-side{flex-direction:row}
-  .lynknow-main{padding:36px 28px}
-}
-@media(max-width:768px){
-  .sec{padding:56px 0}.sec-sm{padding:40px 0}
-  .g3{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}.steps::after{display:none}
-  .adv-grid{grid-template-columns:repeat(2,1fr)}
-  .wl-grid{grid-template-columns:1fr}
-  .wl-btn{width:100%;justify-content:center}
-  .hero h1{font-size:clamp(2.2rem,8vw,3rem)}
-  .hero-ctas .btn-lg{width:100%;justify-content:center}
-  .inner-hero{padding:88px 0 48px}
-  .legal-page{padding:88px 0 60px}
-  .lynknow-main{padding:28px 22px}
-  .lynknow-side{flex-direction:column}
-}
+@media(max-width:1024px){.nav-links{display:none}.btn-nav{display:none}.burger{display:flex}}
+@media(max-width:900px){.seg,.seg.r{grid-template-columns:1fr;direction:ltr}.lynknow-grid{grid-template-columns:1fr}.lynknow-side{flex-direction:row}.lynknow-main{padding:36px 28px}}
+@media(max-width:768px){.sec{padding:56px 0}.sec-sm{padding:40px 0}.g3{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.steps::after{display:none}.adv-grid{grid-template-columns:repeat(2,1fr)}.wl-grid{grid-template-columns:1fr}.wl-btn{width:100%;justify-content:center}.hero h1{font-size:clamp(2.2rem,8vw,3rem)}.hero-ctas .btn-lg{width:100%;justify-content:center}.inner-hero{padding:88px 0 48px}.legal-page{padding:88px 0 60px}.lynknow-main{padding:28px 22px}.lynknow-side{flex-direction:column}}
 @media(max-width:520px){.adv-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){
   .hero-orb-1,.hero-orb-2{display:none}
-  .badge-dot,.wp1,.wp2,.wp3,.wpf,.hp1,.hp2,.hp3,.hp4,.hp5,.hp6,.hero-city-sweep{animation:none!important;box-shadow:none!important}
+  .badge-dot,.wp1,.wp2,.wp3,.wpf,.hp1,.hp2,.hp3,.hp4,.hp5,.hp6,.hero-city-sweep,.cg1,.cg2,.cg3{animation:none!important;box-shadow:none!important}
   *{transition-duration:.001ms!important}
 }
 </style>
+
+<!-- Meta Pixel — ID 824693310430602 -->
+<script>
+!function(f,b,e,v,n,t,s){
+  if(f.fbq)return;
+  n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+  t=b.createElement(e);t.async=!0;t.src=v;
+  s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','824693310430602');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=824693310430602&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -325,37 +281,34 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
     <div class="logo-link" onclick="navigate('home')" aria-label="TideLynk home">
       <svg xmlns="http://www.w3.org/2000/svg" width="149" height="50" viewBox="0 0 149 50" fill="none" style="height:32px;width:auto;display:block"><path d="M82.6452 5.12812C81.4412 1.97549 79.0884 -0.0727545 75.5718 0.00197866C74.2695 -0.0229324 73.0226 0.208187 71.8698 0.835115C70.2824 1.6987 69.1697 3.01899 68.3545 4.59807C66.6578 7.88356 66.28 11.4043 66.6772 15.0178C66.9609 17.5892 67.455 20.1301 68.4237 22.5506C68.5262 22.8081 68.4487 22.9119 68.2106 23.0101C67.1616 23.4405 66.0876 23.792 64.9888 24.055C64.611 24.1463 64.5445 24.3207 64.5916 24.6446C64.8615 26.4658 65.1299 28.2871 65.3874 30.1098C65.4206 30.345 65.4925 30.3727 65.7029 30.3118C66.2011 30.1665 66.7118 30.0599 67.2086 29.9105C70.6823 28.8656 73.7976 27.173 76.4645 24.6985C78.6663 22.6558 80.3492 20.2339 81.6225 17.5214C82.7075 15.2102 83.3801 12.7827 83.5448 10.2335C83.6582 8.46759 83.2694 6.76395 82.6452 5.12812ZM75.1636 17.4079C74.675 18.1317 74.1478 18.8292 73.4572 19.4644C73.1444 18.6285 72.9949 17.812 72.8385 17.0024C72.5078 15.2738 72.3362 13.5273 72.386 11.7683C72.4247 10.3996 72.5562 9.03362 73.1001 7.75486C73.4433 6.94386 73.8973 6.22421 74.8466 5.98617C75.6078 5.79518 76.3233 6.03461 76.7593 6.68922C77.3128 7.51958 77.5038 8.47312 77.5578 9.4405C77.7225 12.3786 76.7897 15.004 75.1636 17.4079Z" fill="white"/><path d="M86.5908 39.4071C84.025 39.2908 81.5546 38.4937 79.2268 37.2232C77.4623 36.26 75.8915 35.0338 74.4993 33.589C73.3174 32.3628 72.2877 31.0134 71.4629 29.5188C71.3868 29.3804 71.1557 29.2032 71.51 29.0801C73.1873 28.5002 74.5477 27.3986 75.9427 26.3578C76.2168 26.1544 76.3316 26.1682 76.5212 26.4478C77.8927 28.467 79.6545 30.0184 81.9435 30.9359C83.2707 31.4674 84.6519 31.7179 86.0705 31.7843C86.3791 31.7981 86.4787 31.9089 86.5189 32.194C86.833 34.4429 87.1555 36.6918 87.4849 38.9393C87.5333 39.2659 87.5015 39.4721 87.096 39.4099C86.9631 39.3905 86.8261 39.4071 86.5908 39.4071Z" fill="white"/><path d="M9.40946 37.291H3.28688V23.9373H0V19.171H3.28688V12.2665H9.40946V19.1696H12.6963V23.9359H9.40946V37.291Z" fill="white"/><path d="M16.1895 9.34912C18.1616 9.34912 19.8058 10.9517 19.8058 12.9654C19.8058 14.9375 18.1616 16.5816 16.1895 16.5816C14.1759 16.5816 12.5732 14.9375 12.5732 12.9654C12.5732 10.9517 14.1759 9.34912 16.1895 9.34912ZM13.1074 37.291V19.1696H19.2716V37.291H13.1074Z" fill="white"/><path d="M41.6651 37.291H35.501V35.1127C34.2679 36.9616 31.5969 37.7021 29.2968 37.7021C24.1609 37.7021 20.2983 33.2637 20.2983 28.2511C20.2983 23.2384 24.1609 18.76 29.2968 18.76C31.5983 18.76 33.8984 19.4173 35.501 21.3895V6.47327H41.6651V37.291ZM31.1872 23.7311C28.7224 23.7311 26.8721 25.8679 26.8721 28.2511C26.8721 30.6342 28.721 32.771 31.1872 32.771C33.6534 32.771 35.501 30.6342 35.501 28.2511C35.501 25.8679 33.6521 23.7311 31.1872 23.7311Z" fill="white"/><path d="M63.0721 28.9902H49.0195C49.0195 31.0855 50.499 33.3053 52.9237 33.3053C55.102 33.3053 56.4569 31.8674 56.4984 30.5526H62.7857C61.7173 35.3189 57.8547 37.7021 53.0468 37.7021C46.8011 37.7021 42.4873 34.0042 42.4873 28.2511C42.4873 22.5811 46.9658 18.76 53.0468 18.76C58.5536 18.76 63.1137 22.0469 63.1137 27.8415C63.1137 28.2096 63.0721 28.6206 63.0721 28.9902ZM57.1973 26.0728C57.1973 26.0728 56.9094 22.7029 53.17 22.7029C49.3074 22.7029 49.1026 26.0728 49.1026 26.0728H57.1973Z" fill="white"/><path d="M88.4759 47.5641L92.5848 37.2911H91.5579L84.6548 19.1697H90.859L95.1728 32.1137L99.4866 19.1697H105.734L98.8306 37.2911L94.8863 47.5641H88.4759Z" fill="#00FFE7"/><path d="M125.292 37.2911H119.128V27.0181C119.128 24.8813 118.306 23.7312 116.375 23.7312C114.443 23.7312 112.923 25.7864 112.923 28.2512V37.2911H106.759V19.1697H112.923V21.3882C114.156 19.8271 116.087 18.7587 118.47 18.7587C123.318 18.7587 125.292 22.0871 125.292 27.0181V37.2911Z" fill="#00FFE7"/><path d="M134.743 37.291H128.579V6.47327H134.743V26.3606L140.536 19.1696H148.178L140.371 27.7985L149 37.2896H141.11L134.741 29.2766V37.291H134.743Z" fill="#00FFE7"/><path d="M12.0812 40.6068H73.4939L71.3126 50.0033H9.39648L12.0812 40.6068Z" fill="#FF2EC4"/><rect width="53.9064" height="6.71177" transform="translate(14.4304 41.9492)" fill="#FF2EC4"/></svg>
     </div>
-    <div class="nav-links">
-      <a class="nav-lynknow" onclick="scrollToSection('lynknow')">LynkNow</a>
+    <div class="nav-links" role="navigation" aria-label="Desktop navigation">
+      <a onclick="scrollToSection('lynknow')" class="mob-highlight">⚡ LynkNow</a>
       <a onclick="scrollToSection('how-it-works')">How It Works</a>
+      <a onclick="navigate('for-cleaners')">For Cleaners</a>
+      <a onclick="navigate('for-companies')">For Companies</a>
       <a onclick="scrollToSection('why-tidelynk')">Why TideLynk</a>
       <a onclick="scrollToSection('contact')">Contact</a>
     </div>
-    <div class="nav-right">
-      <span onclick="scrollToSection('join')" class="btn-nav" style="cursor:pointer">Join Waitlist</span>
+    <div class="nav-right" style="display:flex;align-items:center;gap:12px">
+      <span onclick="scrollToSection('join')" class="btn-nav" role="button" tabindex="0">Join Waitlist</span>
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
-<nav class="nav-mob" id="mobNav">
-  <a class="nav-lynknow-mob" onclick="scrollToSection('lynknow')">⚡ LynkNow</a>
-  <a onclick="scrollToSection('how-it-works')">How It Works</a>
-  <a onclick="scrollToSection('why-tidelynk')">Why TideLynk</a>
-  <a onclick="navigate('for-cleaners')">For Cleaners</a>
-  <a onclick="navigate('for-companies')">For Companies</a>
-  <a onclick="navigate('faqs')">FAQs</a>
-  <a onclick="scrollToSection('contact')">Contact</a>
-  <a onclick="navigate('privacy-policy')">Privacy Policy</a>
-  <a onclick="navigate('terms-and-conditions')">Terms of Use</a>
-  <a onclick="scrollToSection('join')" class="btn btn-teal" style="margin-top:12px;justify-content:center">Join Waitlist</a>
+<nav class="nav-mob" id="mobNav" aria-label="Mobile navigation">
+  <a onclick="scrollToSection('lynknow')" class="mob-highlight"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>LynkNow</a>
+  <a onclick="scrollToSection('how-it-works')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>How It Works</a>
+  <a onclick="navigate('for-cleaners')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>For Cleaners</a>
+  <a onclick="navigate('for-companies')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>For Companies</a>
+  <a onclick="scrollToSection('why-tidelynk')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Why TideLynk</a>
+  <a onclick="scrollToSection('contact')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a>
+  <a onclick="scrollToSection('join')" class="mob-cta">Join Waitlist →</a>
 </nav>
 
-<!-- ══════ HOME ══════ -->
+<!-- HOME PAGE -->
 <div id="page-home" class="page active">
 
-<!-- HERO -->
 <section class="hero" aria-label="Hero">
   <div class="hero-bg" aria-hidden="true">
     <div class="hero-base"></div>
@@ -364,9 +317,124 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
 
+    <!-- ═══ VOLUMETRIC NIGHT CLOUDS ═══ -->
+    <div class="hero-clouds" aria-hidden="true">
+      <svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Blur filters — extended regions to prevent edge clipping -->
+          <filter id="cf-xl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+          <filter id="cf-lg" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="12"/></filter>
+          <filter id="cf-md" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="5.5"/></filter>
 
+          <!-- Organic turbulence displacement — makes ellipses look like real cloud edges -->
+          <filter id="cf-t1" x="-28%" y="-28%" width="156%" height="156%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.013 0.019" numOctaves="3" seed="5" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <filter id="cf-t2" x="-28%" y="-28%" width="156%" height="156%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.015 0.021" numOctaves="3" seed="11" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <filter id="cf-t3" x="-28%" y="-28%" width="156%" height="156%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="17" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
 
-    <!-- Floating particles -->
+          <!-- Colour gradients -->
+          <!-- Deep navy volume — moonlit core fading to transparent edges -->
+          <radialGradient id="cg-vol-l" cx="48%" cy="36%" r="52%">
+            <stop offset="0%" stop-color="#172d60" stop-opacity="0.75"/>
+            <stop offset="48%" stop-color="#0f1e4a" stop-opacity="0.38"/>
+            <stop offset="100%" stop-color="#07102a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="cg-vol-r" cx="52%" cy="34%" r="52%">
+            <stop offset="0%" stop-color="#152a5a" stop-opacity="0.72"/>
+            <stop offset="48%" stop-color="#0e1c46" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#07102a" stop-opacity="0"/>
+          </radialGradient>
+          <!-- Cool blue-silver moonlit highlight on cloud tops -->
+          <radialGradient id="cg-moon-l" cx="44%" cy="12%" r="55%">
+            <stop offset="0%" stop-color="#364e84" stop-opacity="0.3"/>
+            <stop offset="60%" stop-color="#1a2e5c" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#0c1838" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="cg-moon-r" cx="56%" cy="10%" r="55%">
+            <stop offset="0%" stop-color="#304680" stop-opacity="0.28"/>
+            <stop offset="60%" stop-color="#182c58" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#0c1838" stop-opacity="0"/>
+          </radialGradient>
+          <!-- Teal city-light glow — Perth skyline illuminating cloud bases -->
+          <radialGradient id="cg-teal-l" cx="50%" cy="88%" r="52%">
+            <stop offset="0%" stop-color="#4FE8D8" stop-opacity="0.07"/>
+            <stop offset="100%" stop-color="#4FE8D8" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="cg-teal-r" cx="50%" cy="88%" r="52%">
+            <stop offset="0%" stop-color="#4FE8D8" stop-opacity="0.065"/>
+            <stop offset="100%" stop-color="#4FE8D8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- ═══ UPPER-LEFT CLOUD CLUSTER ═══ -->
+        <!-- Clouds hug the upper-left corner — clear of headline and CTA -->
+        <g class="cg1">
+          <!-- Far atmospheric haze — widest, softest, lowest opacity -->
+          <ellipse cx="75" cy="165" rx="340" ry="110" fill="#09112e" opacity="0.58" filter="url(#cf-xl)"/>
+          <!-- Mid-distance background puff -->
+          <ellipse cx="285" cy="148" rx="200" ry="72" fill="#0c1736" opacity="0.42" filter="url(#cf-xl)"/>
+          <!-- Main cloud bodies — organic turbulence edges, layered for density -->
+          <ellipse cx="60" cy="104" rx="192" ry="72" fill="#111e3e" opacity="0.60" filter="url(#cf-t1)"/>
+          <ellipse cx="238" cy="84" rx="170" ry="64" fill="#12203c" opacity="0.54" filter="url(#cf-t1)"/>
+          <ellipse cx="370" cy="116" rx="145" ry="52" fill="#0e1a38" opacity="0.40" filter="url(#cf-t2)"/>
+          <!-- Density variation — inner volume gradient -->
+          <ellipse cx="158" cy="98" rx="215" ry="82" fill="url(#cg-vol-l)" filter="url(#cf-lg)"/>
+          <!-- Secondary puff — breaks up the silhouette naturally -->
+          <ellipse cx="310" cy="76" rx="110" ry="48" fill="#131e40" opacity="0.44" filter="url(#cf-t3)"/>
+          <ellipse cx="120" cy="72" rx="140" ry="50" fill="#101b3a" opacity="0.38" filter="url(#cf-t3)"/>
+          <!-- Moonlit highlights on cloud tops — cool blue-silver -->
+          <ellipse cx="128" cy="55" rx="210" ry="28" fill="url(#cg-moon-l)" filter="url(#cf-md)"/>
+          <ellipse cx="300" cy="48" rx="125" ry="19" fill="#2c4276" opacity="0.20" filter="url(#cf-md)"/>
+          <!-- Wispy trailing tendrils dissolving into sky -->
+          <ellipse cx="460" cy="134" rx="120" ry="36" fill="#0b1530" opacity="0.22" filter="url(#cf-xl)"/>
+          <ellipse cx="-15" cy="148" rx="95" ry="30" fill="#0b1530" opacity="0.20" filter="url(#cf-xl)"/>
+          <!-- Teal city-light warmth on cloud underbelly -->
+          <ellipse cx="168" cy="182" rx="240" ry="34" fill="url(#cg-teal-l)" filter="url(#cf-xl)"/>
+        </g>
+
+        <!-- ═══ UPPER-RIGHT CLOUD CLUSTER ═══ -->
+        <!-- Asymmetric shape — distinct from left cluster for realism -->
+        <g class="cg2">
+          <!-- Far atmospheric haze -->
+          <ellipse cx="1370" cy="152" rx="360" ry="114" fill="#09112e" opacity="0.54" filter="url(#cf-xl)"/>
+          <ellipse cx="1148" cy="142" rx="210" ry="70" fill="#0c1736" opacity="0.38" filter="url(#cf-xl)"/>
+          <!-- Main cloud bodies -->
+          <ellipse cx="1385" cy="96" rx="195" ry="74" fill="#111e3e" opacity="0.57" filter="url(#cf-t2)"/>
+          <ellipse cx="1208" cy="112" rx="176" ry="66" fill="#12203c" opacity="0.50" filter="url(#cf-t2)"/>
+          <ellipse cx="1092" cy="128" rx="148" ry="50" fill="#0e1a38" opacity="0.36" filter="url(#cf-t1)"/>
+          <!-- Volume gradient -->
+          <ellipse cx="1284" cy="104" rx="222" ry="84" fill="url(#cg-vol-r)" filter="url(#cf-lg)"/>
+          <!-- Secondary puffs -->
+          <ellipse cx="1112" cy="80" rx="118" ry="50" fill="#131e40" opacity="0.40" filter="url(#cf-t3)"/>
+          <ellipse cx="1338" cy="70" rx="145" ry="46" fill="#101b3a" opacity="0.36" filter="url(#cf-t3)"/>
+          <!-- Moonlit highlights -->
+          <ellipse cx="1318" cy="52" rx="215" ry="26" fill="url(#cg-moon-r)" filter="url(#cf-md)"/>
+          <ellipse cx="1158" cy="64" rx="130" ry="18" fill="#2c4276" opacity="0.17" filter="url(#cf-md)"/>
+          <!-- Wispy edges -->
+          <ellipse cx="1052" cy="124" rx="128" ry="34" fill="#0b1530" opacity="0.20" filter="url(#cf-xl)"/>
+          <!-- City-light teal -->
+          <ellipse cx="1284" cy="170" rx="248" ry="32" fill="url(#cg-teal-r)" filter="url(#cf-xl)"/>
+        </g>
+
+        <!-- ═══ SUBTLE HORIZON ATMOSPHERE ═══ -->
+        <!-- Very faint — adds depth without covering skyline -->
+        <g class="cg3">
+          <ellipse cx="720" cy="448" rx="680" ry="48" fill="#090f28" opacity="0.13" filter="url(#cf-xl)"/>
+          <ellipse cx="210" cy="458" rx="280" ry="26" fill="#4FE8D8" opacity="0.016" filter="url(#cf-xl)"/>
+          <ellipse cx="1230" cy="462" rx="260" ry="24" fill="#4FE8D8" opacity="0.013" filter="url(#cf-xl)"/>
+        </g>
+      </svg>
+    </div>
+    <!-- ═══ END CLOUDS ═══ -->
+
     <div class="hero-particle hp1" aria-hidden="true"></div>
     <div class="hero-particle hp2" aria-hidden="true"></div>
     <div class="hero-particle hp3" aria-hidden="true"></div>
@@ -374,7 +442,6 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
     <div class="hero-particle hp5" aria-hidden="true"></div>
     <div class="hero-particle hp6" aria-hidden="true"></div>
 
-    <!-- Skyline -->
     <div class="hero-skyline" id="heroSkyline">
       <svg id="skylineSvg" viewBox="0 0 1500 390" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
@@ -383,26 +450,19 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
           <linearGradient id="hGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0.1"/></linearGradient>
           <linearGradient id="riverShim" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="transparent"/><stop offset="20%" stop-color="rgba(79,232,216,0.07)"/><stop offset="80%" stop-color="rgba(79,232,216,0.07)"/><stop offset="100%" stop-color="transparent"/></linearGradient>
           <linearGradient id="botFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0A0F2C" stop-opacity="0"/><stop offset="80%" stop-color="#050B1A" stop-opacity="1"/></linearGradient>
-
         </defs>
         <rect x="0" y="240" width="1500" height="130" fill="url(#hGlow)"/>
         <g id="buildingLayer"></g>
-
         <path d="M138,286 C152,265 164,273 180,260 C192,250 206,257 222,246 C234,240 249,247 264,237 C278,231 294,238 310,228 C323,222 340,229 356,220 C370,215 386,222 403,214 C418,211 434,218 450,212 C464,210 480,216 495,222 C508,228 520,223 534,231 C545,238 557,233 570,241 L570,290 L138,290 Z" fill="url(#treeFade)"/>
         <path d="M0,326 C200,316 460,336 760,322 C960,312 1160,330 1500,318" fill="none" stroke="rgba(79,232,216,.09)" stroke-width="1.5"/>
         <rect x="0" y="352" width="1500" height="14" fill="url(#riverShim)"/>
         <rect x="0" y="308" width="1500" height="82" fill="url(#botFade)"/>
       </svg>
     </div>
-
-    <!-- City light sweep -->
     <div class="hero-city-sweep" aria-hidden="true"></div>
-
-    <!-- Edge vignette (topmost in bg) -->
     <div class="hero-vignette" aria-hidden="true"></div>
   </div>
 
-  <!-- HERO CONTENT -->
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge"><span class="badge-dot"></span>Launching soon · Perth-wide</div>
@@ -429,7 +489,7 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
   </div>
 </section>
 
-<!-- LYNKNOW SECTION -->
+<!-- LYNKNOW -->
 <section class="sec" id="lynknow">
   <div class="wrap">
     <div class="lynknow-grid">
@@ -444,13 +504,11 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
         <p class="also-avail">Also available</p>
         <div class="sec-card sec-sched">
           <div class="sec-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-          <div class="sec-name">Scheduled</div>
-          <div class="sec-desc">Book a future date and time that suits you.</div>
+          <div class="sec-name">Scheduled</div><div class="sec-desc">Book a future date and time that suits you.</div>
         </div>
         <div class="sec-card sec-recur">
           <div class="sec-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
-          <div class="sec-name">Recurring</div>
-          <div class="sec-desc">Weekly, fortnightly or monthly cleans with ongoing support.</div>
+          <div class="sec-name">Recurring</div><div class="sec-desc">Weekly, fortnightly or monthly cleans with ongoing support.</div>
         </div>
       </div>
     </div>
@@ -548,38 +606,35 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
     <a href="https://form.typeform.com/to/QDqBIhAP" class="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Us</a>
   </div>
 </section>
+</div>
 
-</div><!-- /page-home -->
-
-<!-- ══════ HOW IT WORKS ══════ -->
+<!-- HOW IT WORKS PAGE -->
 <div id="page-how-it-works" class="page page-top">
   <section class="inner-hero"><div class="wrap inner-hero-content"><div class="tag">How TideLynk Works</div><h1>Tap. Match. Clean.</h1><p>From the moment you open TideLynk to a cleaner at your door — fast, flexible, and verified every step of the way.</p></div></section>
   <section class="sec"><div class="wrap"><div class="steps" style="margin-top:0"><div class="step s1"><div class="snum"><div class="snum-inner">1</div></div><h3>Tap</h3><p>Open TideLynk and choose your booking type. LynkNow for on-demand matching, a specific date and time for Scheduled, or set up a Recurring clean for ongoing support.</p></div><div class="step s2"><div class="snum"><div class="snum-inner">2</div></div><h3>Match</h3><p>TideLynk matches you with verified local cleaners based on your location, time, and job scope. View real cleaner profiles, ratings, trust badges, and ETA — then choose.</p></div><div class="step s3"><div class="snum"><div class="snum-inner">3</div></div><h3>Clean</h3><p>Track your cleaner in real time, confirm job completion, and come home to a properly cleaned space. Rate your experience and set up a recurring schedule if you'd like.</p></div></div></div></section>
-  <section class="sec prob-bg"><div class="wrap"><div class="tag">Booking Modes</div><h2 style="margin-bottom:40px">Three ways to book.</h2><div class="g3"><div class="card" style="border-color:rgba(79,232,216,.3)"><div class="ic ic-t"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3 style="color:var(--teal)">LynkNow</h3><p>Our signature on-demand service. Get matched with a nearby verified cleaner in minutes. See real ETAs, live distance, and cleaner profiles before you confirm.</p></div><div class="card"><div class="ic ic-t"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Scheduled</h3><p>Choose your preferred date and time. TideLynk matches you with cleaners available for your selected slot and job scope.</p></div><div class="card"><div class="ic ic-p"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><h3>Recurring</h3><p>Set up weekly, fortnightly, or monthly cleaning after your first clean. Keep your preferred cleaner and automate your schedule.</p></div></div></div></section>
+  <section class="sec prob-bg"><div class="wrap"><div class="tag">Booking Modes</div><h2 style="margin-bottom:40px">Three ways to book.</h2><div class="g3"><div class="card" style="border-color:rgba(79,232,216,.3)"><div class="ic ic-t"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3 style="color:var(--teal)">LynkNow</h3><p>Our signature on-demand service. Get matched with a nearby verified cleaner in minutes.</p></div><div class="card"><div class="ic ic-t"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Scheduled</h3><p>Choose your preferred date and time. TideLynk matches you with cleaners available for your selected slot.</p></div><div class="card"><div class="ic ic-p"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><h3>Recurring</h3><p>Set up weekly, fortnightly, or monthly cleaning after your first clean. Keep your preferred cleaner.</p></div></div></div></section>
   <section class="sec" style="text-align:center"><div class="wrap"><h2 style="margin-bottom:16px">Ready to get started?</h2><p style="max-width:420px;margin:0 auto 28px">Join the Perth waitlist and be first to access TideLynk when we launch.</p><a href="https://form.typeform.com/to/ixQoLQQf" class="btn btn-teal btn-lg" target="_blank" rel="noopener noreferrer">Join the Perth Waitlist →</a></div></section>
 </div>
 
-<!-- ══════ FOR CLEANERS ══════ -->
+<!-- FOR CLEANERS -->
 <div id="page-for-cleaners" class="page page-top">
   <section class="inner-hero"><div class="wrap inner-hero-content"><div class="tag">For Independent Cleaners</div><h1>Get access to cleaning jobs across Perth — without chasing leads.</h1><p>Build your profile, get verified, and be ready when bookings go live.</p></div></section>
-  <section class="sec"><div class="wrap seg"><div><div class="tag">Founding Cleaner Offer</div><h2>First 100 verified cleaners get 2 months free.</h2><p style="margin:16px 0 0">During TideLynk's Perth launch. Then only $9.99/month. Cancel anytime.</p><div class="offer" style="margin-top:28px"><div class="offer-lbl">What you'll need to get verified</div><div class="chk-list" style="margin-top:12px"><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Active Australian Business Number (ABN)</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Current public liability insurance</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>National police check</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Profile photo and service specialisations</p></div></div></div><div style="margin-top:28px"><a href="https://form.typeform.com/to/uBkHRHFN" class="btn btn-teal btn-lg" target="_blank" rel="noopener noreferrer">Join as a Founding Cleaner →</a></div><p style="font-size:.78rem;color:rgba(136,146,176,.4);margin-top:12px">Applications may require agreement to TideLynk's <a onclick="navigate('terms-and-conditions')" style="color:rgba(79,232,216,.5);text-decoration:underline;cursor:pointer">Terms</a> and <a onclick="navigate('privacy-policy')" style="color:rgba(79,232,216,.5);text-decoration:underline;cursor:pointer">Privacy Policy</a>.</p></div><div><div class="bk-card"><p style="font-size:.72rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:var(--gray)">Why join TideLynk as a cleaner</p><div class="chk-list"><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access local Perth cleaning jobs without chasing leads</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Build your own verified profile with ratings and trust badges</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Get matched to scheduled and recurring jobs automatically</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Payments processed securely through Stripe</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>2 months free during the Perth founding period</p></div></div></div></div></div></section>
+  <section class="sec"><div class="wrap seg"><div><div class="tag">Founding Cleaner Offer</div><h2>First 100 verified cleaners get 2 months free.</h2><p style="margin:16px 0 0">During TideLynk's Perth launch. Then only $9.99/month. Cancel anytime.</p><div class="offer" style="margin-top:28px"><div class="offer-lbl">What you'll need to get verified</div><div class="chk-list" style="margin-top:12px"><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Active Australian Business Number (ABN)</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Current public liability insurance</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>National police check</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Profile photo and service specialisations</p></div></div></div><div style="margin-top:28px"><a href="https://form.typeform.com/to/uBkHRHFN" class="btn btn-teal btn-lg" target="_blank" rel="noopener noreferrer">Join as a Founding Cleaner →</a></div></div><div><div class="bk-card"><p style="font-size:.72rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:var(--gray)">Why join TideLynk as a cleaner</p><div class="chk-list"><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access local Perth cleaning jobs without chasing leads</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Build your own verified profile with ratings and trust badges</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Get matched to scheduled and recurring jobs automatically</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Payments processed securely through Stripe</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>2 months free during the Perth founding period</p></div></div></div></div></div></section>
 </div>
 
-<!-- ══════ FOR COMPANIES ══════ -->
+<!-- FOR COMPANIES -->
 <div id="page-for-companies" class="page page-top">
   <section class="inner-hero"><div class="wrap inner-hero-content"><div class="tag tag-pink">For Cleaning Companies</div><h1>Grow your team<br>on TideLynk.</h1><p>Bring your cleaning team onto TideLynk through one company account. Manage cleaners, build your profile, and access job opportunities as the platform grows.</p></div></section>
-  <section class="sec"><div class="wrap seg"><div><div class="tag tag-pink">Founding Company Offer</div><h2>Cleaning companies get 2 months free during launch.</h2><p style="margin:16px 0 0">After that: $9.99/month + $1 per active cleaner seat.</p><div class="offer pk" style="margin-top:28px"><div class="offer-lbl pk">Company account features</div><div class="chk-list" style="margin-top:12px"><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Manage all cleaners from one company dashboard</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Individual cleaner profiles with company badge</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access End of Lease and Bond Clean jobs</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Handle your own cleaner payouts internally</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Teams reviewed through TideLynk's verification process</p></div></div></div><div style="margin-top:28px"><a href="https://form.typeform.com/to/dTUTYTnp" class="btn btn-pink btn-lg" target="_blank" rel="noopener noreferrer">Register Company Interest →</a></div><p style="font-size:.78rem;color:rgba(136,146,176,.4);margin-top:12px">Applications may require agreement to TideLynk's <a onclick="navigate('terms-and-conditions')" style="color:rgba(255,61,138,.45);text-decoration:underline;cursor:pointer">Terms</a> and <a onclick="navigate('privacy-policy')" style="color:rgba(255,61,138,.45);text-decoration:underline;cursor:pointer">Privacy Policy</a>.</p></div><div><div class="bk-card"><p style="font-size:.72rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:var(--gray)">Compliance requirements</p><p style="font-size:.9rem;color:rgba(136,146,176,.7);margin-bottom:16px">Compliance requirements apply at the individual cleaner level. Each cleaner will need:</p><div class="chk-list"><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Active ABN</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Current public liability insurance</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>National police check</p></div></div></div></div></div></section>
+  <section class="sec"><div class="wrap seg"><div><div class="tag tag-pink">Founding Company Offer</div><h2>Cleaning companies get 2 months free during launch.</h2><p style="margin:16px 0 0">After that: $9.99/month + $1 per active cleaner seat.</p><div class="offer pk" style="margin-top:28px"><div class="offer-lbl pk">Company account features</div><div class="chk-list" style="margin-top:12px"><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Manage all cleaners from one company dashboard</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Individual cleaner profiles with company badge</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access End of Lease and Bond Clean jobs</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Handle your own cleaner payouts internally</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Teams reviewed through TideLynk's verification process</p></div></div></div><div style="margin-top:28px"><a href="https://form.typeform.com/to/dTUTYTnp" class="btn btn-pink btn-lg" target="_blank" rel="noopener noreferrer">Register Company Interest →</a></div></div><div><div class="bk-card"><p style="font-size:.72rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:var(--gray)">Compliance requirements</p><p style="font-size:.9rem;color:rgba(136,146,176,.7);margin-bottom:16px">Compliance requirements apply at the individual cleaner level. Each cleaner will need:</p><div class="chk-list"><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Active ABN</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Current public liability insurance</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>National police check</p></div></div></div></div></div></section>
 </div>
 
-<!-- ══════ FAQs ══════ -->
+<!-- FAQs -->
 <div id="page-faqs" class="page page-top">
   <section class="inner-hero"><div class="wrap inner-hero-content"><div class="tag">FAQs</div><h1>Common questions.</h1><p>Everything you need to know about TideLynk, the waitlist, and how the platform works.</p></div></section>
   <section class="sec"><div class="wrap"><div class="faq-wrap" style="margin-top:0;max-width:820px">
     <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">Is TideLynk available now?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>TideLynk is preparing for launch across Perth. Customers, independent cleaners, and cleaning companies can join the waitlist now to be among the first when the platform goes live.</p></div></div>
-    <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">What is LynkNow?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>LynkNow is TideLynk's signature on-demand matching service. It connects you with a nearby verified cleaner in real time — with live ETAs and distance information. Perfect for when you need a clean fast, without planning ahead.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">What is LynkNow?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>LynkNow is TideLynk's signature on-demand matching service. It connects you with a nearby verified cleaner in real time — with live ETAs and distance information.</p></div></div>
     <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">What cleaning services will TideLynk support?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>TideLynk is being built for standard cleans, deep cleans, end of lease / bond cleans, scheduled cleans, and recurring home cleaning. Some service types may launch in stages.</p></div></div>
-    <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">How does scheduled booking work?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>With scheduled booking, you choose your preferred date and time. TideLynk then matches you with cleaners who are available for your selected slot and job scope.</p></div></div>
-    <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">How do recurring cleans work?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>After your first clean, TideLynk will prompt you to set up a recurring schedule — weekly, fortnightly, or monthly. You can keep your preferred cleaner and automate your booking.</p></div></div>
     <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">Are cleaners verified?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>Yes — every cleaner goes through TideLynk's verification process including police checks, insurance verification, and ABN checks before their profile goes live.</p></div></div>
     <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">Is there a cost to join as a cleaner?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>Founding cleaners who join during TideLynk's Perth launch receive their first 2 months free. After the free period, cleaner membership is $9.99/month and can be cancelled anytime.</p></div></div>
     <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">How does company pricing work?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>Founding company accounts receive 2 months free during launch. After that, company accounts are $9.99/month plus $1 per active cleaner added to the company profile.</p></div></div>
@@ -588,72 +643,50 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
   </div><div style="text-align:center;margin-top:40px"><p style="margin-bottom:20px">Still have questions?</p><a href="https://form.typeform.com/to/QDqBIhAP" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Contact Us</a></div></div></section>
 </div>
 
-<!-- ══════ PRIVACY POLICY ══════ -->
+<!-- PRIVACY POLICY -->
 <div id="page-privacy-policy" class="page page-top">
   <div class="legal-page"><div class="legal-wrap">
     <h1>Privacy Policy</h1>
     <p class="legal-meta">Tidelynk App Pty Ltd (ACN 691 362 955) · Last updated: October 2025</p>
     <div class="legal-body">
-      <div style="background:rgba(79,232,216,.07);border:1px solid rgba(79,232,216,.2);border-radius:9px;padding:14px 18px;margin-bottom:24px"><p style="font-size:.85rem;color:rgba(200,235,230,.75);margin:0;line-height:1.65"><strong style="color:rgba(79,232,216,.9)">Pre-launch notice:</strong> TideLynk is currently in a pre-launch stage. Some features referenced in this Privacy Policy relate to planned mobile application and platform functionality that may be introduced as the TideLynk platform evolves.</p></div>
-      <p>Tidelynk App Pty Ltd (ACN 691 362 955) (<strong>we</strong>, <strong>us</strong> or <strong>our</strong>), understands that protecting your personal information is important. This Privacy Policy sets out our commitment to protecting the privacy of personal information provided to us, or collected by us, when interacting with you.</p>
+      <div style="background:rgba(79,232,216,.07);border:1px solid rgba(79,232,216,.2);border-radius:9px;padding:14px 18px;margin-bottom:24px"><p style="font-size:.85rem;color:rgba(200,235,230,.75);margin:0;line-height:1.65"><strong style="color:rgba(79,232,216,.9)">Pre-launch notice:</strong> TideLynk is currently in a pre-launch stage. Some features referenced in this Privacy Policy relate to planned mobile application and platform functionality.</p></div>
+      <p>Tidelynk App Pty Ltd (ACN 691 362 955) (<strong>we</strong>, <strong>us</strong> or <strong>our</strong>) understands that protecting your personal information is important. This Privacy Policy sets out our commitment to protecting the privacy of personal information provided to us, or collected by us, when interacting with you.</p>
       <h2>The Information We Collect</h2>
-      <p>The types of personal information we may collect include:</p>
-      <ul><li><strong>Identity Data</strong> — your name, age, profession, photographic identification.</li><li><strong>Contact Data</strong> — your telephone number, address and email.</li><li><strong>Financial Data</strong> — bank account and payment card details (through our third-party payment processor Stripe — we do not have access to that information).</li><li><strong>Transaction Data</strong> — details about payments to and from us and details of products and services purchased.</li><li><strong>Technical and Usage Data</strong> — IP address, login data, browser session and geo-location data, device and network information, search queries and browsing behaviour.</li><li><strong>Profile Data</strong> — your username and password, profile picture, purchases or orders made, content you post, send, receive and share through our platform.</li><li><strong>Marketing and Communications Data</strong> — your preferences in receiving marketing communications.</li><li><strong>Professional Data</strong> — where you are a worker or applying for a role, your professional history, experience, or required authorisations or licences.</li><li><strong>Sensitive Information</strong> — information relating to criminal records, health information or biometric information. We may collect this during background verification checks.</li></ul>
+      <p>The types of personal information we may collect include Identity Data, Contact Data, Financial Data (through Stripe — we do not have access to this), Transaction Data, Technical and Usage Data, Profile Data, Marketing and Communications Data, Professional Data, and Sensitive Information relating to criminal records during background checks.</p>
       <h2>How We Collect Personal Information</h2>
-      <p>We collect personal information when you provide it directly to us; when you complete a form; when you use any website we operate; and from publicly available sources.</p>
+      <p>We collect personal information when you provide it directly to us, complete a form, use any website we operate, or from publicly available sources.</p>
       <h2>Why We Collect, Hold, Use and Disclose Personal Information</h2>
-      <p>We collect, hold, use and disclose your personal information to enable you to access and use our software; to work or do business with you; to contact and communicate with you; for internal record keeping and billing; for analytics and business development; for advertising and marketing; and to comply with our legal obligations.</p>
+      <p>We collect, hold, use and disclose your personal information to enable you to access and use our software; to contact and communicate with you; for internal record keeping and billing; for analytics and business development; and to comply with our legal obligations.</p>
       <h2>Our Disclosures of Personal Information to Third Parties</h2>
-      <p>We will only disclose personal information to third parties where it is necessary as part of our business, where we have your consent, or where permitted by law. This may include our employees and related entities; IT service providers; payment systems operators (including Stripe); professional advisors; and courts, tribunals, and regulatory authorities as required by law.</p>
-      <h2>Overseas Disclosure</h2>
-      <p>We may store personal information overseas, including in Australia, United Kingdom and United States of America, in accordance with the Australian Privacy Principles.</p>
+      <p>We will only disclose personal information to third parties where necessary as part of our business, where we have your consent, or where permitted by law — including IT service providers, payment systems operators (Stripe), professional advisors, and courts as required by law.</p>
       <h2>Your Rights and Controlling Your Personal Information</h2>
-      <p>You may request access to or correction of the personal information we hold about you. To unsubscribe from our communications, please contact us or use the opt-out facilities provided. If you wish to make a complaint, contact us and if not satisfied, you may contact the Office of the Australian Information Commissioner.</p>
-      <h2>Storage and Security</h2>
-      <p>We are committed to ensuring that the personal information we collect is secure. While we take reasonable measures to protect your information, we cannot guarantee the security of information transmitted over the Internet.</p>
-      <h2>Cookies</h2>
-      <p>We may use cookies on our website from time to time. You can block cookies by activating the relevant setting on your browser, however this may affect access to parts of our website.</p>
-      <h2>Use of Location Services Data</h2>
-      <p>We collect your precise or approximate location via our mobile application to enable cleaners to provide services to you; to generate and improve routes; to allow real-time location access; for security and safety; and to prevent and detect fraud. You can turn off location services in your account or device settings.</p>
-      <h2>Amendments</h2>
-      <p>We may vary this Privacy Policy at any time by publishing the amended version on our website.</p>
+      <p>You may request access to or correction of the personal information we hold about you. To unsubscribe from communications, contact us or use the opt-out facilities provided.</p>
+      <h2>Cookies and Location Data</h2>
+      <p>We may use cookies on our website. We collect location data via our mobile application to enable cleaner matching, real-time tracking, and fraud prevention. You can disable location services in your device settings.</p>
       <div class="legal-contact"><h3>Contact Us</h3><p>Tidelynk App Pty Ltd (ACN 691 362 955)<br>Email: <a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></p></div>
     </div>
   </div></div>
 </div>
 
-<!-- ══════ TERMS OF USE ══════ -->
+<!-- TERMS -->
 <div id="page-terms-and-conditions" class="page page-top">
   <div class="legal-page"><div class="legal-wrap">
     <h1>Website Terms of Use</h1>
     <p class="legal-meta">Tidelynk App Pty Ltd (ACN 691 362 955) · Last updated: 16 October 2025</p>
     <div class="legal-body">
       <p>This website (<strong>Site</strong>) is operated by Tidelynk App Pty Ltd (ACN 691 362 955) (<strong>we</strong>, <strong>our</strong> or <strong>us</strong>). These website terms of use (<strong>Terms</strong>) apply to your use of, and access to, the Site.</p>
-      <h2>Information and Availability</h2>
-      <p>While we use reasonable attempts to ensure the accuracy and completeness of the Content, to the extent permitted by law, we do not warrant the accuracy, completeness or suitability of any of the Content. The Content may be subject to change without notice. We also do not warrant that access to the Site will be uninterrupted, error-free or free from viruses.</p>
-      <h2>Intellectual Property Rights</h2>
-      <p>Unless otherwise indicated, we own or license the Content and all intellectual property rights displayed or used on the Site. We authorise you to access and use the Site solely for your own personal use. You must not copy, reproduce, distribute, or create derivative works from Our Intellectual Property without our permission.</p>
-      <p>Nothing in the above restricts your ability to publish, post or repost Content on your social media page or blog, provided that you do not assert ownership or endorsement; you do not damage our reputation; and you comply with all other terms.</p>
-      <h2>Conduct We Don't Accept</h2>
-      <p>You must not do anything unlawful or that might bring us or the Site into disrepute. This includes breaching any individual's privacy; using the Site to defame, harass, threaten or offend any person; interfering with any user of the Site; transmitting viruses or other disabling features; using the Site to send unsolicited electronic messages; using data mining, robots, or screen scraping tools; or facilitating a third party to do any of the above.</p>
-      <h2>User Content</h2>
-      <p>Users may have the opportunity to upload or post content to the Site, subject to our approval. By uploading User Content, you grant us a worldwide, non-exclusive, royalty-free licence to use, reproduce, distribute, display, and perform the User Content in connection with our business. You are solely responsible for your User Content. We reserve the right to edit or remove any User Content at any time without notice.</p>
-      <h2>Third Party Sites</h2>
-      <p>The Site may contain links to websites operated by third parties. We do not control, endorse or approve, and are not responsible for, the content on those websites.</p>
-      <h2>Our Liability is Limited</h2>
-      <p>To the maximum extent permitted by law (including the Australian Consumer Law), we exclude all liability for any loss or damage of any kind (including consequential loss, indirect loss, loss of profit, loss of benefit, loss of opportunity or loss of reputation) arising out of or in connection with the Site or the Content.</p>
-      <h2>Privacy</h2>
-      <p>We respect your privacy and understand protecting your personal information is important. Our <a onclick="navigate('privacy-policy')" style="color:var(--teal);cursor:pointer;text-decoration:underline">Privacy Policy</a> sets out how we will collect and handle your personal information.</p>
-      <h2>What Happens if We Discontinue the Site</h2>
-      <p>We may, at any time and without notice, discontinue the Site in whole or in part, or exclude any person from using our Site.</p>
-      <h2>Changes to These Terms</h2>
-      <p>We may vary these Terms at any time by publishing the varied terms on the Site.</p>
+      <h2>Information and Availability</h2><p>While we use reasonable attempts to ensure the accuracy and completeness of the Content, we do not warrant the accuracy, completeness or suitability of any Content. We also do not warrant that access to the Site will be uninterrupted or error-free.</p>
+      <h2>Intellectual Property Rights</h2><p>Unless otherwise indicated, we own or license the Content and all intellectual property rights displayed or used on the Site. We authorise you to access and use the Site solely for your own personal use.</p>
+      <h2>Conduct We Don't Accept</h2><p>You must not do anything unlawful or that might bring us or the Site into disrepute, including breaching any individual's privacy, transmitting viruses, using data mining tools, or facilitating a third party to do any of the above.</p>
+      <h2>Our Liability is Limited</h2><p>To the maximum extent permitted by law, we exclude all liability for any loss or damage of any kind arising out of or in connection with the Site or the Content.</p>
+      <h2>Privacy</h2><p>Our <a onclick="navigate('privacy-policy')" style="color:var(--teal);cursor:pointer;text-decoration:underline">Privacy Policy</a> sets out how we will collect and handle your personal information.</p>
+      <h2>Changes to These Terms</h2><p>We may vary these Terms at any time by publishing the varied terms on the Site.</p>
       <div class="legal-contact"><h3>Contact Us</h3><p>Tidelynk App Pty Ltd (ACN 691 362 955)<br>Email: <a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></p></div>
     </div>
   </div></div>
 </div>
 
-<!-- ══════ FOOTER ══════ -->
+<!-- FOOTER -->
 <footer>
   <div class="foot-skyline-bg"><svg id="footerSkylineSvg" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block"></svg></div>
   <div class="wrap">
@@ -685,94 +718,46 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
 
 <script>
 const PAGES={home:'page-home','how-it-works':'page-how-it-works','for-cleaners':'page-for-cleaners','for-companies':'page-for-companies',faqs:'page-faqs','privacy-policy':'page-privacy-policy','terms-and-conditions':'page-terms-and-conditions'};
-const PAGE_TITLES={home:'TideLynk — Tap. Match. Clean. | Perth\'s Cleaning Marketplace','how-it-works':'How It Works | TideLynk','for-cleaners':'For Cleaners | TideLynk','for-companies':'For Companies | TideLynk',faqs:'FAQs | TideLynk','privacy-policy':'Privacy Policy | TideLynk','terms-and-conditions':'Website Terms of Use | TideLynk'};
-
-function navigate(page){
-  const p=page||'home';
-  Object.values(PAGES).forEach(id=>{const el=document.getElementById(id);if(el){el.classList.remove('active');el.style.display='none';}});
-  const target=document.getElementById(PAGES[p]);
-  if(target){target.classList.add('active');target.style.display='block';}
-  window.scrollTo({top:0,behavior:'smooth'});
-  window.location.hash=p==='home'?'':p;
-  document.title=PAGE_TITLES[p]||PAGE_TITLES.home;
-  closeMobNav();
-}
-function scrollToSection(id){
-  const home=document.getElementById('page-home');
-  if(home&&!home.classList.contains('active')){navigate('home');setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},180);}
-  else{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
-  closeMobNav();
-}
-window.addEventListener('hashchange',()=>{
-  const h=window.location.hash.slice(1)||'home';
-  if(PAGES[h]){Object.values(PAGES).forEach(id=>{const el=document.getElementById(id);if(el){el.classList.remove('active');el.style.display='none';}});const t=document.getElementById(PAGES[h]);if(t){t.classList.add('active');t.style.display='block';}window.scrollTo({top:0,behavior:'instant'});document.title=PAGE_TITLES[h]||PAGE_TITLES.home;}
-});
-(function(){
-  const h=window.location.hash.slice(1)||'home';
-  Object.values(PAGES).forEach(id=>{const el=document.getElementById(id);if(el){el.classList.remove('active');el.style.display='none';}});
-  const t=document.getElementById(PAGES[h]||PAGES.home);
-  if(t){t.classList.add('active');t.style.display='block';}
-  document.title=PAGE_TITLES[h]||PAGE_TITLES.home;
-})();
-
+const PAGE_TITLES={home:"TideLynk — Tap. Match. Clean. | Perth's Cleaning Marketplace",'how-it-works':'How It Works | TideLynk','for-cleaners':'For Cleaners | TideLynk','for-companies':'For Companies | TideLynk',faqs:'FAQs | TideLynk','privacy-policy':'Privacy Policy | TideLynk','terms-and-conditions':'Website Terms of Use | TideLynk'};
+function navigate(p){p=p||'home';Object.values(PAGES).forEach(id=>{const el=document.getElementById(id);if(el){el.classList.remove('active');el.style.display='none';}});const t=document.getElementById(PAGES[p]);if(t){t.classList.add('active');t.style.display='block';}window.scrollTo({top:0,behavior:'smooth'});window.location.hash=p==='home'?'':p;document.title=PAGE_TITLES[p]||PAGE_TITLES.home;closeMobNav();}
+function scrollToSection(id){const home=document.getElementById('page-home');if(home&&!home.classList.contains('active')){navigate('home');setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},220);}else{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}closeMobNav();}
+window.addEventListener('hashchange',()=>{const h=window.location.hash.slice(1)||'home';if(PAGES[h]){Object.values(PAGES).forEach(id=>{const el=document.getElementById(id);if(el){el.classList.remove('active');el.style.display='none';}});const t=document.getElementById(PAGES[h]);if(t){t.classList.add('active');t.style.display='block';}window.scrollTo({top:0,behavior:'instant'});document.title=PAGE_TITLES[h]||PAGE_TITLES.home;}});
+(function(){const h=window.location.hash.slice(1)||'home';Object.values(PAGES).forEach(id=>{const el=document.getElementById(id);if(el){el.classList.remove('active');el.style.display='none';}});const t=document.getElementById(PAGES[h]||PAGES.home);if(t){t.classList.add('active');t.style.display='block';}document.title=PAGE_TITLES[h]||PAGE_TITLES.home;})();
 const burger=document.getElementById('burgerBtn'),mobNav=document.getElementById('mobNav');
-function closeMobNav(){if(mobNav){mobNav.classList.remove('open');if(burger){burger.setAttribute('aria-expanded','false');burger.textContent='☰';}}}
-if(burger&&mobNav){burger.addEventListener('click',()=>{const o=mobNav.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));burger.textContent=o?'✕':'☰';});}
-
+function closeMobNav(){if(mobNav)mobNav.classList.remove('open');if(burger){burger.setAttribute('aria-expanded','false');burger.textContent='☰';}}
+if(burger&&mobNav){burger.addEventListener('click',()=>{const o=mobNav.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));burger.textContent=o?'✕':'☰';});document.addEventListener('click',(e)=>{if(mobNav.classList.contains('open')&&!mobNav.contains(e.target)&&!burger.contains(e.target))closeMobNav();});}
 const nav=document.getElementById('mainNav');
-if(nav){window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});}
-
-function faq(btn){
-  const item=btn.closest('.faq-item'),open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-btn').setAttribute('aria-expanded','false');});
-  if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
-}
-
+if(nav)window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+function faq(btn){const item=btn.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-btn').setAttribute('aria-expanded','false');});if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true');}}
 const skyEl=document.getElementById('heroSkyline');
 let raf=null;
-if(skyEl&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-  document.addEventListener('mousemove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=null;const heroEl=document.querySelector('.hero');if(!heroEl)return;const rect=heroEl.getBoundingClientRect();if(e.clientY>rect.bottom+80)return;skyEl.style.transform=`translateX(${(e.clientX/window.innerWidth-.5)*10}px)`;});});
-}
+if(skyEl&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){document.addEventListener('mousemove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=null;const heroEl=document.querySelector('.hero');if(!heroEl)return;const rect=heroEl.getBoundingClientRect();if(e.clientY>rect.bottom+80)return;skyEl.style.transform=`translateX(${(e.clientX/window.innerWidth-.5)*10}px)`;});});}
+(function(){const L=document.getElementById('buildingLayer');if(!L)return;const ns='http://www.w3.org/2000/svg',gY=355;const b=[[55,26,36],[86,20,50],[111,30,42],[148,23,58],[177,32,46],[216,25,54],[265,34,76],[306,27,90],[338,38,72],[382,30,98],[419,36,83],[462,32,110],[502,40,130],[548,32,150],[586,44,136],[638,36,160],[684,40,183],[729,34,198],[770,46,192],[824,34,176],[865,40,162],[909,32,145],[948,40,128],[994,32,106],[1032,36,93],[1074,30,108],[1110,40,80],[1158,32,70],[1196,36,60],[1238,28,53],[1272,32,43],[1310,25,35],[1342,30,28],[1376,22,20]];b.forEach(([x,w,h])=>{const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',gY-h);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill','url(#bldFade)');L.appendChild(r);if(h>80){for(let wy=gY-h+16;wy<gY-18;wy+=12){for(let wx=x+4;wx<x+w-5;wx+=7){if(Math.random()>.52){const win=document.createElementNS(ns,'rect');win.setAttribute('x',wx);win.setAttribute('y',wy);win.setAttribute('width','3');win.setAttribute('height','4');win.setAttribute('fill',Math.random()>.62?'#4FE8D8':'#ffffff');win.setAttribute('opacity',(Math.random()*.12+.06).toFixed(2));const rp=Math.random();if(rp<.14)win.setAttribute('class','wp1');else if(rp<.28)win.setAttribute('class','wp2');else if(rp<.40)win.setAttribute('class','wp3');else if(rp<.48)win.setAttribute('class','wpf');L.appendChild(win);}}}}});const tall=b.reduce((a,c)=>c[2]>a[2]?c:a);const ax=tall[0]+tall[1]/2,ay=gY-tall[2];const ant=document.createElementNS(ns,'line');ant.setAttribute('x1',ax);ant.setAttribute('y1',ay);ant.setAttribute('x2',ax);ant.setAttribute('y2',ay-22);ant.setAttribute('stroke','rgba(79,232,216,.38)');ant.setAttribute('stroke-width','1.5');L.appendChild(ant);const dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',ax);dot.setAttribute('cy',ay-22);dot.setAttribute('r','2.5');dot.setAttribute('fill','#FF3D8A');dot.setAttribute('opacity','.75');L.appendChild(dot);})();
+(function(){const svg=document.getElementById('footerSkylineSvg');if(!svg)return;const ns='http://www.w3.org/2000/svg',gY=70;const b=[[30,18,18],[52,14,24],[70,20,20],[94,14,28],[112,18,22],[134,12,27],[158,16,36],[178,12,40],[194,20,34],[218,14,45],[238,16,38],[258,12,50],[274,18,60],[298,14,68],[318,20,62],[344,16,74],[364,14,88],[382,18,84],[404,16,80],[422,14,76],[444,16,66],[462,18,58],[482,14,52],[500,16,46],[518,14,50],[538,18,40],[558,14,36],[576,16,30],[594,14,26],[612,18,22],[635,14,17],[656,12,20],[676,16,18],[698,14,15]];b.forEach(([x,w,h])=>{const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',gY-h);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill','rgba(79,232,216,0.5)');svg.appendChild(r);});})();
 
-/* Building generator */
+// ── Meta Pixel event tracking ──────────────────────────────────────────
+// Uses event delegation — no need to touch individual link elements.
+// Guards against fbq not being available (e.g. ad blockers).
 (function(){
-  const L=document.getElementById('buildingLayer');if(!L)return;
-  const ns='http://www.w3.org/2000/svg',gY=355;
-  const b=[[55,26,36],[86,20,50],[111,30,42],[148,23,58],[177,32,46],[216,25,54],[265,34,76],[306,27,90],[338,38,72],[382,30,98],[419,36,83],[462,32,110],[502,40,130],[548,32,150],[586,44,136],[638,36,160],[684,40,183],[729,34,198],[770,46,192],[824,34,176],[865,40,162],[909,32,145],[948,40,128],[994,32,106],[1032,36,93],[1074,30,108],[1110,40,80],[1158,32,70],[1196,36,60],[1238,28,53],[1272,32,43],[1310,25,35],[1342,30,28],[1376,22,20]];
-  b.forEach(([x,w,h])=>{
-    const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',gY-h);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill','url(#bldFade)');L.appendChild(r);
-    if(h>80){
-      for(let wy=gY-h+16;wy<gY-18;wy+=12){
-        for(let wx=x+4;wx<x+w-5;wx+=7){
-          if(Math.random()>.52){
-            const win=document.createElementNS(ns,'rect');
-            win.setAttribute('x',wx);win.setAttribute('y',wy);win.setAttribute('width','3');win.setAttribute('height','4');
-            win.setAttribute('fill',Math.random()>.62?'#4FE8D8':'#ffffff');
-            win.setAttribute('opacity',(Math.random()*.12+.06).toFixed(2));
-            const rp=Math.random();
-            if(rp<.14)win.setAttribute('class','wp1');
-            else if(rp<.28)win.setAttribute('class','wp2');
-            else if(rp<.40)win.setAttribute('class','wp3');
-            else if(rp<.48)win.setAttribute('class','wpf');
-            L.appendChild(win);
-          }
-        }
-      }
-    }
-  });
-  const tall=b.reduce((a,c)=>c[2]>a[2]?c:a);
-  const ax=tall[0]+tall[1]/2,ay=gY-tall[2];
-  const ant=document.createElementNS(ns,'line');ant.setAttribute('x1',ax);ant.setAttribute('y1',ay);ant.setAttribute('x2',ax);ant.setAttribute('y2',ay-22);ant.setAttribute('stroke','rgba(79,232,216,.38)');ant.setAttribute('stroke-width','1.5');L.appendChild(ant);
-  const dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',ax);dot.setAttribute('cy',ay-22);dot.setAttribute('r','2.5');dot.setAttribute('fill','#FF3D8A');dot.setAttribute('opacity','.75');L.appendChild(dot);
-})();
+  const PIXEL_MAP = [
+    // Customer waitlist → Lead
+    { partial: 'typeform.com/to/ixQoLQQf', event: 'Lead',                 params: { content_name: 'customer_waitlist' } },
+    // Cleaner registration → CompleteRegistration
+    { partial: 'typeform.com/to/uBkHRHFN', event: 'CompleteRegistration', params: { content_name: 'cleaner_registration' } },
+    // Company registration → CompleteRegistration
+    { partial: 'typeform.com/to/dTUTYTnp', event: 'CompleteRegistration', params: { content_name: 'company_registration' } },
+  ];
 
-/* Footer skyline */
-(function(){
-  const svg=document.getElementById('footerSkylineSvg');if(!svg)return;
-  const ns='http://www.w3.org/2000/svg',gY=70;
-  const b=[[30,18,18],[52,14,24],[70,20,20],[94,14,28],[112,18,22],[134,12,27],[158,16,36],[178,12,40],[194,20,34],[218,14,45],[238,16,38],[258,12,50],[274,18,60],[298,14,68],[318,20,62],[344,16,74],[364,14,88],[382,18,84],[404,16,80],[422,14,76],[444,16,66],[462,18,58],[482,14,52],[500,16,46],[518,14,50],[538,18,40],[558,14,36],[576,16,30],[594,14,26],[612,18,22],[635,14,17],[656,12,20],[676,16,18],[698,14,15]];
-  b.forEach(([x,w,h])=>{const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',gY-h);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill','rgba(79,232,216,0.5)');svg.appendChild(r);});
+  document.addEventListener('click', function(e) {
+    if (typeof fbq !== 'function') return;
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    const match = PIXEL_MAP.find(function(m){ return href.indexOf(m.partial) !== -1; });
+    if (match) fbq('track', match.event, match.params);
+  }, { passive: true });
 })();
+// ── End Meta Pixel event tracking ─────────────────────────────────────
 </script>
 </body>
 </html>
