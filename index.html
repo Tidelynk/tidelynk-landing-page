@@ -21,22 +21,22 @@ h3{font-size:1.05rem;font-weight:600;color:var(--white)}
 p{color:var(--gray);font-size:1rem;line-height:1.7}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:8px;font-size:.92rem;font-weight:600;cursor:pointer;transition:all .25s;border:none;white-space:nowrap;text-decoration:none}
 .btn-lg{padding:14px 30px;font-size:1rem}
-.btn-teal{background:var(--teal);color:#061020;box-shadow:0 0 0 rgba(79,232,216,0)}.btn-teal:hover{background:#5ef0e0;box-shadow:0 0 28px rgba(79,232,216,.38),0 6px 20px rgba(79,232,216,.18);transform:translateY(-2px) scale(1.02)}
+.btn-teal{background:var(--teal);color:#061020}.btn-teal:hover{background:#5ef0e0;box-shadow:0 0 28px rgba(79,232,216,.38),0 6px 20px rgba(79,232,216,.18);transform:translateY(-2px) scale(1.02)}
 .btn-pink{background:var(--pink);color:#fff}.btn-pink:hover{box-shadow:0 6px 28px rgba(255,61,138,.35);transform:translateY(-2px)}
 .btn-outline{border:1px solid rgba(255,255,255,.18);color:var(--white);background:transparent}.btn-outline:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3);transform:translateY(-2px)}
 
-/* ═══════ NAV ═══════ */
+/* ═══ NAV ═══ */
 #mainNav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(4,7,22,.96);border-bottom:1px solid rgba(255,255,255,.07);transition:background .25s;transform:translateZ(0)}
 #mainNav.scrolled{background:rgba(3,5,16,.99);border-bottom-color:rgba(79,232,216,.1)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:70px;max-width:1100px;margin:0 auto;padding:0 24px;gap:32px}
 .logo-link{display:flex;align-items:center;flex-shrink:0;cursor:pointer}
 .nav-links{display:flex;justify-content:center;align-items:center;gap:6px;flex:1}
-.nav-links a{position:relative;padding:6px 10px;font-size:.82rem;font-weight:500;color:var(--gray);letter-spacing:.01em;cursor:pointer;transition:color .2s;white-space:nowrap;text-decoration:none}
+.nav-links a{position:relative;padding:6px 10px;font-size:.82rem;font-weight:500;color:var(--gray);cursor:pointer;transition:color .2s;white-space:nowrap;text-decoration:none}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:10px;right:10px;height:1.5px;background:var(--teal);border-radius:2px;transform:scaleX(0);transform-origin:center;transition:transform .25s ease}
 .nav-links a:hover{color:var(--white)}.nav-links a:hover::after{transform:scaleX(1)}
 .nav-right{display:flex;align-items:center;flex-shrink:0}
-.btn-nav{padding:9px 20px;font-size:.82rem;font-weight:600;border-radius:8px;border:1px solid rgba(79,232,216,.32);color:var(--teal);background:rgba(79,232,216,.06);letter-spacing:.01em;transition:all .22s;text-decoration:none;white-space:nowrap;cursor:pointer;display:inline-block}
-.btn-nav:hover{background:rgba(79,232,216,.14);border-color:rgba(79,232,216,.75);box-shadow:0 0 28px rgba(79,232,216,.28),0 0 10px rgba(79,232,216,.12);transform:translateY(-1px)}
+.btn-nav{padding:9px 20px;font-size:.82rem;font-weight:600;border-radius:8px;border:1px solid rgba(79,232,216,.32);color:var(--teal);background:rgba(79,232,216,.06);transition:all .22s;text-decoration:none;white-space:nowrap;cursor:pointer;display:inline-block}
+.btn-nav:hover{background:rgba(79,232,216,.14);border-color:rgba(79,232,216,.75);box-shadow:0 0 28px rgba(79,232,216,.28);transform:translateY(-1px)}
 .burger{display:none;background:none;border:1px solid var(--border);color:var(--white);font-size:1.15rem;cursor:pointer;padding:8px 12px;border-radius:7px;line-height:1;align-items:center;justify-content:center}
 .nav-mob{display:flex;flex-direction:column;position:fixed;top:70px;right:0;width:100%;max-width:320px;bottom:0;background:rgba(4,7,22,.99);border-left:1px solid rgba(255,255,255,.07);padding:24px 28px 40px;gap:0;z-index:199;transform:translateX(100%);visibility:hidden;transition:transform .32s cubic-bezier(.22,.68,0,1.15),visibility .32s;overflow-y:auto}
 .nav-mob.open{transform:translateX(0);visibility:visible}
@@ -49,30 +49,27 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .page{display:none}.page.active{display:block}.page-top{padding-top:70px}
 #lynknow,#how-it-works,#why-tidelynk,#join,#contact{scroll-margin-top:84px}
 
-/* ═══════════════════════════════════
-   HERO — BASE
-═══════════════════════════════════ */
+/* ═══════════════════════════════
+   HERO BASE
+═══════════════════════════════ */
 .hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 72px;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;pointer-events:none}
 .hero-base{position:absolute;inset:0;background:radial-gradient(ellipse 90% 55% at 50% -8%,rgba(8,22,52,.98) 0%,transparent 64%),linear-gradient(180deg,#050B1A 0%,#0A0F2C 45%,#081734 100%)}
-.hero-stars{position:absolute;inset:0;background-image:radial-gradient(1.2px 1.2px at 96px 68px,rgba(255,255,255,.17) 0%,transparent 100%),radial-gradient(1px 1px at 224px 42px,rgba(255,255,255,.13) 0%,transparent 100%),radial-gradient(.9px .9px at 382px 115px,rgba(255,255,255,.19) 0%,transparent 100%),radial-gradient(1.1px 1.1px at 522px 58px,rgba(255,255,255,.14) 0%,transparent 100%),radial-gradient(1.2px 1.2px at 770px 34px,rgba(255,255,255,.16) 0%,transparent 100%),radial-gradient(1px 1px at 924px 74px,rgba(255,255,255,.12) 0%,transparent 100%),radial-gradient(1.1px 1.1px at 1062px 50px,rgba(255,255,255,.17) 0%,transparent 100%),radial-gradient(1px 1px at 1352px 60px,rgba(255,255,255,.14) 0%,transparent 100%),radial-gradient(1px 1px at 312px 84px,rgba(79,232,216,.2) 0%,transparent 100%),radial-gradient(.9px .9px at 852px 56px,rgba(79,232,216,.15) 0%,transparent 100%),radial-gradient(1px 1px at 1154px 108px,rgba(79,232,216,.13) 0%,transparent 100%),radial-gradient(.8px .8px at 608px 136px,rgba(255,255,255,.09) 0%,transparent 100%),radial-gradient(.7px .7px at 148px 190px,rgba(255,255,255,.08) 0%,transparent 100%),radial-gradient(.8px .8px at 468px 175px,rgba(255,255,255,.1) 0%,transparent 100%),radial-gradient(.9px .9px at 1006px 155px,rgba(79,232,216,.11) 0%,transparent 100%),radial-gradient(.8px .8px at 1290px 180px,rgba(255,255,255,.09) 0%,transparent 100%);background-size:100% 100%;background-repeat:no-repeat}
+.hero-stars{position:absolute;inset:0;background-image:radial-gradient(1.2px 1.2px at 96px 68px,rgba(255,255,255,.17) 0%,transparent 100%),radial-gradient(1px 1px at 224px 42px,rgba(255,255,255,.13) 0%,transparent 100%),radial-gradient(.9px .9px at 382px 115px,rgba(255,255,255,.19) 0%,transparent 100%),radial-gradient(1.1px 1.1px at 522px 58px,rgba(255,255,255,.14) 0%,transparent 100%),radial-gradient(1.2px 1.2px at 770px 34px,rgba(255,255,255,.16) 0%,transparent 100%),radial-gradient(1px 1px at 924px 74px,rgba(255,255,255,.12) 0%,transparent 100%),radial-gradient(1.1px 1.1px at 1062px 50px,rgba(255,255,255,.17) 0%,transparent 100%),radial-gradient(1px 1px at 312px 84px,rgba(79,232,216,.2) 0%,transparent 100%),radial-gradient(.9px .9px at 852px 56px,rgba(79,232,216,.15) 0%,transparent 100%),radial-gradient(.8px .8px at 608px 136px,rgba(255,255,255,.09) 0%,transparent 100%),radial-gradient(.7px .7px at 148px 190px,rgba(255,255,255,.08) 0%,transparent 100%),radial-gradient(.8px .8px at 468px 175px,rgba(255,255,255,.1) 0%,transparent 100%),radial-gradient(.9px .9px at 1006px 155px,rgba(79,232,216,.11) 0%,transparent 100%),radial-gradient(.8px .8px at 1290px 180px,rgba(255,255,255,.09) 0%,transparent 100%);background-size:100% 100%;background-repeat:no-repeat}
 .hero-grid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.022) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 85% 80% at 50% 30%,black 20%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 85% 80% at 50% 30%,black 20%,transparent 80%)}
 .hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 88% 82% at 50% 38%,transparent 28%,rgba(2,5,16,.52) 100%);pointer-events:none}
 .hero-orb{position:absolute;border-radius:50%;pointer-events:none}
 .hero-orb-1{width:900px;height:900px;background:radial-gradient(circle,rgba(79,232,216,.055) 0%,transparent 62%);top:-350px;right:-220px}
 .hero-orb-2{width:600px;height:600px;background:radial-gradient(circle,rgba(255,61,138,.03) 0%,transparent 62%);top:-180px;left:-220px}
 
-/* ═══ RADAR PULSE — signature TideLynk effect ═══ */
+/* ═══ RADAR PULSE ═══ */
 .hero-radar{position:absolute;left:50%;top:44%;pointer-events:none;z-index:1;display:none}
-.rr{position:absolute;border-radius:50%;border:1px solid rgba(79,232,216,.2);transform:translate(-50%,-50%);animation:rrExp 3s ease-out infinite}
-.rr:nth-child(1){animation-delay:0s}
-.rr:nth-child(2){animation-delay:.75s}
-.rr:nth-child(3){animation-delay:1.5s}
-.rr:nth-child(4){animation-delay:2.25s}
-@keyframes rrExp{0%{width:24px;height:24px;opacity:.5;border-color:rgba(79,232,216,.48)}100%{width:340px;height:340px;opacity:0;border-color:rgba(79,232,216,.03)}}
+.rr{position:absolute;border-radius:50%;border:1px solid rgba(79,232,216,.18);transform:translate(-50%,-50%);animation:rrExp 3s ease-out infinite}
+.rr:nth-child(1){animation-delay:0s}.rr:nth-child(2){animation-delay:.75s}.rr:nth-child(3){animation-delay:1.5s}.rr:nth-child(4){animation-delay:2.25s}
+@keyframes rrExp{0%{width:24px;height:24px;opacity:.48;border-color:rgba(79,232,216,.45)}100%{width:340px;height:340px;opacity:0;border-color:rgba(79,232,216,.03)}}
 
 /* ═══ FLOATING BUBBLES ═══ */
-.hbub{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 32% 30%,rgba(79,232,216,.13),rgba(79,232,216,.02));border:1px solid rgba(79,232,216,.1)}
+.hbub{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 32% 30%,rgba(79,232,216,.12),rgba(79,232,216,.02));border:1px solid rgba(79,232,216,.09)}
 .hb1{width:18px;height:18px;left:8%;bottom:28%;animation:bRise1 13s ease-in-out infinite}
 .hb2{width:11px;height:11px;left:18%;bottom:18%;animation:bRise2 16s ease-in-out infinite 2.5s}
 .hb3{width:22px;height:22px;right:10%;bottom:32%;animation:bRise1 19s ease-in-out infinite 5s}
@@ -80,18 +77,18 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .hb5{width:14px;height:14px;left:42%;bottom:20%;animation:bRise2 17s ease-in-out infinite 3.5s}
 .hb6{width:7px;height:7px;right:32%;bottom:38%;animation:bRise3 11s ease-in-out infinite 8s}
 .hb7{width:16px;height:16px;left:28%;bottom:14%;animation:bRise1 15s ease-in-out infinite 1.5s}
-@keyframes bRise1{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:.6}85%{opacity:.28}100%{transform:translate(-14px,-260px) scale(.65);opacity:0}}
-@keyframes bRise2{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:.5}85%{opacity:.2}100%{transform:translate(10px,-300px) scale(.55);opacity:0}}
-@keyframes bRise3{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:.45}85%{opacity:.15}100%{transform:translate(-7px,-220px) scale(.6);opacity:0}}
+@keyframes bRise1{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:.55}85%{opacity:.25}100%{transform:translate(-14px,-260px) scale(.65);opacity:0}}
+@keyframes bRise2{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:.45}85%{opacity:.18}100%{transform:translate(10px,-300px) scale(.55);opacity:0}}
+@keyframes bRise3{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:.4}85%{opacity:.14}100%{transform:translate(-7px,-220px) scale(.6);opacity:0}}
 
-/* ═══ MAP LOCATION DOTS ═══ */
+/* ═══ LOCATION DOTS ═══ */
 .hloc{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px rgba(79,232,216,.8);pointer-events:none;display:none}
-.hloc::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(79,232,216,.32);animation:locR 2.8s ease-out infinite}
-.hloc::before{content:'';position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(79,232,216,.14);animation:locR 2.8s ease-out .45s infinite}
+.hloc::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(79,232,216,.3);animation:locR 2.8s ease-out infinite}
+.hloc::before{content:'';position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(79,232,216,.13);animation:locR 2.8s ease-out .45s infinite}
 .hl1{top:22%;left:16%}.hl2{top:18%;right:20%}.hl3{top:31%;right:9%}
 @keyframes locR{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
 
-/* ═══ FLOATING PARTICLES ═══ */
+/* ═══ PARTICLES ═══ */
 .hero-particle{position:absolute;border-radius:50%;pointer-events:none}
 .hp1{width:5px;height:5px;background:rgba(79,232,216,.1);top:22%;left:13%;animation:hpd1 13s ease-in-out infinite}
 .hp2{width:3px;height:3px;background:rgba(255,255,255,.09);top:17%;left:33%;animation:hpd2 17s ease-in-out infinite 2s}
@@ -102,8 +99,8 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 @keyframes hpd1{0%,100%{transform:translate(0,0);opacity:.08}33%{transform:translate(-10px,-14px);opacity:.13}66%{transform:translate(8px,-8px);opacity:.06}}
 @keyframes hpd2{0%,100%{transform:translate(0,0);opacity:.06}40%{transform:translate(12px,-18px);opacity:.11}70%{transform:translate(-6px,-10px);opacity:.07}}
 @keyframes hpd3{0%,100%{transform:translate(0,0);opacity:.07}50%{transform:translate(-8px,-12px);opacity:.12}}
-.hero-city-sweep{position:absolute;bottom:0;left:0;width:32%;height:130px;background:linear-gradient(90deg,transparent 0%,rgba(79,232,216,.055) 45%,rgba(79,232,216,.08) 55%,transparent 100%);animation:hCitySweep 14s linear infinite;will-change:transform}
-@keyframes hCitySweep{from{transform:translateX(-110%)}to{transform:translateX(340%)}}
+
+/* ═══ SKYLINE ═══ */
 .hero-skyline{position:absolute;bottom:0;left:0;right:0;width:100%;will-change:transform;transition:transform .08s linear}
 .wp1{animation:wPulse 5s ease-in-out infinite}
 .wp2{animation:wPulse 7s ease-in-out 1.8s infinite}
@@ -113,9 +110,7 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 @keyframes wFlicker{0%,100%{opacity:.04}50%{opacity:.26}}
 @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ═══════════════════════════════════
-   CLOUD SYSTEM
-═══════════════════════════════════ */
+/* ═══ CLOUDS ═══ */
 .hero-clouds{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .hero-clouds svg{position:absolute;top:0;left:0;width:100%;height:100%}
 .cg1{animation:cdrift1 26s ease-in-out infinite;will-change:transform}
@@ -125,42 +120,29 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 @keyframes cdrift2{0%,100%{transform:translate(0,0)}40%{transform:translate(10px,-3px)}72%{transform:translate(-6px,2px)}}
 @keyframes cdrift3{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,1px)}}
 
-/* ═══════════════════════════════════
-   HERO CONTENT — DESKTOP
-═══════════════════════════════════ */
+/* ═══════════════════════════════
+   HERO CONTENT
+═══════════════════════════════ */
 .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:820px;width:100%;margin:0 auto;padding:0 24px;position:relative;z-index:2}
-.hero-content{animation:fadeUp .8s .1s ease both;width:100%}
+.hero-content{animation:fadeUp .8s .1s ease both;width:100%;display:flex;flex-direction:column;align-items:center}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
 /* Desktop badge */
 .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:28px;padding:7px 16px 7px 10px;font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:22px;letter-spacing:.025em}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 10px rgba(79,232,216,.9);animation:dotPulse 2.2s ease-in-out infinite}
 
-/* Mobile status pill (hidden on desktop) */
-.hero-status-pill{display:none;align-items:center;gap:8px;padding:5px 14px 5px 9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:30px;font-size:.7rem;letter-spacing:.025em;color:rgba(255,255,255,.48);margin-bottom:20px}
+/* Mobile status pill — hidden on desktop */
+.hero-status-pill{display:none;align-items:center;gap:8px;padding:5px 14px 5px 9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:30px;font-size:.7rem;letter-spacing:.025em;color:rgba(255,255,255,.48);margin-bottom:0}
 .status-live-dot{width:7px;height:7px;border-radius:50%;background:#22d97a;box-shadow:0 0 9px rgba(34,217,122,.9);flex-shrink:0;animation:liveDotBlink 2.2s ease-in-out infinite}
 @keyframes liveDotBlink{0%,100%{opacity:1;box-shadow:0 0 9px rgba(34,217,122,.9)}50%{opacity:.6;box-shadow:0 0 18px rgba(34,217,122,.5)}}
 
 .hero-kicker{display:block;font-size:.78rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
 .hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:16px;background:linear-gradient(160deg,#fff 10%,rgba(218,234,255,.84) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero h1 em{font-style:normal;background:linear-gradient(140deg,var(--teal),#8ff2e8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 22px rgba(79,232,216,.32))}
-.hero-lynknow-line{display:flex;align-items:flex-start;justify-content:center;gap:9px;font-size:.9rem;color:rgba(79,232,216,.78);font-weight:500;margin-bottom:18px;line-height:1.6}
-.hero-lynknow-line svg{flex-shrink:0;margin-top:2px}
-.hero-lynknow-line strong{color:var(--teal);font-weight:700}
-
-/* Desktop sub */
-.hero-sub{font-size:1.05rem;color:rgba(160,175,210,.86);max-width:560px;margin:0 auto 32px;line-height:1.78}
-
-/* Mobile-only sub (hidden on desktop) */
-.hero-sub-mob{display:none;font-size:.9rem;color:rgba(155,168,200,.78);margin:0 0 26px;line-height:1.62;max-width:300px}
-
-/* Desktop CTA */
+.hero-sub{font-size:1rem;color:rgba(160,175,210,.82);max-width:520px;margin:0 auto 32px;line-height:1.72}
 .hero-ctas{margin-bottom:24px;display:flex;justify-content:center}
 .hero-cta-desk{display:inline-flex}
-
-/* Mobile CTA (hidden on desktop) */
-.hero-cta-mob{display:none!important;width:100%;justify-content:center;font-size:.97rem;padding:15px 24px;border-radius:12px;letter-spacing:.015em;box-shadow:0 0 0 rgba(79,232,216,0);transition:background .2s,box-shadow .3s,transform .2s}
-.hero-cta-mob:hover,.hero-cta-mob:active{background:#5ef0e0;box-shadow:0 0 36px rgba(79,232,216,.45),0 6px 24px rgba(79,232,216,.22);transform:translateY(-1px)}
+.hero-cta-mob{display:none!important}
 
 /* Desktop proof */
 .hero-proof{display:flex;justify-content:center;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
@@ -170,18 +152,42 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .hero-proof strong{color:rgba(255,255,255,.55);font-weight:500}
 .momentum-num{color:rgba(79,232,216,.8);font-weight:700}
 
-/* Mobile proof (hidden on desktop) */
-.hero-proof-mob{display:none;align-items:center;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)}
-.pmob-avs{display:flex;align-items:center}
-.pmob-av{width:30px;height:30px;border-radius:50%;margin-left:-9px;border:1.5px solid rgba(79,232,216,.22);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;box-shadow:0 0 10px rgba(79,232,216,.12),inset 0 1px 0 rgba(255,255,255,.05)}
-.pmob-av:first-child{margin-left:0}
-.hero-proof-mob p{font-size:.72rem;color:rgba(120,138,172,.55);margin:0;line-height:1.45}
-
-/* ═══════════════════════════════════
-   MOBILE HERO — FULL OVERRIDE
-   Premium · Minimal · App-native
-═══════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   MOBILE PROOF BAND — sits just below the fold
+   Visible on mobile only; desktop proof stays in hero
+═══════════════════════════════════════════════ */
+.mob-proof-band{display:none}
 @media(max-width:768px){
+  .mob-proof-band{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:18px 28px;
+    background:rgba(255,255,255,.018);
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.04);
+  }
+  .mob-proof-band .mpavs{display:flex;align-items:center}
+  .mob-proof-band .mpav{
+    width:28px;height:28px;border-radius:50%;
+    margin-left:-8px;
+    border:1.5px solid rgba(79,232,216,.22);
+    display:flex;align-items:center;justify-content:center;
+    font-size:.58rem;font-weight:700;
+    box-shadow:0 0 8px rgba(79,232,216,.1)
+  }
+  .mob-proof-band .mpav:first-child{margin-left:0}
+  .mob-proof-band p{font-size:.72rem;color:rgba(120,138,172,.55);margin:0}
+}
+
+/* ═══════════════════════════════════════════════
+   MOBILE HERO — COMPLETE OVERRIDE
+   Premium · Minimal · Centred · One-screen
+═══════════════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* Hero takes exactly one screen */
   .hero{
     padding:0;
     min-height:100vh;
@@ -189,75 +195,78 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
     align-items:flex-start;
     justify-content:flex-start;
   }
+
+  /* Content column — centred, constrained width */
   .hero-inner{
-    padding:22px 24px 0;
-    align-items:flex-start;
-    text-align:left;
+    padding:calc(70px + 44px) 28px 0;
+    align-items:center;
+    text-align:center;
     max-width:100%;
+    width:100%;
     margin:0;
-    padding-top:calc(70px + 24px);
-    flex:1;
-    justify-content:flex-start;
   }
   .hero-content{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
     width:100%;
+    max-width:340px;
+    margin:0 auto;
+    gap:0;
   }
 
-  /* Swap badge for status pill */
+  /* Swap badge → status pill */
   .hero-badge{display:none}
-  .hero-status-pill{display:inline-flex}
+  .hero-status-pill{display:inline-flex;margin-bottom:30px}
 
-  /* Kicker tighter */
-  .hero-kicker{font-size:.7rem;letter-spacing:.14em;margin-bottom:8px}
+  /* Kicker — more breathing room */
+  .hero-kicker{font-size:.7rem;letter-spacing:.15em;margin-bottom:18px}
 
-  /* H1 bigger, tighter */
+  /* Headline — dominant, lots of air */
   .hero h1{
-    font-size:clamp(2.5rem,11vw,3.2rem);
+    font-size:clamp(2.9rem,13vw,3.8rem);
     line-height:1.02;
-    letter-spacing:-.036em;
-    margin-bottom:13px;
-    text-align:left;
+    letter-spacing:-.038em;
+    margin-bottom:24px;
+    text-align:center;
   }
-  /* "minutes." — animated teal glow pulse */
-  .hero h1 em{
-    animation:minutesGlow 3s ease-in-out infinite;
-  }
+  .hero h1 em{animation:minutesGlow 3s ease-in-out infinite}
   @keyframes minutesGlow{
     0%,100%{filter:drop-shadow(0 0 14px rgba(79,232,216,.32))}
-    50%{filter:drop-shadow(0 0 40px rgba(79,232,216,.72)) drop-shadow(0 0 6px rgba(79,232,216,1))}
+    50%{filter:drop-shadow(0 0 42px rgba(79,232,216,.75)) drop-shadow(0 0 6px rgba(79,232,216,1))}
   }
 
-  /* Remove desktop-only elements */
-  .hero-lynknow-line{display:none}
-  .hero-sub{display:none}
+  /* Sub — single short line, restrained */
+  .hero-sub{
+    font-size:.88rem;
+    color:rgba(148,163,196,.72);
+    max-width:270px;
+    margin:0 auto 44px;
+    line-height:1.65;
+    text-align:center;
+  }
 
-  /* Show mobile sub */
-  .hero-sub-mob{display:block}
-
-  /* CTA — full width, pill style */
-  .hero-ctas{justify-content:flex-start;margin-bottom:16px;width:100%}
+  /* CTA — full width, prominent */
+  .hero-ctas{width:100%;justify-content:center;margin-bottom:0}
   .hero-cta-desk{display:none!important}
-  .hero-cta-mob{display:inline-flex!important}
+  .hero-cta-mob{
+    display:inline-flex!important;
+    width:100%;
+    justify-content:center;
+    font-size:.97rem;
+    padding:16px 24px;
+    border-radius:12px;
+    letter-spacing:.01em;
+  }
 
-  /* Proof swap */
+  /* Hide proof inside hero — moved to proof band below */
   .hero-proof{display:none}
-  .hero-proof-mob{display:flex}
 
-  /* Activate radar */
-  .hero-radar{display:block}
-
-  /* Activate location dots */
+  /* Activate radar, location dots */
+  .hero-radar{display:block;top:50%}
   .hloc{display:block}
 
-  /* Reduce orbs — don't overpower mobile */
-  .hero-orb-1{opacity:.5;width:600px;height:600px}
-  .hero-orb-2{opacity:.4}
-
-  /* Skyline sits lower on mobile, fully visible */
-  .hero-skyline{bottom:0}
+  /* Soften orbs — less competition with text */
+  .hero-orb-1{opacity:.38;width:550px;height:550px}
+  .hero-orb-2{opacity:.28}
 }
 
 /* ═══ OTHER PAGE STYLES ═══ */
@@ -370,7 +379,7 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .legal-page{padding:96px 0 80px;min-height:80vh}
 .legal-page h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-bottom:8px;background:linear-gradient(135deg,#fff,rgba(79,232,216,.9));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .legal-meta{font-size:.82rem;color:rgba(136,146,176,.5);margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--border)}
-.legal-body h2{font-size:1.25rem;font-weight:700;color:var(--teal);margin:36px 0 12px;letter-spacing:-.01em}
+.legal-body h2{font-size:1.25rem;font-weight:700;color:var(--teal);margin:36px 0 12px}
 .legal-body h3{font-size:1.05rem;font-weight:600;color:rgba(255,255,255,.85);margin:24px 0 10px}
 .legal-body p{font-size:.92rem;color:rgba(200,210,230,.78);margin-bottom:14px;line-height:1.75}
 .legal-body ul{margin:10px 0 16px 20px;display:flex;flex-direction:column;gap:8px}
@@ -395,7 +404,6 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
   .steps{grid-template-columns:1fr}.steps::after{display:none}
   .adv-grid{grid-template-columns:repeat(2,1fr)}
   .wl-grid{grid-template-columns:1fr}
-  .wl-btn{width:100%;justify-content:center}
   .inner-hero{padding:88px 0 48px}
   .legal-page{padding:88px 0 60px}
   .lynknow-main{padding:28px 22px}
@@ -404,26 +412,17 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
 @media(max-width:520px){.adv-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){
   .hero-orb-1,.hero-orb-2{display:none}
-  .badge-dot,.status-live-dot,.wp1,.wp2,.wp3,.wpf,.hp1,.hp2,.hp3,.hp4,.hp5,.hp6,.hero-city-sweep,.cg1,.cg2,.cg3,.hb1,.hb2,.hb3,.hb4,.hb5,.hb6,.hb7,.rr,.hloc::after,.hloc::before{animation:none!important;box-shadow:none!important}
+  .badge-dot,.status-live-dot,.wp1,.wp2,.wp3,.wpf,.hp1,.hp2,.hp3,.hp4,.hp5,.hp6,.cg1,.cg2,.cg3,.hb1,.hb2,.hb3,.hb4,.hb5,.hb6,.hb7,.rr,.hloc::after,.hloc::before{animation:none!important;box-shadow:none!important}
   *{transition-duration:.001ms!important}
 }
 </style>
 
 <!-- Meta Pixel — ID 824693310430602 -->
 <script>
-!function(f,b,e,v,n,t,s){
-  if(f.fbq)return;
-  n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
-  t=b.createElement(e);t.async=!0;t.src=v;
-  s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
-}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','824693310430602');
-fbq('track','PageView');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','824693310430602');fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=824693310430602&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -433,7 +432,7 @@ fbq('track','PageView');
     <div class="logo-link" onclick="navigate('home')" aria-label="TideLynk home">
       <svg xmlns="http://www.w3.org/2000/svg" width="149" height="50" viewBox="0 0 149 50" fill="none" style="height:32px;width:auto;display:block"><path d="M82.6452 5.12812C81.4412 1.97549 79.0884 -0.0727545 75.5718 0.00197866C74.2695 -0.0229324 73.0226 0.208187 71.8698 0.835115C70.2824 1.6987 69.1697 3.01899 68.3545 4.59807C66.6578 7.88356 66.28 11.4043 66.6772 15.0178C66.9609 17.5892 67.455 20.1301 68.4237 22.5506C68.5262 22.8081 68.4487 22.9119 68.2106 23.0101C67.1616 23.4405 66.0876 23.792 64.9888 24.055C64.611 24.1463 64.5445 24.3207 64.5916 24.6446C64.8615 26.4658 65.1299 28.2871 65.3874 30.1098C65.4206 30.345 65.4925 30.3727 65.7029 30.3118C66.2011 30.1665 66.7118 30.0599 67.2086 29.9105C70.6823 28.8656 73.7976 27.173 76.4645 24.6985C78.6663 22.6558 80.3492 20.2339 81.6225 17.5214C82.7075 15.2102 83.3801 12.7827 83.5448 10.2335C83.6582 8.46759 83.2694 6.76395 82.6452 5.12812ZM75.1636 17.4079C74.675 18.1317 74.1478 18.8292 73.4572 19.4644C73.1444 18.6285 72.9949 17.812 72.8385 17.0024C72.5078 15.2738 72.3362 13.5273 72.386 11.7683C72.4247 10.3996 72.5562 9.03362 73.1001 7.75486C73.4433 6.94386 73.8973 6.22421 74.8466 5.98617C75.6078 5.79518 76.3233 6.03461 76.7593 6.68922C77.3128 7.51958 77.5038 8.47312 77.5578 9.4405C77.7225 12.3786 76.7897 15.004 75.1636 17.4079Z" fill="white"/><path d="M86.5908 39.4071C84.025 39.2908 81.5546 38.4937 79.2268 37.2232C77.4623 36.26 75.8915 35.0338 74.4993 33.589C73.3174 32.3628 72.2877 31.0134 71.4629 29.5188C71.3868 29.3804 71.1557 29.2032 71.51 29.0801C73.1873 28.5002 74.5477 27.3986 75.9427 26.3578C76.2168 26.1544 76.3316 26.1682 76.5212 26.4478C77.8927 28.467 79.6545 30.0184 81.9435 30.9359C83.2707 31.4674 84.6519 31.7179 86.0705 31.7843C86.3791 31.7981 86.4787 31.9089 86.5189 32.194C86.833 34.4429 87.1555 36.6918 87.4849 38.9393C87.5333 39.2659 87.5015 39.4721 87.096 39.4099C86.9631 39.3905 86.8261 39.4071 86.5908 39.4071Z" fill="white"/><path d="M9.40946 37.291H3.28688V23.9373H0V19.171H3.28688V12.2665H9.40946V19.1696H12.6963V23.9359H9.40946V37.291Z" fill="white"/><path d="M16.1895 9.34912C18.1616 9.34912 19.8058 10.9517 19.8058 12.9654C19.8058 14.9375 18.1616 16.5816 16.1895 16.5816C14.1759 16.5816 12.5732 14.9375 12.5732 12.9654C12.5732 10.9517 14.1759 9.34912 16.1895 9.34912ZM13.1074 37.291V19.1696H19.2716V37.291H13.1074Z" fill="white"/><path d="M41.6651 37.291H35.501V35.1127C34.2679 36.9616 31.5969 37.7021 29.2968 37.7021C24.1609 37.7021 20.2983 33.2637 20.2983 28.2511C20.2983 23.2384 24.1609 18.76 29.2968 18.76C31.5983 18.76 33.8984 19.4173 35.501 21.3895V6.47327H41.6651V37.291ZM31.1872 23.7311C28.7224 23.7311 26.8721 25.8679 26.8721 28.2511C26.8721 30.6342 28.721 32.771 31.1872 32.771C33.6534 32.771 35.501 30.6342 35.501 28.2511C35.501 25.8679 33.6521 23.7311 31.1872 23.7311Z" fill="white"/><path d="M63.0721 28.9902H49.0195C49.0195 31.0855 50.499 33.3053 52.9237 33.3053C55.102 33.3053 56.4569 31.8674 56.4984 30.5526H62.7857C61.7173 35.3189 57.8547 37.7021 53.0468 37.7021C46.8011 37.7021 42.4873 34.0042 42.4873 28.2511C42.4873 22.5811 46.9658 18.76 53.0468 18.76C58.5536 18.76 63.1137 22.0469 63.1137 27.8415C63.1137 28.2096 63.0721 28.6206 63.0721 28.9902ZM57.1973 26.0728C57.1973 26.0728 56.9094 22.7029 53.17 22.7029C49.3074 22.7029 49.1026 26.0728 49.1026 26.0728H57.1973Z" fill="white"/><path d="M88.4759 47.5641L92.5848 37.2911H91.5579L84.6548 19.1697H90.859L95.1728 32.1137L99.4866 19.1697H105.734L98.8306 37.2911L94.8863 47.5641H88.4759Z" fill="#00FFE7"/><path d="M125.292 37.2911H119.128V27.0181C119.128 24.8813 118.306 23.7312 116.375 23.7312C114.443 23.7312 112.923 25.7864 112.923 28.2512V37.2911H106.759V19.1697H112.923V21.3882C114.156 19.8271 116.087 18.7587 118.47 18.7587C123.318 18.7587 125.292 22.0871 125.292 27.0181V37.2911Z" fill="#00FFE7"/><path d="M134.743 37.291H128.579V6.47327H134.743V26.3606L140.536 19.1696H148.178L140.371 27.7985L149 37.2896H141.11L134.741 29.2766V37.291H134.743Z" fill="#00FFE7"/><path d="M12.0812 40.6068H73.4939L71.3126 50.0033H9.39648L12.0812 40.6068Z" fill="#FF2EC4"/><rect width="53.9064" height="6.71177" transform="translate(14.4304 41.9492)" fill="#FF2EC4"/></svg>
     </div>
-    <div class="nav-links" role="navigation" aria-label="Desktop navigation">
+    <div class="nav-links">
       <a onclick="scrollToSection('lynknow')" class="mob-highlight">⚡ LynkNow</a>
       <a onclick="scrollToSection('how-it-works')">How It Works</a>
       <a onclick="navigate('for-cleaners')">For Cleaners</a>
@@ -448,7 +447,7 @@ fbq('track','PageView');
   </div>
 </nav>
 
-<nav class="nav-mob" id="mobNav" aria-label="Mobile navigation">
+<nav class="nav-mob" id="mobNav">
   <a onclick="scrollToSection('lynknow')" class="mob-highlight"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>LynkNow</a>
   <a onclick="scrollToSection('how-it-works')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>How It Works</a>
   <a onclick="navigate('for-cleaners')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>For Cleaners</a>
@@ -469,7 +468,7 @@ fbq('track','PageView');
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
 
-    <!-- ═══ VOLUMETRIC CLOUDS ═══ -->
+    <!-- Clouds -->
     <div class="hero-clouds">
       <svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -479,48 +478,30 @@ fbq('track','PageView');
           <filter id="cf-t1" x="-28%" y="-28%" width="156%" height="156%"><feTurbulence type="fractalNoise" baseFrequency="0.013 0.019" numOctaves="3" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"/></filter>
           <filter id="cf-t2" x="-28%" y="-28%" width="156%" height="156%"><feTurbulence type="fractalNoise" baseFrequency="0.015 0.021" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G"/></filter>
           <filter id="cf-t3" x="-28%" y="-28%" width="156%" height="156%"><feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="17" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/></filter>
-          <radialGradient id="cg-vol-l" cx="48%" cy="36%" r="52%"><stop offset="0%" stop-color="#172d60" stop-opacity="0.75"/><stop offset="48%" stop-color="#0f1e4a" stop-opacity="0.38"/><stop offset="100%" stop-color="#07102a" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-vol-r" cx="52%" cy="34%" r="52%"><stop offset="0%" stop-color="#152a5a" stop-opacity="0.72"/><stop offset="48%" stop-color="#0e1c46" stop-opacity="0.35"/><stop offset="100%" stop-color="#07102a" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-moon-l" cx="44%" cy="12%" r="55%"><stop offset="0%" stop-color="#364e84" stop-opacity="0.3"/><stop offset="60%" stop-color="#1a2e5c" stop-opacity="0.12"/><stop offset="100%" stop-color="#0c1838" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-moon-r" cx="56%" cy="10%" r="55%"><stop offset="0%" stop-color="#304680" stop-opacity="0.28"/><stop offset="60%" stop-color="#182c58" stop-opacity="0.1"/><stop offset="100%" stop-color="#0c1838" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-teal-l" cx="50%" cy="88%" r="52%"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0.07"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-teal-r" cx="50%" cy="88%" r="52%"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0.065"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0"/></radialGradient>
+          <radialGradient id="cg-vl" cx="48%" cy="36%" r="52%"><stop offset="0%" stop-color="#172d60" stop-opacity="0.75"/><stop offset="48%" stop-color="#0f1e4a" stop-opacity="0.38"/><stop offset="100%" stop-color="#07102a" stop-opacity="0"/></radialGradient>
+          <radialGradient id="cg-vr" cx="52%" cy="34%" r="52%"><stop offset="0%" stop-color="#152a5a" stop-opacity="0.72"/><stop offset="48%" stop-color="#0e1c46" stop-opacity="0.35"/><stop offset="100%" stop-color="#07102a" stop-opacity="0"/></radialGradient>
+          <radialGradient id="cg-ml" cx="44%" cy="12%" r="55%"><stop offset="0%" stop-color="#364e84" stop-opacity="0.3"/><stop offset="60%" stop-color="#1a2e5c" stop-opacity="0.12"/><stop offset="100%" stop-color="#0c1838" stop-opacity="0"/></radialGradient>
+          <radialGradient id="cg-mr" cx="56%" cy="10%" r="55%"><stop offset="0%" stop-color="#304680" stop-opacity="0.28"/><stop offset="60%" stop-color="#182c58" stop-opacity="0.1"/><stop offset="100%" stop-color="#0c1838" stop-opacity="0"/></radialGradient>
+          <radialGradient id="cg-tl" cx="50%" cy="88%" r="52%"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0.07"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0"/></radialGradient>
+          <radialGradient id="cg-tr" cx="50%" cy="88%" r="52%"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0.065"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0"/></radialGradient>
         </defs>
-        <g class="cg1"><ellipse cx="75" cy="165" rx="340" ry="110" fill="#09112e" opacity="0.58" filter="url(#cf-xl)"/><ellipse cx="285" cy="148" rx="200" ry="72" fill="#0c1736" opacity="0.42" filter="url(#cf-xl)"/><ellipse cx="60" cy="104" rx="192" ry="72" fill="#111e3e" opacity="0.60" filter="url(#cf-t1)"/><ellipse cx="238" cy="84" rx="170" ry="64" fill="#12203c" opacity="0.54" filter="url(#cf-t1)"/><ellipse cx="370" cy="116" rx="145" ry="52" fill="#0e1a38" opacity="0.40" filter="url(#cf-t2)"/><ellipse cx="158" cy="98" rx="215" ry="82" fill="url(#cg-vol-l)" filter="url(#cf-lg)"/><ellipse cx="310" cy="76" rx="110" ry="48" fill="#131e40" opacity="0.44" filter="url(#cf-t3)"/><ellipse cx="120" cy="72" rx="140" ry="50" fill="#101b3a" opacity="0.38" filter="url(#cf-t3)"/><ellipse cx="128" cy="55" rx="210" ry="28" fill="url(#cg-moon-l)" filter="url(#cf-md)"/><ellipse cx="300" cy="48" rx="125" ry="19" fill="#2c4276" opacity="0.20" filter="url(#cf-md)"/><ellipse cx="460" cy="134" rx="120" ry="36" fill="#0b1530" opacity="0.22" filter="url(#cf-xl)"/><ellipse cx="-15" cy="148" rx="95" ry="30" fill="#0b1530" opacity="0.20" filter="url(#cf-xl)"/><ellipse cx="168" cy="182" rx="240" ry="34" fill="url(#cg-teal-l)" filter="url(#cf-xl)"/></g>
-        <g class="cg2"><ellipse cx="1370" cy="152" rx="360" ry="114" fill="#09112e" opacity="0.54" filter="url(#cf-xl)"/><ellipse cx="1148" cy="142" rx="210" ry="70" fill="#0c1736" opacity="0.38" filter="url(#cf-xl)"/><ellipse cx="1385" cy="96" rx="195" ry="74" fill="#111e3e" opacity="0.57" filter="url(#cf-t2)"/><ellipse cx="1208" cy="112" rx="176" ry="66" fill="#12203c" opacity="0.50" filter="url(#cf-t2)"/><ellipse cx="1092" cy="128" rx="148" ry="50" fill="#0e1a38" opacity="0.36" filter="url(#cf-t1)"/><ellipse cx="1284" cy="104" rx="222" ry="84" fill="url(#cg-vol-r)" filter="url(#cf-lg)"/><ellipse cx="1112" cy="80" rx="118" ry="50" fill="#131e40" opacity="0.40" filter="url(#cf-t3)"/><ellipse cx="1338" cy="70" rx="145" ry="46" fill="#101b3a" opacity="0.36" filter="url(#cf-t3)"/><ellipse cx="1318" cy="52" rx="215" ry="26" fill="url(#cg-moon-r)" filter="url(#cf-md)"/><ellipse cx="1158" cy="64" rx="130" ry="18" fill="#2c4276" opacity="0.17" filter="url(#cf-md)"/><ellipse cx="1052" cy="124" rx="128" ry="34" fill="#0b1530" opacity="0.20" filter="url(#cf-xl)"/><ellipse cx="1284" cy="170" rx="248" ry="32" fill="url(#cg-teal-r)" filter="url(#cf-xl)"/></g>
-        <g class="cg3"><ellipse cx="720" cy="448" rx="680" ry="48" fill="#090f28" opacity="0.13" filter="url(#cf-xl)"/><ellipse cx="210" cy="458" rx="280" ry="26" fill="#4FE8D8" opacity="0.016" filter="url(#cf-xl)"/><ellipse cx="1230" cy="462" rx="260" ry="24" fill="#4FE8D8" opacity="0.013" filter="url(#cf-xl)"/></g>
+        <g class="cg1"><ellipse cx="75" cy="165" rx="340" ry="110" fill="#09112e" opacity="0.58" filter="url(#cf-xl)"/><ellipse cx="285" cy="148" rx="200" ry="72" fill="#0c1736" opacity="0.42" filter="url(#cf-xl)"/><ellipse cx="60" cy="104" rx="192" ry="72" fill="#111e3e" opacity="0.60" filter="url(#cf-t1)"/><ellipse cx="238" cy="84" rx="170" ry="64" fill="#12203c" opacity="0.54" filter="url(#cf-t1)"/><ellipse cx="370" cy="116" rx="145" ry="52" fill="#0e1a38" opacity="0.40" filter="url(#cf-t2)"/><ellipse cx="158" cy="98" rx="215" ry="82" fill="url(#cg-vl)" filter="url(#cf-lg)"/><ellipse cx="310" cy="76" rx="110" ry="48" fill="#131e40" opacity="0.44" filter="url(#cf-t3)"/><ellipse cx="128" cy="55" rx="210" ry="28" fill="url(#cg-ml)" filter="url(#cf-md)"/><ellipse cx="460" cy="134" rx="120" ry="36" fill="#0b1530" opacity="0.22" filter="url(#cf-xl)"/><ellipse cx="168" cy="182" rx="240" ry="34" fill="url(#cg-tl)" filter="url(#cf-xl)"/></g>
+        <g class="cg2"><ellipse cx="1370" cy="152" rx="360" ry="114" fill="#09112e" opacity="0.54" filter="url(#cf-xl)"/><ellipse cx="1148" cy="142" rx="210" ry="70" fill="#0c1736" opacity="0.38" filter="url(#cf-xl)"/><ellipse cx="1385" cy="96" rx="195" ry="74" fill="#111e3e" opacity="0.57" filter="url(#cf-t2)"/><ellipse cx="1208" cy="112" rx="176" ry="66" fill="#12203c" opacity="0.50" filter="url(#cf-t2)"/><ellipse cx="1092" cy="128" rx="148" ry="50" fill="#0e1a38" opacity="0.36" filter="url(#cf-t1)"/><ellipse cx="1284" cy="104" rx="222" ry="84" fill="url(#cg-vr)" filter="url(#cf-lg)"/><ellipse cx="1318" cy="52" rx="215" ry="26" fill="url(#cg-mr)" filter="url(#cf-md)"/><ellipse cx="1052" cy="124" rx="128" ry="34" fill="#0b1530" opacity="0.20" filter="url(#cf-xl)"/><ellipse cx="1284" cy="170" rx="248" ry="32" fill="url(#cg-tr)" filter="url(#cf-xl)"/></g>
+        <g class="cg3"><ellipse cx="720" cy="448" rx="680" ry="48" fill="#090f28" opacity="0.13" filter="url(#cf-xl)"/></g>
       </svg>
     </div>
 
-    <!-- ═══ RADAR PULSE — TideLynk signature effect ═══ -->
-    <div class="hero-radar" aria-hidden="true">
-      <div class="rr"></div>
-      <div class="rr"></div>
-      <div class="rr"></div>
-      <div class="rr"></div>
-    </div>
+    <!-- Radar pulse -->
+    <div class="hero-radar" aria-hidden="true"><div class="rr"></div><div class="rr"></div><div class="rr"></div><div class="rr"></div></div>
 
-    <!-- ═══ FLOATING CLEANING BUBBLES ═══ -->
-    <div class="hbub hb1" aria-hidden="true"></div>
-    <div class="hbub hb2" aria-hidden="true"></div>
-    <div class="hbub hb3" aria-hidden="true"></div>
-    <div class="hbub hb4" aria-hidden="true"></div>
-    <div class="hbub hb5" aria-hidden="true"></div>
-    <div class="hbub hb6" aria-hidden="true"></div>
-    <div class="hbub hb7" aria-hidden="true"></div>
+    <!-- Floating bubbles -->
+    <div class="hbub hb1" aria-hidden="true"></div><div class="hbub hb2" aria-hidden="true"></div><div class="hbub hb3" aria-hidden="true"></div><div class="hbub hb4" aria-hidden="true"></div><div class="hbub hb5" aria-hidden="true"></div><div class="hbub hb6" aria-hidden="true"></div><div class="hbub hb7" aria-hidden="true"></div>
 
-    <!-- ═══ MAP LOCATION DOTS ═══ -->
-    <div class="hloc hl1" aria-hidden="true"></div>
-    <div class="hloc hl2" aria-hidden="true"></div>
-    <div class="hloc hl3" aria-hidden="true"></div>
+    <!-- Location dots -->
+    <div class="hloc hl1" aria-hidden="true"></div><div class="hloc hl2" aria-hidden="true"></div><div class="hloc hl3" aria-hidden="true"></div>
 
     <!-- Particles -->
-    <div class="hero-particle hp1" aria-hidden="true"></div>
-    <div class="hero-particle hp2" aria-hidden="true"></div>
-    <div class="hero-particle hp3" aria-hidden="true"></div>
-    <div class="hero-particle hp4" aria-hidden="true"></div>
-    <div class="hero-particle hp5" aria-hidden="true"></div>
-    <div class="hero-particle hp6" aria-hidden="true"></div>
+    <div class="hero-particle hp1" aria-hidden="true"></div><div class="hero-particle hp2" aria-hidden="true"></div><div class="hero-particle hp3" aria-hidden="true"></div><div class="hero-particle hp4" aria-hidden="true"></div><div class="hero-particle hp5" aria-hidden="true"></div><div class="hero-particle hp6" aria-hidden="true"></div>
 
     <!-- Skyline -->
     <div class="hero-skyline" id="heroSkyline">
@@ -528,65 +509,48 @@ fbq('track','PageView');
         <defs>
           <linearGradient id="bldFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0c1540" stop-opacity="0.82"/><stop offset="100%" stop-color="#0A0F2C" stop-opacity="0.08"/></linearGradient>
           <linearGradient id="treeFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#060b22" stop-opacity="0.9"/><stop offset="100%" stop-color="#070c25" stop-opacity="0.7"/></linearGradient>
-          <linearGradient id="hGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0.1"/></linearGradient>
-          <linearGradient id="riverShim" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="transparent"/><stop offset="20%" stop-color="rgba(79,232,216,0.07)"/><stop offset="80%" stop-color="rgba(79,232,216,0.07)"/><stop offset="100%" stop-color="transparent"/></linearGradient>
+          <linearGradient id="hGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0.07"/></linearGradient>
+          <linearGradient id="riverShim" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="transparent"/><stop offset="20%" stop-color="rgba(79,232,216,0.06)"/><stop offset="80%" stop-color="rgba(79,232,216,0.06)"/><stop offset="100%" stop-color="transparent"/></linearGradient>
           <linearGradient id="botFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0A0F2C" stop-opacity="0"/><stop offset="80%" stop-color="#050B1A" stop-opacity="1"/></linearGradient>
         </defs>
         <rect x="0" y="240" width="1500" height="130" fill="url(#hGlow)"/>
         <g id="buildingLayer"></g>
         <path d="M138,286 C152,265 164,273 180,260 C192,250 206,257 222,246 C234,240 249,247 264,237 C278,231 294,238 310,228 C323,222 340,229 356,220 C370,215 386,222 403,214 C418,211 434,218 450,212 C464,210 480,216 495,222 C508,228 520,223 534,231 C545,238 557,233 570,241 L570,290 L138,290 Z" fill="url(#treeFade)"/>
-        <path d="M0,326 C200,316 460,336 760,322 C960,312 1160,330 1500,318" fill="none" stroke="rgba(79,232,216,.09)" stroke-width="1.5"/>
+        <path d="M0,326 C200,316 460,336 760,322 C960,312 1160,330 1500,318" fill="none" stroke="rgba(79,232,216,.07)" stroke-width="1.5"/>
         <rect x="0" y="352" width="1500" height="14" fill="url(#riverShim)"/>
         <rect x="0" y="308" width="1500" height="82" fill="url(#botFade)"/>
       </svg>
     </div>
-    <div class="hero-city-sweep" aria-hidden="true"></div>
+
     <div class="hero-vignette" aria-hidden="true"></div>
   </div>
 
-  <!-- ═══════════════════════════════════
+  <!-- ═══════════════════════════════
        HERO CONTENT
-       Desktop: centred   Mobile: left-aligned, minimal
+       Desktop: centred, full elements
+       Mobile: centred, 5 elements only
   ═══════════════════════════════════ -->
   <div class="hero-inner">
     <div class="hero-content">
 
-      <!-- Desktop badge -->
+      <!-- Desktop badge / Mobile status pill -->
       <div class="hero-badge"><span class="badge-dot"></span>Launching soon · Perth-wide</div>
-
-      <!-- Mobile status pill -->
-      <div class="hero-status-pill" aria-label="Launch status">
-        <span class="status-live-dot"></span>Perth-wide launch coming soon
-      </div>
+      <div class="hero-status-pill"><span class="status-live-dot"></span>Launching soon · Perth-wide</div>
 
       <span class="hero-kicker">Tap. Match. Clean.</span>
 
       <h1>Find a cleaner<br>in <em>minutes.</em></h1>
 
-      <!-- Desktop only: LynkNow line -->
-      <p class="hero-lynknow-line">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        Powered by <strong>LynkNow</strong> — TideLynk's instant cleaner matching service for Perth homes.
-      </p>
-
-      <!-- Desktop sub -->
-      <p class="hero-sub">Choose on-demand, scheduled, or recurring cleans with verified local cleaners — without the back-and-forth.</p>
-
-      <!-- Mobile sub — single, punchy line -->
-      <p class="hero-sub-mob">Verified local cleaners — on-demand or scheduled.</p>
+      <!-- Single sub — same copy both views, styled differently by breakpoint -->
+      <p class="hero-sub">On-demand and scheduled cleaning, matched with verified Perth cleaners.</p>
 
       <!-- CTAs -->
       <div class="hero-ctas">
-        <!-- Desktop -->
         <a href="https://form.typeform.com/to/ixQoLQQf" target="_blank" rel="noopener noreferrer" class="btn btn-teal btn-lg hero-cta-desk">Join the Perth Waitlist →</a>
-        <!-- Mobile — full width, prominent -->
-        <a href="https://form.typeform.com/to/ixQoLQQf" target="_blank" rel="noopener noreferrer" class="btn btn-teal btn-lg hero-cta-mob">
-          Find Cleaner
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <a href="https://form.typeform.com/to/ixQoLQQf" target="_blank" rel="noopener noreferrer" class="btn btn-teal btn-lg hero-cta-mob">Join the Perth Waitlist →</a>
       </div>
 
-      <!-- Desktop proof -->
+      <!-- Desktop proof only — hidden on mobile (moved to proof band below) -->
       <div class="hero-proof">
         <div class="proof-avs" aria-hidden="true">
           <div class="pav" style="background:#1e2d5e">KM</div>
@@ -597,20 +561,20 @@ fbq('track','PageView');
         <p><span class="momentum-num">200+</span> Perth cleaners have already <strong>registered interest</strong></p>
       </div>
 
-      <!-- Mobile proof — premium gradient bubbles -->
-      <div class="hero-proof-mob" role="img" aria-label="200 plus Perth cleaners interested">
-        <div class="pmob-avs" aria-hidden="true">
-          <div class="pmob-av" style="background:linear-gradient(145deg,#162248,#1f3462);z-index:4">K</div>
-          <div class="pmob-av" style="background:linear-gradient(145deg,#132840,#1c3a5e);z-index:3">S</div>
-          <div class="pmob-av" style="background:linear-gradient(145deg,#1e1a4a,#2a2464);z-index:2">T</div>
-          <div class="pmob-av" style="background:linear-gradient(145deg,#2a1038,#3c1c52);z-index:1">N</div>
-        </div>
-        <p><span class="momentum-num">200+</span> Perth cleaners<br>already interested</p>
-      </div>
-
     </div>
   </div>
 </section>
+
+<!-- MOBILE SOCIAL PROOF BAND — appears on first scroll on mobile, invisible on desktop -->
+<div class="mob-proof-band" aria-label="Social proof">
+  <div class="mpavs" aria-hidden="true">
+    <div class="mpav" style="background:linear-gradient(145deg,#162248,#1f3462)">K</div>
+    <div class="mpav" style="background:linear-gradient(145deg,#132840,#1c3a5e)">S</div>
+    <div class="mpav" style="background:linear-gradient(145deg,#1e1a4a,#2a2464)">T</div>
+    <div class="mpav" style="background:linear-gradient(145deg,#2a1038,#3c1c52)">N</div>
+  </div>
+  <p><span class="momentum-num">200+</span> Perth cleaners already interested</p>
+</div>
 
 <!-- LYNKNOW SECTION -->
 <section class="sec" id="lynknow">
@@ -640,7 +604,7 @@ fbq('track','PageView');
     <div class="g3">
       <div class="card"><div class="ic ic-p"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><h3>Last-minute cancellations</h3><p>Cleaners cancel and you're left scrambling. No accountability, no backup.</p></div>
       <div class="card"><div class="ic ic-t"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Endless back-and-forth</h3><p>Quotes, messages, and phone calls — just to book a simple clean. It takes days, not minutes.</p></div>
-      <div class="card"><div class="ic ic-p"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Finding a trusted cleaner feels inconsistent.</h3><p>Verification, reliability, and quality varies too much. No simple way to choose with confidence.</p></div>
+      <div class="card"><div class="ic ic-p"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Finding a trusted cleaner feels inconsistent.</h3><p>Verification and quality varies too much. No simple way to choose with confidence.</p></div>
     </div>
   </div>
 </section>
@@ -728,7 +692,7 @@ fbq('track','PageView');
 <!-- HOW IT WORKS PAGE -->
 <div id="page-how-it-works" class="page page-top">
   <section class="inner-hero"><div class="wrap inner-hero-content"><div class="tag">How TideLynk Works</div><h1>Tap. Match. Clean.</h1><p>From the moment you open TideLynk to a cleaner at your door — fast, flexible, and verified every step of the way.</p></div></section>
-  <section class="sec"><div class="wrap"><div class="steps" style="margin-top:0"><div class="step s1"><div class="snum"><div class="snum-inner">1</div></div><h3>Tap</h3><p>Open TideLynk and choose your booking type. LynkNow for on-demand matching, Scheduled for a specific date, or Recurring for ongoing cleans.</p></div><div class="step s2"><div class="snum"><div class="snum-inner">2</div></div><h3>Match</h3><p>TideLynk matches you with verified local cleaners based on your location, time, and job scope. View real cleaner profiles, ratings, and ETAs — then choose.</p></div><div class="step s3"><div class="snum"><div class="snum-inner">3</div></div><h3>Clean</h3><p>Track your cleaner in real time, confirm job completion, and come home to a properly cleaned space. Rate your experience and set up a recurring schedule.</p></div></div></div></section>
+  <section class="sec"><div class="wrap"><div class="steps" style="margin-top:0"><div class="step s1"><div class="snum"><div class="snum-inner">1</div></div><h3>Tap</h3><p>Open TideLynk and choose your booking type. LynkNow for on-demand matching, Scheduled for a specific date, or Recurring for ongoing cleans.</p></div><div class="step s2"><div class="snum"><div class="snum-inner">2</div></div><h3>Match</h3><p>TideLynk matches you with verified local cleaners based on your location, time, and job scope. View real cleaner profiles, ratings, and ETAs — then choose.</p></div><div class="step s3"><div class="snum"><div class="snum-inner">3</div></div><h3>Clean</h3><p>Track your cleaner in real time, confirm job completion, and come home to a properly cleaned space.</p></div></div></div></section>
   <section class="sec prob-bg"><div class="wrap"><div class="tag">Booking Modes</div><h2 style="margin-bottom:40px">Three ways to book.</h2><div class="g3"><div class="card" style="border-color:rgba(79,232,216,.3)"><div class="ic ic-t"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3 style="color:var(--teal)">LynkNow</h3><p>Our signature on-demand service. Get matched with a nearby verified cleaner in minutes.</p></div><div class="card"><div class="ic ic-t"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Scheduled</h3><p>Choose your preferred date and time. TideLynk matches you with cleaners available for your selected slot.</p></div><div class="card"><div class="ic ic-p"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><h3>Recurring</h3><p>Set up weekly, fortnightly, or monthly cleaning after your first clean. Keep your preferred cleaner.</p></div></div></div></section>
   <section class="sec" style="text-align:center"><div class="wrap"><h2 style="margin-bottom:16px">Ready to get started?</h2><p style="max-width:420px;margin:0 auto 28px">Join the Perth waitlist and be first to access TideLynk when we launch.</p><a href="https://form.typeform.com/to/ixQoLQQf" class="btn btn-teal btn-lg" target="_blank" rel="noopener noreferrer">Join the Perth Waitlist →</a></div></section>
 </div>
@@ -736,13 +700,13 @@ fbq('track','PageView');
 <!-- FOR CLEANERS -->
 <div id="page-for-cleaners" class="page page-top">
   <section class="inner-hero"><div class="wrap inner-hero-content"><div class="tag">For Independent Cleaners</div><h1>Get access to cleaning jobs across Perth — without chasing leads.</h1><p>Build your profile, get verified, and be ready when bookings go live.</p></div></section>
-  <section class="sec"><div class="wrap seg"><div><div class="tag">Founding Cleaner Offer</div><h2>First 100 verified cleaners get 2 months free.</h2><p style="margin:16px 0 0">During TideLynk's Perth launch. Then only $9.99/month. Cancel anytime.</p><div class="offer" style="margin-top:28px"><div class="offer-lbl">What you'll need to get verified</div><div class="chk-list" style="margin-top:12px"><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Active Australian Business Number (ABN)</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Current public liability insurance</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>National police check</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Profile photo and service specialisations</p></div></div></div><div style="margin-top:28px"><a href="https://form.typeform.com/to/uBkHRHFN" class="btn btn-teal btn-lg" target="_blank" rel="noopener noreferrer">Join as a Founding Cleaner →</a></div></div><div><div class="bk-card"><p style="font-size:.72rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:var(--gray)">Why join TideLynk as a cleaner</p><div class="chk-list"><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access local Perth cleaning jobs without chasing leads</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Build your own verified profile with ratings and trust badges</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Get matched to scheduled and recurring jobs automatically</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Payments processed securely through Stripe</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>2 months free during the Perth founding period</p></div></div></div></div></div></section>
+  <section class="sec"><div class="wrap seg"><div><div class="tag">Founding Cleaner Offer</div><h2>First 100 verified cleaners get 2 months free.</h2><p style="margin:16px 0 0">During TideLynk's Perth launch. Then only $9.99/month. Cancel anytime.</p><div class="offer" style="margin-top:28px"><div class="offer-lbl">What you'll need to get verified</div><div class="chk-list" style="margin-top:12px"><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Active Australian Business Number (ABN)</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Current public liability insurance</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>National police check</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Profile photo and service specialisations</p></div></div></div><div style="margin-top:28px"><a href="https://form.typeform.com/to/uBkHRHFN" class="btn btn-teal btn-lg" target="_blank" rel="noopener noreferrer">Join as a Founding Cleaner →</a></div></div><div><div class="bk-card"><p style="font-size:.72rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:var(--gray)">Why join TideLynk as a cleaner</p><div class="chk-list"><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access local Perth cleaning jobs without chasing leads</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Build your own verified profile with ratings and trust badges</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Payments processed securely through Stripe</p></div><div class="chk-row"><div class="ck ck-t"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>2 months free during the Perth founding period</p></div></div></div></div></div></section>
 </div>
 
 <!-- FOR COMPANIES -->
 <div id="page-for-companies" class="page page-top">
   <section class="inner-hero"><div class="wrap inner-hero-content"><div class="tag tag-pink">For Cleaning Companies</div><h1>Grow your team<br>on TideLynk.</h1><p>Bring your cleaning team onto TideLynk through one company account. Manage cleaners, build your profile, and access job opportunities as the platform grows.</p></div></section>
-  <section class="sec"><div class="wrap seg"><div><div class="tag tag-pink">Founding Company Offer</div><h2>Cleaning companies get 2 months free during launch.</h2><p style="margin:16px 0 0">After that: $9.99/month + $1 per active cleaner seat.</p><div class="offer pk" style="margin-top:28px"><div class="offer-lbl pk">Company account features</div><div class="chk-list" style="margin-top:12px"><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Manage all cleaners from one company dashboard</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Individual cleaner profiles with company badge</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access End of Lease and Bond Clean jobs</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Handle your own cleaner payouts internally</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Teams reviewed through TideLynk's verification process</p></div></div></div><div style="margin-top:28px"><a href="https://form.typeform.com/to/dTUTYTnp" class="btn btn-pink btn-lg" target="_blank" rel="noopener noreferrer">Register Company Interest →</a></div></div><div><div class="bk-card"><p style="font-size:.72rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:var(--gray)">Compliance requirements</p><p style="font-size:.9rem;color:rgba(136,146,176,.7);margin-bottom:16px">Compliance requirements apply at the individual cleaner level. Each cleaner will need:</p><div class="chk-list"><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Active ABN</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Current public liability insurance</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>National police check</p></div></div></div></div></div></section>
+  <section class="sec"><div class="wrap seg"><div><div class="tag tag-pink">Founding Company Offer</div><h2>Cleaning companies get 2 months free during launch.</h2><p style="margin:16px 0 0">After that: $9.99/month + $1 per active cleaner seat.</p><div class="offer pk" style="margin-top:28px"><div class="offer-lbl pk">Company account features</div><div class="chk-list" style="margin-top:12px"><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Manage all cleaners from one company dashboard</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Individual cleaner profiles with company badge</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access End of Lease and Bond Clean jobs</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Teams reviewed through TideLynk's verification process</p></div></div></div><div style="margin-top:28px"><a href="https://form.typeform.com/to/dTUTYTnp" class="btn btn-pink btn-lg" target="_blank" rel="noopener noreferrer">Register Company Interest →</a></div></div><div><div class="bk-card"><p style="font-size:.72rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:var(--gray)">Compliance requirements</p><p style="font-size:.9rem;color:rgba(136,146,176,.7);margin-bottom:16px">Each cleaner will need:</p><div class="chk-list"><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Active ABN</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Current public liability insurance</p></div><div class="chk-row"><div class="ck ck-p"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>National police check</p></div></div></div></div></div></section>
 </div>
 
 <!-- FAQs -->
@@ -755,29 +719,20 @@ fbq('track','PageView');
     <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">Is there a cost to join as a cleaner?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>Founding cleaners who join during TideLynk's Perth launch receive their first 2 months free. After the free period, cleaner membership is $9.99/month and can be cancelled anytime.</p></div></div>
     <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">How does company pricing work?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>Founding company accounts receive 2 months free during launch. After that, company accounts are $9.99/month plus $1 per active cleaner.</p></div></div>
     <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">Where is TideLynk launching?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>TideLynk is launching across the Perth metropolitan area, covering suburbs including Subiaco, Nedlands, Cottesloe, South Perth, Victoria Park, Mount Lawley, Applecross, Fremantle, Scarborough, Perth CBD, and more.</p></div></div>
-    <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">How do I contact TideLynk?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>You can reach us via our contact form or by emailing <a href="mailto:info@tidelynk.com.au" style="color:var(--teal)">info@tidelynk.com.au</a>. We aim to respond within 1 business day.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="faq(this)" aria-expanded="false">How do I contact TideLynk?<span class="faq-chev">⌄</span></button><div class="faq-body"><p>You can reach us via our contact form or by emailing <a href="mailto:info@tidelynk.com.au" style="color:var(--teal)">info@tidelynk.com.au</a>.</p></div></div>
   </div><div style="text-align:center;margin-top:40px"><p style="margin-bottom:20px">Still have questions?</p><a href="https://form.typeform.com/to/QDqBIhAP" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Contact Us</a></div></div></section>
 </div>
 
-<!-- PRIVACY POLICY -->
-<div id="page-privacy-policy" class="page page-top">
-  <div class="legal-page"><div class="legal-wrap"><h1>Privacy Policy</h1><p class="legal-meta">Tidelynk App Pty Ltd (ACN 691 362 955) · Last updated: October 2025</p><div class="legal-body"><div style="background:rgba(79,232,216,.07);border:1px solid rgba(79,232,216,.2);border-radius:9px;padding:14px 18px;margin-bottom:24px"><p style="font-size:.85rem;color:rgba(200,235,230,.75);margin:0;line-height:1.65"><strong style="color:rgba(79,232,216,.9)">Pre-launch notice:</strong> TideLynk is currently in a pre-launch stage. Some features referenced in this Privacy Policy relate to planned functionality.</p></div><p>Tidelynk App Pty Ltd (ACN 691 362 955) (<strong>we</strong>, <strong>us</strong> or <strong>our</strong>) understands that protecting your personal information is important.</p><h2>The Information We Collect</h2><p>We may collect Identity Data, Contact Data, Financial Data (through Stripe — we do not have access to this), Transaction Data, Technical and Usage Data, Profile Data, Marketing and Communications Data, Professional Data, and Sensitive Information relating to background checks.</p><h2>How We Collect Personal Information</h2><p>We collect personal information when you provide it directly to us, complete a form, use any website we operate, or from publicly available sources.</p><h2>Why We Collect, Hold, Use and Disclose Personal Information</h2><p>We collect, hold, use and disclose your personal information to enable you to access and use our software; to contact and communicate with you; for internal record keeping and billing; for analytics and business development; and to comply with our legal obligations.</p><h2>Your Rights and Controlling Your Personal Information</h2><p>You may request access to or correction of the personal information we hold about you. To unsubscribe from communications, contact us or use the opt-out facilities provided.</p><div class="legal-contact"><h3>Contact Us</h3><p>Tidelynk App Pty Ltd (ACN 691 362 955)<br>Email: <a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></p></div></div></div></div>
-</div>
-
-<!-- TERMS -->
-<div id="page-terms-and-conditions" class="page page-top">
-  <div class="legal-page"><div class="legal-wrap"><h1>Website Terms of Use</h1><p class="legal-meta">Tidelynk App Pty Ltd (ACN 691 362 955) · Last updated: 16 October 2025</p><div class="legal-body"><p>This website is operated by Tidelynk App Pty Ltd (ACN 691 362 955). These terms apply to your use of, and access to, the Site.</p><h2>Information and Availability</h2><p>While we use reasonable attempts to ensure the accuracy and completeness of the Content, we do not warrant the accuracy, completeness or suitability of any Content.</p><h2>Intellectual Property Rights</h2><p>Unless otherwise indicated, we own or license the Content and all intellectual property rights displayed or used on the Site. We authorise you to access and use the Site solely for your own personal use.</p><h2>Our Liability is Limited</h2><p>To the maximum extent permitted by law, we exclude all liability for any loss or damage of any kind arising out of or in connection with the Site or the Content.</p><h2>Privacy</h2><p>Our <a onclick="navigate('privacy-policy')" style="color:var(--teal);cursor:pointer;text-decoration:underline">Privacy Policy</a> sets out how we will collect and handle your personal information.</p><div class="legal-contact"><h3>Contact Us</h3><p>Tidelynk App Pty Ltd (ACN 691 362 955)<br>Email: <a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></p></div></div></div></div>
-</div>
+<!-- PRIVACY / TERMS (condensed) -->
+<div id="page-privacy-policy" class="page page-top"><div class="legal-page"><div class="legal-wrap"><h1>Privacy Policy</h1><p class="legal-meta">Tidelynk App Pty Ltd (ACN 691 362 955) · Last updated: October 2025</p><div class="legal-body"><div style="background:rgba(79,232,216,.07);border:1px solid rgba(79,232,216,.2);border-radius:9px;padding:14px 18px;margin-bottom:24px"><p style="font-size:.85rem;color:rgba(200,235,230,.75);margin:0"><strong style="color:rgba(79,232,216,.9)">Pre-launch notice:</strong> TideLynk is currently in a pre-launch stage.</p></div><p>Tidelynk App Pty Ltd (ACN 691 362 955) (<strong>we</strong>, <strong>us</strong>) understands that protecting your personal information is important.</p><h2>The Information We Collect</h2><p>We may collect Identity Data, Contact Data, Financial Data (through Stripe), Transaction Data, Technical and Usage Data, Profile Data, Marketing and Communications Data, Professional Data, and Sensitive Information relating to background checks.</p><h2>How We Collect Personal Information</h2><p>We collect personal information when you provide it directly to us, complete a form, use any website we operate, or from publicly available sources.</p><h2>Your Rights</h2><p>You may request access to or correction of the personal information we hold about you. To unsubscribe from communications, contact us or use the opt-out facilities provided.</p><div class="legal-contact"><h3>Contact Us</h3><p>Email: <a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></p></div></div></div></div></div>
+<div id="page-terms-and-conditions" class="page page-top"><div class="legal-page"><div class="legal-wrap"><h1>Website Terms of Use</h1><p class="legal-meta">Tidelynk App Pty Ltd (ACN 691 362 955) · Last updated: 16 October 2025</p><div class="legal-body"><p>This website is operated by Tidelynk App Pty Ltd (ACN 691 362 955). These terms apply to your use of, and access to, the Site.</p><h2>Intellectual Property Rights</h2><p>Unless otherwise indicated, we own or license the Content and all intellectual property rights on the Site.</p><h2>Our Liability is Limited</h2><p>To the maximum extent permitted by law, we exclude all liability for any loss or damage arising out of or in connection with the Site.</p><h2>Privacy</h2><p>Our <a onclick="navigate('privacy-policy')" style="color:var(--teal);cursor:pointer;text-decoration:underline">Privacy Policy</a> sets out how we collect and handle your personal information.</p><div class="legal-contact"><h3>Contact Us</h3><p>Email: <a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></p></div></div></div></div></div>
 
 <!-- FOOTER -->
 <footer>
   <div class="foot-skyline-bg"><svg id="footerSkylineSvg" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block"></svg></div>
   <div class="wrap">
     <div class="foot-top">
-      <div>
-        <div onclick="navigate('home')" style="cursor:pointer;margin-bottom:8px"><svg xmlns="http://www.w3.org/2000/svg" width="149" height="50" viewBox="0 0 149 50" fill="none" style="height:24px;width:auto;display:block"><path d="M82.6452 5.12812C81.4412 1.97549 79.0884 -0.0727545 75.5718 0.00197866C74.2695 -0.0229324 73.0226 0.208187 71.8698 0.835115C70.2824 1.6987 69.1697 3.01899 68.3545 4.59807C66.6578 7.88356 66.28 11.4043 66.6772 15.0178C66.9609 17.5892 67.455 20.1301 68.4237 22.5506C68.5262 22.8081 68.4487 22.9119 68.2106 23.0101C67.1616 23.4405 66.0876 23.792 64.9888 24.055C64.611 24.1463 64.5445 24.3207 64.5916 24.6446C64.8615 26.4658 65.1299 28.2871 65.3874 30.1098C65.4206 30.345 65.4925 30.3727 65.7029 30.3118C66.2011 30.1665 66.7118 30.0599 67.2086 29.9105C70.6823 28.8656 73.7976 27.173 76.4645 24.6985C78.6663 22.6558 80.3492 20.2339 81.6225 17.5214C82.7075 15.2102 83.3801 12.7827 83.5448 10.2335C83.6582 8.46759 83.2694 6.76395 82.6452 5.12812ZM75.1636 17.4079C74.675 18.1317 74.1478 18.8292 73.4572 19.4644C73.1444 18.6285 72.9949 17.812 72.8385 17.0024C72.5078 15.2738 72.3362 13.5273 72.386 11.7683C72.4247 10.3996 72.5562 9.03362 73.1001 7.75486C73.4433 6.94386 73.8973 6.22421 74.8466 5.98617C75.6078 5.79518 76.3233 6.03461 76.7593 6.68922C77.3128 7.51958 77.5038 8.47312 77.5578 9.4405C77.7225 12.3786 76.7897 15.004 75.1636 17.4079Z" fill="white"/><path d="M86.5908 39.4071C84.025 39.2908 81.5546 38.4937 79.2268 37.2232C77.4623 36.26 75.8915 35.0338 74.4993 33.589C73.3174 32.3628 72.2877 31.0134 71.4629 29.5188C71.3868 29.3804 71.1557 29.2032 71.51 29.0801C73.1873 28.5002 74.5477 27.3986 75.9427 26.3578C76.2168 26.1544 76.3316 26.1682 76.5212 26.4478C77.8927 28.467 79.6545 30.0184 81.9435 30.9359C83.2707 31.4674 84.6519 31.7179 86.0705 31.7843C86.3791 31.7981 86.4787 31.9089 86.5189 32.194C86.833 34.4429 87.1555 36.6918 87.4849 38.9393C87.5333 39.2659 87.5015 39.4721 87.096 39.4099C86.9631 39.3905 86.8261 39.4071 86.5908 39.4071Z" fill="white"/><path d="M9.40946 37.291H3.28688V23.9373H0V19.171H3.28688V12.2665H9.40946V19.1696H12.6963V23.9359H9.40946V37.291Z" fill="white"/><path d="M16.1895 9.34912C18.1616 9.34912 19.8058 10.9517 19.8058 12.9654C19.8058 14.9375 18.1616 16.5816 16.1895 16.5816C14.1759 16.5816 12.5732 14.9375 12.5732 12.9654C12.5732 10.9517 14.1759 9.34912 16.1895 9.34912ZM13.1074 37.291V19.1696H19.2716V37.291H13.1074Z" fill="white"/><path d="M41.6651 37.291H35.501V35.1127C34.2679 36.9616 31.5969 37.7021 29.2968 37.7021C24.1609 37.7021 20.2983 33.2637 20.2983 28.2511C20.2983 23.2384 24.1609 18.76 29.2968 18.76C31.5983 18.76 33.8984 19.4173 35.501 21.3895V6.47327H41.6651V37.291ZM31.1872 23.7311C28.7224 23.7311 26.8721 25.8679 26.8721 28.2511C26.8721 30.6342 28.721 32.771 31.1872 32.771C33.6534 32.771 35.501 30.6342 35.501 28.2511C35.501 25.8679 33.6521 23.7311 31.1872 23.7311Z" fill="white"/><path d="M63.0721 28.9902H49.0195C49.0195 31.0855 50.499 33.3053 52.9237 33.3053C55.102 33.3053 56.4569 31.8674 56.4984 30.5526H62.7857C61.7173 35.3189 57.8547 37.7021 53.0468 37.7021C46.8011 37.7021 42.4873 34.0042 42.4873 28.2511C42.4873 22.5811 46.9658 18.76 53.0468 18.76C58.5536 18.76 63.1137 22.0469 63.1137 27.8415C63.1137 28.2096 63.0721 28.6206 63.0721 28.9902ZM57.1973 26.0728C57.1973 26.0728 56.9094 22.7029 53.17 22.7029C49.3074 22.7029 49.1026 26.0728 49.1026 26.0728H57.1973Z" fill="white"/><path d="M88.4759 47.5641L92.5848 37.2911H91.5579L84.6548 19.1697H90.859L95.1728 32.1137L99.4866 19.1697H105.734L98.8306 37.2911L94.8863 47.5641H88.4759Z" fill="#00FFE7"/><path d="M125.292 37.2911H119.128V27.0181C119.128 24.8813 118.306 23.7312 116.375 23.7312C114.443 23.7312 112.923 25.7864 112.923 28.2512V37.2911H106.759V19.1697H112.923V21.3882C114.156 19.8271 116.087 18.7587 118.47 18.7587C123.318 18.7587 125.292 22.0871 125.292 27.0181V37.2911Z" fill="#00FFE7"/><path d="M134.743 37.291H128.579V6.47327H134.743V26.3606L140.536 19.1696H148.178L140.371 27.7985L149 37.2896H141.11L134.741 29.2766V37.291H134.743Z" fill="#00FFE7"/><path d="M12.0812 40.6068H73.4939L71.3126 50.0033H9.39648L12.0812 40.6068Z" fill="#FF2EC4"/><rect width="53.9064" height="6.71177" transform="translate(14.4304 41.9492)" fill="#FF2EC4"/></svg></div>
-        <p style="font-size:.82rem;color:var(--gray)">Perth's on-demand cleaning marketplace.</p>
-      </div>
+      <div><div onclick="navigate('home')" style="cursor:pointer;margin-bottom:8px"><svg xmlns="http://www.w3.org/2000/svg" width="149" height="50" viewBox="0 0 149 50" fill="none" style="height:24px;width:auto;display:block"><path d="M82.6452 5.12812C81.4412 1.97549 79.0884 -0.0727545 75.5718 0.00197866C74.2695 -0.0229324 73.0226 0.208187 71.8698 0.835115C70.2824 1.6987 69.1697 3.01899 68.3545 4.59807C66.6578 7.88356 66.28 11.4043 66.6772 15.0178C66.9609 17.5892 67.455 20.1301 68.4237 22.5506C68.5262 22.8081 68.4487 22.9119 68.2106 23.0101C67.1616 23.4405 66.0876 23.792 64.9888 24.055C64.611 24.1463 64.5445 24.3207 64.5916 24.6446C64.8615 26.4658 65.1299 28.2871 65.3874 30.1098C65.4206 30.345 65.4925 30.3727 65.7029 30.3118C66.2011 30.1665 66.7118 30.0599 67.2086 29.9105C70.6823 28.8656 73.7976 27.173 76.4645 24.6985C78.6663 22.6558 80.3492 20.2339 81.6225 17.5214C82.7075 15.2102 83.3801 12.7827 83.5448 10.2335C83.6582 8.46759 83.2694 6.76395 82.6452 5.12812ZM75.1636 17.4079C74.675 18.1317 74.1478 18.8292 73.4572 19.4644C73.1444 18.6285 72.9949 17.812 72.8385 17.0024C72.5078 15.2738 72.3362 13.5273 72.386 11.7683C72.4247 10.3996 72.5562 9.03362 73.1001 7.75486C73.4433 6.94386 73.8973 6.22421 74.8466 5.98617C75.6078 5.79518 76.3233 6.03461 76.7593 6.68922C77.3128 7.51958 77.5038 8.47312 77.5578 9.4405C77.7225 12.3786 76.7897 15.004 75.1636 17.4079Z" fill="white"/><path d="M86.5908 39.4071C84.025 39.2908 81.5546 38.4937 79.2268 37.2232C77.4623 36.26 75.8915 35.0338 74.4993 33.589C73.3174 32.3628 72.2877 31.0134 71.4629 29.5188C71.3868 29.3804 71.1557 29.2032 71.51 29.0801C73.1873 28.5002 74.5477 27.3986 75.9427 26.3578C76.2168 26.1544 76.3316 26.1682 76.5212 26.4478C77.8927 28.467 79.6545 30.0184 81.9435 30.9359C83.2707 31.4674 84.6519 31.7179 86.0705 31.7843C86.3791 31.7981 86.4787 31.9089 86.5189 32.194C86.833 34.4429 87.1555 36.6918 87.4849 38.9393C87.5333 39.2659 87.5015 39.4721 87.096 39.4099C86.9631 39.3905 86.8261 39.4071 86.5908 39.4071Z" fill="white"/><path d="M9.40946 37.291H3.28688V23.9373H0V19.171H3.28688V12.2665H9.40946V19.1696H12.6963V23.9359H9.40946V37.291Z" fill="white"/><path d="M16.1895 9.34912C18.1616 9.34912 19.8058 10.9517 19.8058 12.9654C19.8058 14.9375 18.1616 16.5816 16.1895 16.5816C14.1759 16.5816 12.5732 14.9375 12.5732 12.9654C12.5732 10.9517 14.1759 9.34912 16.1895 9.34912ZM13.1074 37.291V19.1696H19.2716V37.291H13.1074Z" fill="white"/><path d="M41.6651 37.291H35.501V35.1127C34.2679 36.9616 31.5969 37.7021 29.2968 37.7021C24.1609 37.7021 20.2983 33.2637 20.2983 28.2511C20.2983 23.2384 24.1609 18.76 29.2968 18.76C31.5983 18.76 33.8984 19.4173 35.501 21.3895V6.47327H41.6651V37.291ZM31.1872 23.7311C28.7224 23.7311 26.8721 25.8679 26.8721 28.2511C26.8721 30.6342 28.721 32.771 31.1872 32.771C33.6534 32.771 35.501 30.6342 35.501 28.2511C35.501 25.8679 33.6521 23.7311 31.1872 23.7311Z" fill="white"/><path d="M63.0721 28.9902H49.0195C49.0195 31.0855 50.499 33.3053 52.9237 33.3053C55.102 33.3053 56.4569 31.8674 56.4984 30.5526H62.7857C61.7173 35.3189 57.8547 37.7021 53.0468 37.7021C46.8011 37.7021 42.4873 34.0042 42.4873 28.2511C42.4873 22.5811 46.9658 18.76 53.0468 18.76C58.5536 18.76 63.1137 22.0469 63.1137 27.8415C63.1137 28.2096 63.0721 28.6206 63.0721 28.9902ZM57.1973 26.0728C57.1973 26.0728 56.9094 22.7029 53.17 22.7029C49.3074 22.7029 49.1026 26.0728 49.1026 26.0728H57.1973Z" fill="white"/><path d="M88.4759 47.5641L92.5848 37.2911H91.5579L84.6548 19.1697H90.859L95.1728 32.1137L99.4866 19.1697H105.734L98.8306 37.2911L94.8863 47.5641H88.4759Z" fill="#00FFE7"/><path d="M125.292 37.2911H119.128V27.0181C119.128 24.8813 118.306 23.7312 116.375 23.7312C114.443 23.7312 112.923 25.7864 112.923 28.2512V37.2911H106.759V19.1697H112.923V21.3882C114.156 19.8271 116.087 18.7587 118.47 18.7587C123.318 18.7587 125.292 22.0871 125.292 27.0181V37.2911Z" fill="#00FFE7"/><path d="M134.743 37.291H128.579V6.47327H134.743V26.3606L140.536 19.1696H148.178L140.371 27.7985L149 37.2896H141.11L134.741 29.2766V37.291H134.743Z" fill="#00FFE7"/><path d="M12.0812 40.6068H73.4939L71.3126 50.0033H9.39648L12.0812 40.6068Z" fill="#FF2EC4"/><rect width="53.9064" height="6.71177" transform="translate(14.4304 41.9492)" fill="#FF2EC4"/></svg></div><p style="font-size:.82rem;color:var(--gray)">Perth's on-demand cleaning marketplace.</p></div>
       <div><div class="foot-legal-links"><a onclick="scrollToSection('lynknow')">LynkNow</a><a onclick="navigate('for-cleaners')">For Cleaners</a><a onclick="navigate('for-companies')">For Companies</a><a onclick="navigate('faqs')">FAQs</a><a onclick="navigate('privacy-policy')">Privacy Policy</a><a onclick="navigate('terms-and-conditions')">Terms of Use</a><a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></div></div>
     </div>
     <div class="foot-btm"><p>© 2025 TideLynk®. All rights reserved.</p><p>Perth, Western Australia 🇦🇺</p></div>
@@ -802,7 +757,6 @@ let raf=null;
 if(skyEl&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){document.addEventListener('mousemove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=null;const heroEl=document.querySelector('.hero');if(!heroEl)return;const rect=heroEl.getBoundingClientRect();if(e.clientY>rect.bottom+80)return;skyEl.style.transform=`translateX(${(e.clientX/window.innerWidth-.5)*10}px)`;});});}
 (function(){const L=document.getElementById('buildingLayer');if(!L)return;const ns='http://www.w3.org/2000/svg',gY=355;const b=[[55,26,36],[86,20,50],[111,30,42],[148,23,58],[177,32,46],[216,25,54],[265,34,76],[306,27,90],[338,38,72],[382,30,98],[419,36,83],[462,32,110],[502,40,130],[548,32,150],[586,44,136],[638,36,160],[684,40,183],[729,34,198],[770,46,192],[824,34,176],[865,40,162],[909,32,145],[948,40,128],[994,32,106],[1032,36,93],[1074,30,108],[1110,40,80],[1158,32,70],[1196,36,60],[1238,28,53],[1272,32,43],[1310,25,35],[1342,30,28],[1376,22,20]];b.forEach(([x,w,h])=>{const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',gY-h);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill','url(#bldFade)');L.appendChild(r);if(h>80){for(let wy=gY-h+16;wy<gY-18;wy+=12){for(let wx=x+4;wx<x+w-5;wx+=7){if(Math.random()>.52){const win=document.createElementNS(ns,'rect');win.setAttribute('x',wx);win.setAttribute('y',wy);win.setAttribute('width','3');win.setAttribute('height','4');win.setAttribute('fill',Math.random()>.62?'#4FE8D8':'#ffffff');win.setAttribute('opacity',(Math.random()*.12+.06).toFixed(2));const rp=Math.random();if(rp<.14)win.setAttribute('class','wp1');else if(rp<.28)win.setAttribute('class','wp2');else if(rp<.40)win.setAttribute('class','wp3');else if(rp<.48)win.setAttribute('class','wpf');L.appendChild(win);}}}}});const tall=b.reduce((a,c)=>c[2]>a[2]?c:a);const ax=tall[0]+tall[1]/2,ay=gY-tall[2];const ant=document.createElementNS(ns,'line');ant.setAttribute('x1',ax);ant.setAttribute('y1',ay);ant.setAttribute('x2',ax);ant.setAttribute('y2',ay-22);ant.setAttribute('stroke','rgba(79,232,216,.38)');ant.setAttribute('stroke-width','1.5');L.appendChild(ant);const dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',ax);dot.setAttribute('cy',ay-22);dot.setAttribute('r','2.5');dot.setAttribute('fill','#FF3D8A');dot.setAttribute('opacity','.75');L.appendChild(dot);})();
 (function(){const svg=document.getElementById('footerSkylineSvg');if(!svg)return;const ns='http://www.w3.org/2000/svg',gY=70;const b=[[30,18,18],[52,14,24],[70,20,20],[94,14,28],[112,18,22],[134,12,27],[158,16,36],[178,12,40],[194,20,34],[218,14,45],[238,16,38],[258,12,50],[274,18,60],[298,14,68],[318,20,62],[344,16,74],[364,14,88],[382,18,84],[404,16,80],[422,14,76],[444,16,66],[462,18,58],[482,14,52],[500,16,46],[518,14,50],[538,18,40],[558,14,36],[576,16,30],[594,14,26],[612,18,22],[635,14,17],[656,12,20],[676,16,18],[698,14,15]];b.forEach(([x,w,h])=>{const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',gY-h);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill','rgba(79,232,216,0.5)');svg.appendChild(r);});})();
-// Meta Pixel event tracking
 (function(){
   const PIXEL_MAP=[
     {partial:'typeform.com/to/ixQoLQQf',event:'Lead',params:{content_name:'customer_waitlist'}},
