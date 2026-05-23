@@ -100,25 +100,15 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 @keyframes hpd2{0%,100%{transform:translate(0,0);opacity:.06}40%{transform:translate(12px,-18px);opacity:.11}70%{transform:translate(-6px,-10px);opacity:.07}}
 @keyframes hpd3{0%,100%{transform:translate(0,0);opacity:.07}50%{transform:translate(-8px,-12px);opacity:.12}}
 
-/* ═══ SKYLINE ═══ */
-.hero-skyline{position:absolute;bottom:0;left:0;right:0;width:100%;will-change:transform;transition:transform .08s linear}
-.wp1{animation:wPulse 5s ease-in-out infinite}
-.wp2{animation:wPulse 7s ease-in-out 1.8s infinite}
-.wp3{animation:wPulse 4.8s ease-in-out 3.2s infinite}
-.wpf{animation:wFlicker 2.6s ease-in-out infinite}
-@keyframes wPulse{0%,100%{opacity:.06}50%{opacity:.22}}
-@keyframes wFlicker{0%,100%{opacity:.04}50%{opacity:.26}}
+/* ═══ SKYLINE — static ═══ */
+.hero-skyline{position:absolute;bottom:0;left:0;right:0;width:100%}
+.wp1,.wp2,.wp3,.wpf{}
 @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ═══ CLOUDS ═══ */
+/* ═══ CLOUDS — static ═══ */
 .hero-clouds{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .hero-clouds svg{position:absolute;top:0;left:0;width:100%;height:100%}
-.cg1{animation:cdrift1 26s ease-in-out infinite;will-change:transform}
-.cg2{animation:cdrift2 32s ease-in-out infinite;will-change:transform}
-.cg3{animation:cdrift3 42s ease-in-out infinite;will-change:transform}
-@keyframes cdrift1{0%,100%{transform:translate(0,0)}30%{transform:translate(-8px,-2px)}65%{transform:translate(6px,3px)}}
-@keyframes cdrift2{0%,100%{transform:translate(0,0)}40%{transform:translate(10px,-3px)}72%{transform:translate(-6px,2px)}}
-@keyframes cdrift3{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,1px)}}
+.cg1{}.cg2{}.cg3{}
 
 /* ═══════════════════════════════
    HERO CONTENT
@@ -412,7 +402,7 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
 @media(max-width:520px){.adv-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){
   .hero-orb-1,.hero-orb-2{display:none}
-  .badge-dot,.status-live-dot,.wp1,.wp2,.wp3,.wpf,.hp1,.hp2,.hp3,.hp4,.hp5,.hp6,.cg1,.cg2,.cg3,.hb1,.hb2,.hb3,.hb4,.hb5,.hb6,.hb7,.rr,.hloc::after,.hloc::before{animation:none!important;box-shadow:none!important}
+  .badge-dot,.status-live-dot,.hp1,.hp2,.hp3,.hp4,.hp5,.hp6,.hb1,.hb2,.hb3,.hb4,.hb5,.hb6,.hb7,.rr,.hloc::after,.hloc::before{animation:none!important;box-shadow:none!important}
   *{transition-duration:.001ms!important}
 }
 </style>
