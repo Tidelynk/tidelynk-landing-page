@@ -252,16 +252,61 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 
 /* ═══ OTHER PAGE STYLES ═══ */
 .lynknow-grid{display:grid;grid-template-columns:1fr 308px;gap:18px;align-items:start}
-.lynknow-main{background:linear-gradient(145deg,rgba(10,15,46,.99) 0%,rgba(7,10,32,.99) 100%);border:1px solid rgba(79,232,216,.22);border-radius:20px;padding:48px 44px;position:relative;overflow:hidden;display:flex;flex-direction:column}
-.lynknow-main::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(79,232,216,.07) 0%,transparent 65%);pointer-events:none}
+.lynknow-main{background:linear-gradient(150deg,rgba(5,10,32,.99) 0%,rgba(3,6,20,.99) 100%);border:1px solid rgba(79,232,216,.28);border-radius:20px;padding:46px 44px 44px;padding-right:210px;position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:440px}
+.lynknow-main::before{content:'';position:absolute;top:-100px;right:-80px;width:450px;height:450px;background:radial-gradient(circle,rgba(79,232,216,.1) 0%,transparent 65%);pointer-events:none;z-index:0}
 .lynknow-main::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),rgba(79,232,216,.18));border-radius:20px 20px 0 0}
-.lynknow-headline{font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;margin-bottom:14px;color:var(--white);position:relative;z-index:1}
-.lynknow-body{font-size:.975rem;color:rgba(136,146,176,.82);line-height:1.78;margin-bottom:16px;max-width:520px;position:relative;z-index:1}
-.lynknow-tagline{font-size:.9rem;color:rgba(79,232,216,.78);font-weight:600;font-style:italic;margin-bottom:30px;position:relative;z-index:1}
-.lynknow-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--teal);color:#061020;border-radius:9px;font-size:.9rem;font-weight:700;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;border:none;text-decoration:none;align-self:flex-start;position:relative;z-index:1}
-.lynknow-cta:hover{background:#6ff0e2;box-shadow:0 6px 22px rgba(79,232,216,.3);transform:translateY(-1px)}
+/* Connection line */
+.ln-conn{position:absolute;top:0;left:0;right:0;height:44px;pointer-events:none;z-index:0;overflow:hidden}
+.ln-conn-line{position:absolute;top:50%;left:6%;right:6%;height:1px;background:rgba(79,232,216,.1);transform:translateY(-50%);overflow:visible}
+.ln-conn-glow{position:absolute;top:0;left:0;width:28%;height:1px;background:linear-gradient(90deg,transparent,rgba(79,232,216,.6),transparent);animation:lnGlowSweep 3s linear infinite}
+@keyframes lnGlowSweep{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+.ln-conn-nodes{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;padding:0 5.5%}
+.ln-node-item{font-size:.65rem;opacity:.3}
+.ln-dot-wrap{position:absolute;top:50%;left:6%;right:6%;height:6px;transform:translateY(-50%);overflow:hidden}
+.ln-cdot{position:absolute;top:50%;left:0;width:5px;height:5px;border-radius:50%;background:rgba(79,232,216,.8);transform:translateY(-50%);animation:lnDotRide 3.8s linear infinite}
+@keyframes lnDotRide{0%{transform:translateX(0) translateY(-50%);opacity:0}5%{opacity:1}92%{opacity:.65}100%{transform:translateX(650px) translateY(-50%);opacity:0}}
+/* Badge */
+.ln-badge-wrap{position:relative;display:inline-flex;flex-direction:column;align-items:flex-start;margin-bottom:22px;margin-top:6px;z-index:1}
+.ln-pulse-ring{position:absolute;inset:-10px;border-radius:34px;border:1px solid rgba(79,232,216,.3);animation:lnPulseRing 2.8s ease-out infinite;pointer-events:none}
+.ln-pulse-ring.ln-pulse-ring2{animation-delay:1.4s}
+@keyframes lnPulseRing{0%{transform:scale(.95);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+.ln-badge-inner{display:inline-flex;align-items:center;gap:10px;padding:9px 18px 9px 14px;background:rgba(79,232,216,.08);border:1px solid rgba(79,232,216,.28);border-radius:28px;box-shadow:0 0 28px rgba(79,232,216,.14),inset 0 1px 0 rgba(79,232,216,.1);position:relative;z-index:1}
+.ln-bolt{font-size:1rem;filter:drop-shadow(0 0 8px rgba(79,232,216,.9))}
+.ln-name{font-size:.97rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:linear-gradient(120deg,#4FE8D8 0%,#b0f8f0 45%,#4FE8D8 100%);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:lnShimmer 3.2s ease infinite}
+@keyframes lnShimmer{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+.ln-badge-sub{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(79,232,216,.5);margin-top:8px;padding-left:4px}
+/* Headline */
+.lynknow-headline{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;margin-bottom:16px;color:var(--white);position:relative;z-index:1}
+.ln-em{font-style:normal;color:var(--teal);text-shadow:0 0 18px rgba(79,232,216,.45)}
+/* Process */
+.ln-process{display:flex;flex-direction:column;gap:4px;margin-bottom:20px;position:relative;z-index:1}
+.ln-step{display:flex;align-items:center;gap:9px;padding:6px 11px;border-radius:8px;font-size:.79rem;color:rgba(136,146,176,.38);transition:color .38s ease,background .38s ease,border-color .38s ease,box-shadow .38s ease;border:1px solid transparent}
+.ln-step.active{color:rgba(255,255,255,.88);background:rgba(79,232,216,.07);border-color:rgba(79,232,216,.16);box-shadow:0 0 10px rgba(79,232,216,.05)}
+.ln-step-dot{width:5px;height:5px;border-radius:50%;background:rgba(136,146,176,.2);flex-shrink:0;transition:background .38s ease,box-shadow .38s ease}
+.ln-step.active .ln-step-dot{background:var(--teal);box-shadow:0 0 7px rgba(79,232,216,.9)}
+.ln-step-icon{font-size:.82rem;width:18px;text-align:center;flex-shrink:0;opacity:.45;transition:opacity .38s ease}
+.ln-step.active .ln-step-icon{opacity:1}
+.ln-step-text{font-weight:500}
+/* Floating badges */
+.ln-floats{position:absolute;top:82px;right:20px;width:172px;display:flex;flex-direction:column;gap:9px;pointer-events:none;z-index:2}
+.ln-float{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;background:rgba(6,12,34,.9);border:1px solid rgba(255,255,255,.09);border-radius:10px;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7);white-space:nowrap;align-self:flex-end;box-shadow:0 4px 16px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.05)}
+.ln-float-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ln-f1{animation:lnFloatA 5s ease-in-out infinite}
+.ln-f2{animation:lnFloatB 6.2s ease-in-out infinite .8s}
+.ln-f3{animation:lnFloatA 5.6s ease-in-out infinite 1.5s}
+.ln-f4{animation:lnFloatB 4.9s ease-in-out infinite 2.3s}
+@keyframes lnFloatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes lnFloatB{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+/* Body & tagline */
+.lynknow-body{font-size:.93rem;color:rgba(136,146,176,.78);line-height:1.74;margin-bottom:12px;max-width:480px;position:relative;z-index:1}
+.ln-tagline-sm{font-size:.86rem;color:rgba(136,146,176,.56);margin-bottom:9px;position:relative;z-index:1}
+.ln-tmc{font-size:1.08rem;font-weight:800;letter-spacing:.05em;color:var(--white);margin-bottom:24px;position:relative;z-index:1;text-shadow:0 0 18px rgba(79,232,216,.2)}
+/* CTA */
+.lynknow-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--teal);color:#061020;border-radius:10px;font-size:.91rem;font-weight:700;cursor:pointer;transition:background .2s,box-shadow .3s,transform .2s;border:none;text-decoration:none;align-self:flex-start;position:relative;z-index:1}
+.lynknow-cta:hover{background:#6ff0e2;box-shadow:0 0 32px rgba(79,232,216,.38),0 6px 22px rgba(79,232,216,.18);transform:translateY(-2px)}
 .lynknow-side{display:flex;flex-direction:column;gap:14px}
 .also-avail{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(136,146,176,.35)}
+@media(max-width:900px){.ln-floats{display:none}}
 .sec-card{border-radius:14px;padding:22px 20px;transition:transform .2s ease,border-color .2s ease}
 .sec-card:hover{transform:translateY(-2px)}
 .sec-sched{background:rgba(255,255,255,.04);border:1px solid rgba(100,110,210,.18)}.sec-sched:hover{border-color:rgba(100,110,210,.32)}
@@ -594,11 +639,49 @@ fbq('init','824693310430602');fbq('track','PageView');
   <div class="wrap">
     <div class="lynknow-grid">
       <div class="lynknow-main">
-        <div class="tag" style="position:relative;z-index:1;margin-bottom:20px">LynkNow</div>
-        <h2 class="lynknow-headline">Instant cleaner matching<br>for Perth homes.</h2>
-        <p class="lynknow-body">Need a cleaner soon? LynkNow connects you with available verified cleaners near you, showing cleaner profiles, ratings, trust badges, and realistic ETAs before you choose.</p>
-        <p class="lynknow-tagline">No endless quotes. No waiting days. Just tap, match, clean.</p>
-        <a onclick="scrollToSection('how-it-works')" class="lynknow-cta">Explore LynkNow <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <!-- Connection line -->
+        <div class="ln-conn" aria-hidden="true">
+          <div class="ln-conn-line"><div class="ln-conn-glow"></div></div>
+          <div class="ln-conn-nodes"><span class="ln-node-item">📍</span><span class="ln-node-item">⚡</span><span class="ln-node-item">👤</span></div>
+          <div class="ln-dot-wrap"><div class="ln-cdot"></div><div class="ln-cdot" style="animation-delay:1.26s"></div><div class="ln-cdot" style="animation-delay:2.53s"></div></div>
+        </div>
+
+        <!-- Badge -->
+        <div class="ln-badge-wrap">
+          <div class="ln-pulse-ring"></div>
+          <div class="ln-pulse-ring ln-pulse-ring2"></div>
+          <div class="ln-badge-inner"><span class="ln-bolt">⚡</span><span class="ln-name">LYNKNOW™</span></div>
+          <p class="ln-badge-sub">Real-time cleaner matching</p>
+        </div>
+
+        <!-- Headline -->
+        <h2 class="lynknow-headline">Find a verified cleaner in <em class="ln-em">minutes.</em></h2>
+
+        <!-- Process -->
+        <div class="ln-process" id="lnProcess">
+          <div class="ln-step active"><span class="ln-step-dot"></span><span class="ln-step-icon">📍</span><span class="ln-step-text">Detecting nearby cleaners</span></div>
+          <div class="ln-step"><span class="ln-step-dot"></span><span class="ln-step-icon">⚡</span><span class="ln-step-text">Matching instantly</span></div>
+          <div class="ln-step"><span class="ln-step-dot"></span><span class="ln-step-icon">👤</span><span class="ln-step-text">Choose your cleaner</span></div>
+          <div class="ln-step"><span class="ln-step-dot"></span><span class="ln-step-icon">🏠</span><span class="ln-step-text">Cleaner on the way</span></div>
+        </div>
+
+        <!-- Floating badges -->
+        <div class="ln-floats" aria-hidden="true">
+          <div class="ln-float ln-f1"><span class="ln-float-dot" style="background:#22d97a"></span>+2 nearby cleaners</div>
+          <div class="ln-float ln-f2"><span class="ln-float-dot" style="background:#fbbf24"></span>4.9★ avg rating</div>
+          <div class="ln-float ln-f3"><span class="ln-float-dot" style="background:var(--teal)"></span>ETA: 8 min</div>
+          <div class="ln-float ln-f4"><span class="ln-float-dot" style="background:var(--pink)"></span>Verified ✓</div>
+        </div>
+
+        <!-- Body -->
+        <p class="lynknow-body">LynkNow instantly scans nearby verified cleaners, live availability, ratings and ETAs so you can choose confidently.</p>
+
+        <!-- Tagline -->
+        <p class="ln-tagline-sm">No chasing quotes. No cancellations. No waiting days.</p>
+        <p class="ln-tmc">Tap. Match. Clean.</p>
+
+        <!-- CTA -->
+        <a onclick="scrollToSection('how-it-works')" class="lynknow-cta">See LynkNow in action <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="lynknow-side">
         <p class="also-avail">Also available</p>
@@ -811,6 +894,16 @@ if(skyEl&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){documen
     const match=PIXEL_MAP.find(function(m){return href.indexOf(m.partial)!==-1;});
     if(match)fbq('track',match.event,match.params);
   },{passive:true});
+})();
+(function(){
+  const steps=document.querySelectorAll('#lnProcess .ln-step');
+  if(!steps.length)return;
+  let cur=0;
+  setInterval(()=>{
+    steps[cur].classList.remove('active');
+    cur=(cur+1)%steps.length;
+    steps[cur].classList.add('active');
+  },1900);
 })();
 </script>
 </body>
