@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <title>TideLynk — Tap. Match. Clean. | Perth's Cleaning Marketplace</title>
 <meta name="description" content="TideLynk is Perth's on-demand cleaning marketplace. LynkNow instantly matches you with verified local cleaners.">
 <style>
@@ -103,15 +104,24 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 @keyframes hpd2{0%,100%{transform:translate(0,0);opacity:.06}40%{transform:translate(12px,-18px);opacity:.11}70%{transform:translate(-6px,-10px);opacity:.07}}
 @keyframes hpd3{0%,100%{transform:translate(0,0);opacity:.07}50%{transform:translate(-8px,-12px);opacity:.12}}
 
-/* ═══ SKYLINE — static ═══ */
+/* ═══ SKYLINE ═══ */
 .hero-skyline{position:absolute;bottom:0;left:0;right:0;width:100%}
 .wp1,.wp2,.wp3,.wpf{}
 @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ═══ CLOUDS — static ═══ */
+/* ═══ CLOUDS — animated ═══ */
 .hero-clouds{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.hero-clouds svg{position:absolute;top:0;left:0;width:100%;height:100%}
-.cg1{}.cg2{}.cg3{}
+.hero-clouds svg{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible}
+.cloud-grp{will-change:transform}
+.cld-far-l{animation:cldDrift1 130s ease-in-out infinite alternate}
+.cld-far-r{animation:cldDrift2 112s ease-in-out infinite alternate}
+.cld-mid-l{animation:cldDrift3 92s ease-in-out infinite alternate}
+.cld-mid-r{animation:cldDrift1 98s ease-in-out infinite alternate-reverse}
+.cld-near-l{animation:cldDrift2 76s ease-in-out infinite alternate}
+.cld-near-r{animation:cldDrift3 82s ease-in-out infinite alternate-reverse}
+@keyframes cldDrift1{from{transform:translateX(-48px)}to{transform:translateX(48px)}}
+@keyframes cldDrift2{from{transform:translateX(34px)}to{transform:translateX(-52px)}}
+@keyframes cldDrift3{from{transform:translateX(-24px)}to{transform:translateX(40px)}}
 
 /* ═══════════════════════════════
    HERO CONTENT
@@ -124,7 +134,7 @@ p{color:var(--gray);font-size:1rem;line-height:1.7}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:28px;padding:7px 16px 7px 10px;font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:22px;letter-spacing:.025em}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 10px rgba(79,232,216,.9);animation:dotPulse 2.2s ease-in-out infinite}
 
-/* Mobile status pill — hidden on desktop */
+/* Mobile status pill */
 .hero-status-pill{display:none;align-items:center;gap:8px;padding:5px 14px 5px 9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:30px;font-size:.7rem;letter-spacing:.025em;color:rgba(255,255,255,.48);margin-bottom:0}
 .status-live-dot{width:7px;height:7px;border-radius:50%;background:#22d97a;box-shadow:0 0 9px rgba(34,217,122,.9);flex-shrink:0;animation:liveDotBlink 2.2s ease-in-out infinite}
 @keyframes liveDotBlink{0%,100%{opacity:1;box-shadow:0 0 9px rgba(34,217,122,.9)}50%{opacity:.6;box-shadow:0 0 18px rgba(34,217,122,.5)}}
@@ -383,7 +393,7 @@ footer{background:#04070F;border-top:1px solid var(--border);padding:44px 0 0;po
 @media(max-width:520px){.adv-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){
   .hero-orb-1,.hero-orb-2{display:none}
-  .badge-dot,.status-live-dot,.hp1,.hp2,.hp3,.hp4,.hp5,.hp6,.hb1,.hb2,.hb3,.hb4,.hb5,.hb6,.hb7,.rr,.hloc::after,.hloc::before{animation:none!important;box-shadow:none!important}
+  .badge-dot,.status-live-dot,.hp1,.hp2,.hp3,.hp4,.hp5,.hp6,.hb1,.hb2,.hb3,.hb4,.hb5,.hb6,.hb7,.rr,.hloc::after,.hloc::before,.cld-far-l,.cld-far-r,.cld-mid-l,.cld-mid-r,.cld-near-l,.cld-near-r{animation:none!important;box-shadow:none!important}
   *{transition-duration:.001ms!important}
 }
 </style>
@@ -439,26 +449,67 @@ fbq('init','824693310430602');fbq('track','PageView');
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
 
-    <!-- Clouds -->
+    <!-- Clouds — soft floating layers with parallax drift -->
     <div class="hero-clouds">
-      <svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <filter id="cf-xl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
-          <filter id="cf-lg" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="12"/></filter>
-          <filter id="cf-md" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="5.5"/></filter>
-          <filter id="cf-t1" x="-28%" y="-28%" width="156%" height="156%"><feTurbulence type="fractalNoise" baseFrequency="0.013 0.019" numOctaves="3" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"/></filter>
-          <filter id="cf-t2" x="-28%" y="-28%" width="156%" height="156%"><feTurbulence type="fractalNoise" baseFrequency="0.015 0.021" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G"/></filter>
-          <filter id="cf-t3" x="-28%" y="-28%" width="156%" height="156%"><feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="17" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/></filter>
-          <radialGradient id="cg-vl" cx="48%" cy="36%" r="52%"><stop offset="0%" stop-color="#172d60" stop-opacity="0.75"/><stop offset="48%" stop-color="#0f1e4a" stop-opacity="0.38"/><stop offset="100%" stop-color="#07102a" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-vr" cx="52%" cy="34%" r="52%"><stop offset="0%" stop-color="#152a5a" stop-opacity="0.72"/><stop offset="48%" stop-color="#0e1c46" stop-opacity="0.35"/><stop offset="100%" stop-color="#07102a" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-ml" cx="44%" cy="12%" r="55%"><stop offset="0%" stop-color="#364e84" stop-opacity="0.3"/><stop offset="60%" stop-color="#1a2e5c" stop-opacity="0.12"/><stop offset="100%" stop-color="#0c1838" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-mr" cx="56%" cy="10%" r="55%"><stop offset="0%" stop-color="#304680" stop-opacity="0.28"/><stop offset="60%" stop-color="#182c58" stop-opacity="0.1"/><stop offset="100%" stop-color="#0c1838" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-tl" cx="50%" cy="88%" r="52%"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0.07"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0"/></radialGradient>
-          <radialGradient id="cg-tr" cx="50%" cy="88%" r="52%"><stop offset="0%" stop-color="#4FE8D8" stop-opacity="0.065"/><stop offset="100%" stop-color="#4FE8D8" stop-opacity="0"/></radialGradient>
+          <!-- Far layer: very heavy blur, fully atmospheric -->
+          <filter id="cfl-far" x="-45%" y="-45%" width="190%" height="190%">
+            <feGaussianBlur stdDeviation="24"/>
+          </filter>
+          <!-- Mid layer: medium softness -->
+          <filter id="cfl-mid" x="-38%" y="-38%" width="176%" height="176%">
+            <feGaussianBlur stdDeviation="13"/>
+          </filter>
+          <!-- Near layer: slightly crisper edge, still soft -->
+          <filter id="cfl-near" x="-32%" y="-32%" width="164%" height="164%">
+            <feGaussianBlur stdDeviation="7"/>
+          </filter>
         </defs>
-        <g class="cg1"><ellipse cx="75" cy="165" rx="340" ry="110" fill="#09112e" opacity="0.58" filter="url(#cf-xl)"/><ellipse cx="285" cy="148" rx="200" ry="72" fill="#0c1736" opacity="0.42" filter="url(#cf-xl)"/><ellipse cx="60" cy="104" rx="192" ry="72" fill="#111e3e" opacity="0.60" filter="url(#cf-t1)"/><ellipse cx="238" cy="84" rx="170" ry="64" fill="#12203c" opacity="0.54" filter="url(#cf-t1)"/><ellipse cx="370" cy="116" rx="145" ry="52" fill="#0e1a38" opacity="0.40" filter="url(#cf-t2)"/><ellipse cx="158" cy="98" rx="215" ry="82" fill="url(#cg-vl)" filter="url(#cf-lg)"/><ellipse cx="310" cy="76" rx="110" ry="48" fill="#131e40" opacity="0.44" filter="url(#cf-t3)"/><ellipse cx="128" cy="55" rx="210" ry="28" fill="url(#cg-ml)" filter="url(#cf-md)"/><ellipse cx="460" cy="134" rx="120" ry="36" fill="#0b1530" opacity="0.22" filter="url(#cf-xl)"/><ellipse cx="168" cy="182" rx="240" ry="34" fill="url(#cg-tl)" filter="url(#cf-xl)"/></g>
-        <g class="cg2"><ellipse cx="1370" cy="152" rx="360" ry="114" fill="#09112e" opacity="0.54" filter="url(#cf-xl)"/><ellipse cx="1148" cy="142" rx="210" ry="70" fill="#0c1736" opacity="0.38" filter="url(#cf-xl)"/><ellipse cx="1385" cy="96" rx="195" ry="74" fill="#111e3e" opacity="0.57" filter="url(#cf-t2)"/><ellipse cx="1208" cy="112" rx="176" ry="66" fill="#12203c" opacity="0.50" filter="url(#cf-t2)"/><ellipse cx="1092" cy="128" rx="148" ry="50" fill="#0e1a38" opacity="0.36" filter="url(#cf-t1)"/><ellipse cx="1284" cy="104" rx="222" ry="84" fill="url(#cg-vr)" filter="url(#cf-lg)"/><ellipse cx="1318" cy="52" rx="215" ry="26" fill="url(#cg-mr)" filter="url(#cf-md)"/><ellipse cx="1052" cy="124" rx="128" ry="34" fill="#0b1530" opacity="0.20" filter="url(#cf-xl)"/><ellipse cx="1284" cy="170" rx="248" ry="32" fill="url(#cg-tr)" filter="url(#cf-xl)"/></g>
-        <g class="cg3"><ellipse cx="720" cy="448" rx="680" ry="48" fill="#090f28" opacity="0.13" filter="url(#cf-xl)"/></g>
+
+        <!-- ── FAR LAYER — slowest drift, most transparent, upper sky ── -->
+        <g class="cld-far-l cloud-grp">
+          <ellipse cx="155" cy="68" rx="255" ry="60" fill="#0d1a3c" opacity="0.52" filter="url(#cfl-far)"/>
+          <ellipse cx="68"  cy="86" rx="158" ry="44" fill="#0e1c40" opacity="0.40" filter="url(#cfl-far)"/>
+          <ellipse cx="272" cy="58" rx="172" ry="48" fill="#0c1838" opacity="0.38" filter="url(#cfl-far)"/>
+          <ellipse cx="368" cy="84" rx="134" ry="35" fill="#0a1530" opacity="0.24" filter="url(#cfl-far)"/>
+          <ellipse cx="448" cy="96" rx="98"  ry="26" fill="#091428" opacity="0.14" filter="url(#cfl-far)"/>
+        </g>
+        <g class="cld-far-r cloud-grp">
+          <ellipse cx="1292" cy="62" rx="248" ry="58" fill="#0d1a3c" opacity="0.50" filter="url(#cfl-far)"/>
+          <ellipse cx="1382" cy="80" rx="152" ry="42" fill="#0e1c40" opacity="0.38" filter="url(#cfl-far)"/>
+          <ellipse cx="1172" cy="66" rx="165" ry="46" fill="#0c1838" opacity="0.36" filter="url(#cfl-far)"/>
+          <ellipse cx="1062" cy="86" rx="128" ry="32" fill="#0a1530" opacity="0.22" filter="url(#cfl-far)"/>
+          <ellipse cx="988"  cy="98" rx="95"  ry="24" fill="#091428" opacity="0.13" filter="url(#cfl-far)"/>
+        </g>
+
+        <!-- ── MID LAYER — medium speed, flanking center ── -->
+        <g class="cld-mid-l cloud-grp">
+          <ellipse cx="238" cy="114" rx="182" ry="48" fill="#101e42" opacity="0.36" filter="url(#cfl-mid)"/>
+          <ellipse cx="118" cy="128" rx="138" ry="37" fill="#121f40" opacity="0.28" filter="url(#cfl-mid)"/>
+          <ellipse cx="378" cy="108" rx="136" ry="38" fill="#0e1c3e" opacity="0.26" filter="url(#cfl-mid)"/>
+          <ellipse cx="488" cy="134" rx="112" ry="27" fill="#0c1838" opacity="0.15" filter="url(#cfl-mid)"/>
+        </g>
+        <g class="cld-mid-r cloud-grp">
+          <ellipse cx="1215" cy="108" rx="185" ry="50" fill="#101e42" opacity="0.34" filter="url(#cfl-mid)"/>
+          <ellipse cx="1352" cy="122" rx="140" ry="36" fill="#121f40" opacity="0.26" filter="url(#cfl-mid)"/>
+          <ellipse cx="1085" cy="112" rx="140" ry="36" fill="#0e1c3e" opacity="0.24" filter="url(#cfl-mid)"/>
+          <ellipse cx="975"  cy="132" rx="114" ry="26" fill="#0c1838" opacity="0.14" filter="url(#cfl-mid)"/>
+        </g>
+
+        <!-- ── NEAR LAYER — fastest, edge-hugging, most defined ── -->
+        <g class="cld-near-l cloud-grp">
+          <ellipse cx="72"  cy="152" rx="168" ry="44" fill="#132040" opacity="0.26" filter="url(#cfl-near)"/>
+          <ellipse cx="195" cy="144" rx="126" ry="33" fill="#142240" opacity="0.20" filter="url(#cfl-near)"/>
+          <ellipse cx="-18" cy="162" rx="106" ry="27" fill="#111d3c" opacity="0.16" filter="url(#cfl-near)"/>
+          <ellipse cx="318" cy="158" rx="88"  ry="22" fill="#101c38" opacity="0.10" filter="url(#cfl-near)"/>
+        </g>
+        <g class="cld-near-r cloud-grp">
+          <ellipse cx="1372" cy="146" rx="165" ry="42" fill="#132040" opacity="0.24" filter="url(#cfl-near)"/>
+          <ellipse cx="1252" cy="138" rx="128" ry="32" fill="#142240" opacity="0.18" filter="url(#cfl-near)"/>
+          <ellipse cx="1482" cy="156" rx="108" ry="26" fill="#111d3c" opacity="0.15" filter="url(#cfl-near)"/>
+          <ellipse cx="1128" cy="162" rx="90"  ry="21" fill="#101c38" opacity="0.09" filter="url(#cfl-near)"/>
+        </g>
       </svg>
     </div>
 
@@ -695,9 +746,9 @@ fbq('init','824693310430602');fbq('track','PageView');
   <div class="wrap">
     <div class="foot-top">
       <div><div onclick="navigate('home')" style="cursor:pointer;margin-bottom:8px"><svg xmlns="http://www.w3.org/2000/svg" width="149" height="50" viewBox="0 0 149 50" fill="none" style="height:24px;width:auto;display:block"><path d="M82.6452 5.12812C81.4412 1.97549 79.0884 -0.0727545 75.5718 0.00197866C74.2695 -0.0229324 73.0226 0.208187 71.8698 0.835115C70.2824 1.6987 69.1697 3.01899 68.3545 4.59807C66.6578 7.88356 66.28 11.4043 66.6772 15.0178C66.9609 17.5892 67.455 20.1301 68.4237 22.5506C68.5262 22.8081 68.4487 22.9119 68.2106 23.0101C67.1616 23.4405 66.0876 23.792 64.9888 24.055C64.611 24.1463 64.5445 24.3207 64.5916 24.6446C64.8615 26.4658 65.1299 28.2871 65.3874 30.1098C65.4206 30.345 65.4925 30.3727 65.7029 30.3118C66.2011 30.1665 66.7118 30.0599 67.2086 29.9105C70.6823 28.8656 73.7976 27.173 76.4645 24.6985C78.6663 22.6558 80.3492 20.2339 81.6225 17.5214C82.7075 15.2102 83.3801 12.7827 83.5448 10.2335C83.6582 8.46759 83.2694 6.76395 82.6452 5.12812ZM75.1636 17.4079C74.675 18.1317 74.1478 18.8292 73.4572 19.4644C73.1444 18.6285 72.9949 17.812 72.8385 17.0024C72.5078 15.2738 72.3362 13.5273 72.386 11.7683C72.4247 10.3996 72.5562 9.03362 73.1001 7.75486C73.4433 6.94386 73.8973 6.22421 74.8466 5.98617C75.6078 5.79518 76.3233 6.03461 76.7593 6.68922C77.3128 7.51958 77.5038 8.47312 77.5578 9.4405C77.7225 12.3786 76.7897 15.004 75.1636 17.4079Z" fill="white"/><path d="M86.5908 39.4071C84.025 39.2908 81.5546 38.4937 79.2268 37.2232C77.4623 36.26 75.8915 35.0338 74.4993 33.589C73.3174 32.3628 72.2877 31.0134 71.4629 29.5188C71.3868 29.3804 71.1557 29.2032 71.51 29.0801C73.1873 28.5002 74.5477 27.3986 75.9427 26.3578C76.2168 26.1544 76.3316 26.1682 76.5212 26.4478C77.8927 28.467 79.6545 30.0184 81.9435 30.9359C83.2707 31.4674 84.6519 31.7179 86.0705 31.7843C86.3791 31.7981 86.4787 31.9089 86.5189 32.194C86.833 34.4429 87.1555 36.6918 87.4849 38.9393C87.5333 39.2659 87.5015 39.4721 87.096 39.4099C86.9631 39.3905 86.8261 39.4071 86.5908 39.4071Z" fill="white"/><path d="M9.40946 37.291H3.28688V23.9373H0V19.171H3.28688V12.2665H9.40946V19.1696H12.6963V23.9359H9.40946V37.291Z" fill="white"/><path d="M16.1895 9.34912C18.1616 9.34912 19.8058 10.9517 19.8058 12.9654C19.8058 14.9375 18.1616 16.5816 16.1895 16.5816C14.1759 16.5816 12.5732 14.9375 12.5732 12.9654C12.5732 10.9517 14.1759 9.34912 16.1895 9.34912ZM13.1074 37.291V19.1696H19.2716V37.291H13.1074Z" fill="white"/><path d="M41.6651 37.291H35.501V35.1127C34.2679 36.9616 31.5969 37.7021 29.2968 37.7021C24.1609 37.7021 20.2983 33.2637 20.2983 28.2511C20.2983 23.2384 24.1609 18.76 29.2968 18.76C31.5983 18.76 33.8984 19.4173 35.501 21.3895V6.47327H41.6651V37.291ZM31.1872 23.7311C28.7224 23.7311 26.8721 25.8679 26.8721 28.2511C26.8721 30.6342 28.721 32.771 31.1872 32.771C33.6534 32.771 35.501 30.6342 35.501 28.2511C35.501 25.8679 33.6521 23.7311 31.1872 23.7311Z" fill="white"/><path d="M63.0721 28.9902H49.0195C49.0195 31.0855 50.499 33.3053 52.9237 33.3053C55.102 33.3053 56.4569 31.8674 56.4984 30.5526H62.7857C61.7173 35.3189 57.8547 37.7021 53.0468 37.7021C46.8011 37.7021 42.4873 34.0042 42.4873 28.2511C42.4873 22.5811 46.9658 18.76 53.0468 18.76C58.5536 18.76 63.1137 22.0469 63.1137 27.8415C63.1137 28.2096 63.0721 28.6206 63.0721 28.9902ZM57.1973 26.0728C57.1973 26.0728 56.9094 22.7029 53.17 22.7029C49.3074 22.7029 49.1026 26.0728 49.1026 26.0728H57.1973Z" fill="white"/><path d="M88.4759 47.5641L92.5848 37.2911H91.5579L84.6548 19.1697H90.859L95.1728 32.1137L99.4866 19.1697H105.734L98.8306 37.2911L94.8863 47.5641H88.4759Z" fill="#00FFE7"/><path d="M125.292 37.2911H119.128V27.0181C119.128 24.8813 118.306 23.7312 116.375 23.7312C114.443 23.7312 112.923 25.7864 112.923 28.2512V37.2911H106.759V19.1697H112.923V21.3882C114.156 19.8271 116.087 18.7587 118.47 18.7587C123.318 18.7587 125.292 22.0871 125.292 27.0181V37.2911Z" fill="#00FFE7"/><path d="M134.743 37.291H128.579V6.47327H134.743V26.3606L140.536 19.1696H148.178L140.371 27.7985L149 37.2896H141.11L134.741 29.2766V37.291H134.743Z" fill="#00FFE7"/><path d="M12.0812 40.6068H73.4939L71.3126 50.0033H9.39648L12.0812 40.6068Z" fill="#FF2EC4"/><rect width="53.9064" height="6.71177" transform="translate(14.4304 41.9492)" fill="#FF2EC4"/></svg></div><p style="font-size:.82rem;color:var(--gray)">Perth's on-demand cleaning marketplace.</p></div>
-      <div><div class="foot-legal-links"><a onclick="scrollToSection('lynknow')">LynkNow</a><a onclick="navigate('for-cleaners')">For Cleaners</a><a onclick="navigate('for-companies')">For Companies</a><a onclick="navigate('faqs')">FAQs</a><a onclick="navigate('privacy-policy')">Privacy Policy</a><a onclick="navigate('terms-and-conditions')">Terms of Use</a><a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></div></div>
+      <div><div class="foot-legal-links"><a onclick="scrollToSection('lynknow')">LynkNow</a><a onclick="navigate('for-cleaners')">Cleaners</a><a onclick="navigate('for-companies')">Companies</a><a onclick="navigate('faqs')">FAQs</a><a onclick="navigate('privacy-policy')">Privacy Policy</a><a onclick="navigate('terms-and-conditions')">Terms of Use</a><a href="mailto:info@tidelynk.com.au">info@tidelynk.com.au</a></div></div>
     </div>
-    <div class="foot-btm"><p>© 2025 TideLynk®. All rights reserved.</p><p>Perth, Western Australia 🇦🇺</p></div>
+    <div class="foot-btm"><p>© 2026 TideLynk®. All rights reserved.</p><p>Perth, Western Australia 🇦🇺</p></div>
   </div>
 </footer>
 
