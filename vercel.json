@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/join-now",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/cleaning-service/standard-clean",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/faqs",
+      "destination": "/#faq",
+      "permanent": true
+    }
+  ]
+}
